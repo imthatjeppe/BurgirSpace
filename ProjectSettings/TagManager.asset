@@ -8,12 +8,12 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Hands
   - Water
   - UI
+  - NonInteractable
   - Left Hand Physics
   - Right Hand Physics
-  - 
   - 
   - 
   - 
