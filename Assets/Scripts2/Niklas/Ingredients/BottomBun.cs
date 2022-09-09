@@ -9,21 +9,4 @@ public class BottomBun : MonoBehaviour, IPooledObject
         GetComponent<BoxCollider>().isTrigger = false;
         GetComponent<Rigidbody>().useGravity = true;
     }
-
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Food"))
-        {
-            var joint = gameObject.AddComponent<FixedJoint>();
-            joint.connectedBody = other.rigidbody;
-        }
-    }
-
-    void OnCollisionExit(Collision other)
-    {
-        if (other.gameObject.CompareTag("Food"))
-        {
-            Destroy(gameObject.GetComponent<FixedJoint>());
-        }
-    }
 }
