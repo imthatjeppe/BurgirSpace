@@ -963,6 +963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1511519000}
   - component: {fileID: 1511518999}
+  - component: {fileID: 1511519001}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1047,6 +1048,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1511519001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511518998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1590774351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,15 +1384,15 @@ MonoBehaviour:
   - tag: TopBun
     prefab: {fileID: 2219927969580483639, guid: c6abbb9944d61834e9f10c6342ba33db,
       type: 3}
-    size: 10
+    size: 1
   - tag: Patty
     prefab: {fileID: 3700138592806973309, guid: b7d385a3a89287344a41b838178a4fa1,
       type: 3}
-    size: 10
+    size: 1
   - tag: BottomBun
     prefab: {fileID: 8257653546066336505, guid: 7e119f1c07016af428c13fef54435682,
       type: 3}
-    size: 10
+    size: 1
 --- !u!4 &1967367403
 Transform:
   m_ObjectHideFlags: 0
