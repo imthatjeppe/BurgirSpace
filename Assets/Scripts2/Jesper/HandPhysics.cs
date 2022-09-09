@@ -5,8 +5,6 @@ using UnityEngine;
 public class HandPhysics : MonoBehaviour
 {
     public Transform target;
-    //public Renderer noPhysicalHand;
-    //public float showNonPhysicalDistance = 0.05f;
 
     private Rigidbody rb;
     private Collider[] handColliders;
@@ -17,19 +15,6 @@ public class HandPhysics : MonoBehaviour
         Physics.IgnoreLayerCollision(6, 7, true);
         Physics.IgnoreLayerCollision(6, 8, true);
     }
-
-    private void Update()
-    {
-        //float distance = Vector3.Distance(transform.position, target.position);
-
-        //if (distance > showNonPhysicalDistance)
-        //{
-        //    noPhysicalHand.enabled = true;
-        //}
-        //else
-        //    noPhysicalHand.enabled = false;
-    }
-
     public void EnableHandColliders()
     {
         foreach (var item in handColliders)
@@ -44,7 +29,6 @@ public class HandPhysics : MonoBehaviour
             item.enabled = false;
         }
     }
-
     public void EnableHandCollidersDelay(float delay)
     {
         Invoke("EnableHandColliders", delay);
