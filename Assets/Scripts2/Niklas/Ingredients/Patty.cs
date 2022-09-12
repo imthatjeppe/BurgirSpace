@@ -8,22 +8,44 @@ public class Patty : MonoBehaviour, IPooledObject
 
     float rare = 20f, mediumRare = 40f, wellDone = 60f, burnt = 80f;
 
+    bool cooking = false;
+
+    public CookStates states;
+
     public void OnObjectSpawn()
     {
         GetComponent<MeshCollider>().isTrigger = false;
         GetComponent<Rigidbody>().useGravity = true;
     }
 
+    void FixedUpdate()
+    {
+        if (!cooking) { return; }
+
+        cookTime++;
+
+        if (cookTime < rare) { states = CookStates.Raw; return; }
+
+        if (cookTime >= rare && cookTime < mediumRare) { states = CookStates.Rare; return; }
+
+        if (cookTime >= mediumRare && cookTime < wellDone) { states = CookStates.mediumRare; return; }
+
+        if (cookTime >= wellDone && cookTime < burnt) { states = CookStates.wellDone; return; }
+
+        if (cookTime >= burnt) { states = CookStates.Burnt; return; }
+    }
+
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Pan"))
         {
-            InvokeRepeating("Cook", 1f, 1f);
+            cooking = true;
         }
 
         if (other.gameObject.CompareTag("Bun"))
         {
             transform.SetParent(other.gameObject.transform);
+            GetComponent<Rigidbody>().useGravity = false;
         }
     }
 
@@ -31,24 +53,16 @@ public class Patty : MonoBehaviour, IPooledObject
     {
         if (other.gameObject.CompareTag("Pan"))
         {
-            CancelInvoke("Cook");
+            cooking = false;
         }
     }
+}
 
-    string Cook()
-    {
-        cookTime++;
-
-        if(cookTime < rare) { return "Raw"; }
-
-        if(cookTime >= rare && cookTime < mediumRare) { return "Rare"; }
-
-        if(cookTime >= mediumRare && cookTime < wellDone) { return "Medium Rare"; }
-
-        if(cookTime >= wellDone && cookTime < burnt) { return "Well Done"; }
-
-        if(cookTime >= burnt) { return "Burnt"; }
-
-        return "";
-    }
+public enum CookStates
+{
+    Raw,
+    Rare,
+    mediumRare,
+    wellDone,
+    Burnt
 }
