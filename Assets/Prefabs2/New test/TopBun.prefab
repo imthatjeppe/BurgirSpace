@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 938716247878933401}
   - component: {fileID: 2421725463954757157}
   - component: {fileID: 4385721938152294412}
-  - component: {fileID: 4882172418235922449}
+  - component: {fileID: -705289513663945755}
   m_Layer: 0
   m_Name: TopBun
   m_TagString: Bun
@@ -235,16 +235,17 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
---- !u!65 &4882172418235922449
-BoxCollider:
+--- !u!64 &-705289513663945755
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2219927969580483639}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.3533251, y: 1.3408424, z: 0.6123746}
-  m_Center: {x: -0.008291125, y: -0.0032140913, z: 0.041088045}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 282665186597767424, guid: 244ae66cb3d93504fbe50cfa53aa3943, type: 3}
