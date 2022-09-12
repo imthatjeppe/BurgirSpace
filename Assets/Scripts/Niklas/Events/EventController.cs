@@ -33,7 +33,7 @@ public class EventController : MonoBehaviour
             //play start event audio and haptics
             currentEvent = events[0];
             currentEvent.StartEvent(this);
-            events.RemoveAt(0);
+            //events.RemoveAt(0);
 
             if (!hasStarted)
             {
