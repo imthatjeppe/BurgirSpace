@@ -45,7 +45,7 @@ public class Patty : MonoBehaviour, IPooledObject
         if (other.gameObject.CompareTag("Bun"))
         {
             transform.SetParent(other.gameObject.transform);
-            GetComponent<Rigidbody>().useGravity = false;
+            GetComponent<Rigidbody>().isKinematic = true;
         }
     }
 
