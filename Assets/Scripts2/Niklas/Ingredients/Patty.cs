@@ -33,11 +33,6 @@ public class Patty : MonoBehaviour, IPooledObject
         {
             CancelInvoke("Cook");
         }
-
-        if (other.gameObject.CompareTag("Bun"))
-        {
-            transform.SetParent(null);
-        }
     }
 
     string Cook()
