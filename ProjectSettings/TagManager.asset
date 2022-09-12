@@ -9,6 +9,7 @@ TagManager:
   - Bun
   - Patty
   - Pan
+  - Button
   layers:
   - Default
   - TransparentFX
