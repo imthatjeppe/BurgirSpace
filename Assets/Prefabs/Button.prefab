@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1599883418596483465}
   - component: {fileID: 1599883418596483464}
   - component: {fileID: 1599883418596483467}
-  - component: {fileID: 1599883418596483470}
+  - component: {fileID: 81431684}
   m_Layer: 0
   m_Name: Push
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,7 +161,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &1599883418596483470
+--- !u!114 &81431684
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1599883418596483445}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4030898c3e0ea4f49ba8106877d5c41d, type: 3}
+  m_Script: {fileID: 11500000, guid: 209d15ab2005b2e4990d16d63f4f8ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   threshold: 0.1
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 1599883419469848703}
   m_Layer: 0
   m_Name: Clicker
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 1599883419896754182}
   m_Layer: 0
   m_Name: Base
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 1599883419939076744}
   m_Layer: 0
   m_Name: Button
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
