@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Food
   - Ketchup
   - NonInteractable
+  - Bun
+  - Patty
   layers:
   - Default
   - TransparentFX
