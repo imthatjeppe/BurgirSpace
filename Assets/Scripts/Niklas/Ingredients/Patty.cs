@@ -41,28 +41,6 @@ public class Patty : MonoBehaviour, IPooledObject
         {
             cooking = true;
         }
-
-        if (other.gameObject.CompareTag("Bun"))
-        {
-            transform.SetParent(other.gameObject.transform);
-            var rb = GetComponent<Rigidbody>();
-            var otherRb = other.gameObject.GetComponent<Rigidbody>();
-            rb.useGravity = false;
-            otherRb.useGravity = false;
-            rb.velocity = new Vector3(0,0,0);
-            otherRb.velocity = new Vector3(0, 0, 0);
-        }
-    }
-
-    void OnCollisionStay(Collision other)
-    {
-        if (other.gameObject.CompareTag("Bun"))
-        {
-            var otherRb = other.gameObject.GetComponent<Rigidbody>();
-            var rb = GetComponent<Rigidbody>();
-            rb.velocity = new Vector3(0, 0, 0);
-            otherRb.velocity = new Vector3(0, 0, 0);
-        }
     }
 
     void OnCollisionExit(Collision other)
