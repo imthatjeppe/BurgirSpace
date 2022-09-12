@@ -58,8 +58,10 @@ public class Patty : MonoBehaviour, IPooledObject
     {
         if (other.gameObject.CompareTag("Bun"))
         {
+            var otherRb = other.gameObject.GetComponent<Rigidbody>();
             var rb = GetComponent<Rigidbody>();
             rb.velocity = new Vector3(0, 0, 0);
+            otherRb.velocity = new Vector3(0, 0, 0);
         }
     }
 
