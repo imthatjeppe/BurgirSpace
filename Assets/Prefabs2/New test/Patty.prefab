@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 461712592470133264}
   - component: {fileID: 1358804346227715673}
   - component: {fileID: 1478637002423283580}
-  - component: {fileID: 929687325233690689}
   - component: {fileID: 6107220223109245319}
   - component: {fileID: 4653049905464287967}
   - component: {fileID: 3198121809015134413}
+  - component: {fileID: 5979435444741474228}
   m_Layer: 0
   m_Name: Patty
   m_TagString: Patty
@@ -87,19 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &929687325233690689
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3700138592806973309}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1969634, y: 1.3515915, z: 0.23283613}
-  m_Center: {x: 0.05390972, y: -0.022562802, z: 0.12585771}
 --- !u!114 &6107220223109245319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,3 +235,17 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!64 &5979435444741474228
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3700138592806973309}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9036181148622177254, guid: 244ae66cb3d93504fbe50cfa53aa3943, type: 3}

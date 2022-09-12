@@ -6,7 +6,7 @@ public class TopBun : MonoBehaviour, IPooledObject
 {
     public void OnObjectSpawn()
     {
-        GetComponent<BoxCollider>().isTrigger = false;
+        GetComponent<MeshCollider>().isTrigger = false;
         GetComponent<Rigidbody>().useGravity = true;
     }
 }
