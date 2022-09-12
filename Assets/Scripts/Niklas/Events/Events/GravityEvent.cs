@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GravityEvent : GameEvent
 {
-    public List<Rigidbody> objects;
+    [HideInInspector]public List<Rigidbody> objects;
     float timer = 0;
     public float maxTime = 0;
 

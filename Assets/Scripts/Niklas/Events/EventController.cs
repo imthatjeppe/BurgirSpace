@@ -15,25 +15,27 @@ public class EventController : MonoBehaviour
             _event.Init();
         }
 
-        InvokeRepeating("PlayEvent", 15f, 20f);
+        if (currentEvent == null)
+        {
+            Invoke("NextEvent", 10f);
+        }
+
     }
 
     public void NextEvent()
     {
         if (events.Count == 0)
         {
-            Debug.Log("Event Over");
             //play complete event audio and haptics
-            //Destroy(gameObject);
-            return;
+            currentEvent.StartEvent(this);
+            Destroy(gameObject);
         }
         else
         {
-            Debug.Log("Event Started");
             //play start event audio and haptics
             currentEvent = events[0];
             currentEvent.StartEvent(this);
-            //events.RemoveAt(0);
+            events.RemoveAt(0);
 
             if (!hasStarted)
             {
@@ -67,11 +69,4 @@ public class EventController : MonoBehaviour
     }
 
     #endregion
-
-    public void PlayEvent()
-    {
-        if (currentEvent != null) { return; }
-
-        NextEvent();
-    }
 }

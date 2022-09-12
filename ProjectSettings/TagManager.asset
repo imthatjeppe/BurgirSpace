@@ -8,6 +8,7 @@ TagManager:
   - NonInteractable
   - Bun
   - Patty
+  - Events
   layers:
   - Default
   - TransparentFX
