@@ -12,7 +12,8 @@ public class GravityEvent : GameEvent
     {
         foreach (Rigidbody obj in FindObjectsOfType<Rigidbody>())
         {
-            objects.Add(obj);
+            if (obj.gameObject.tag != "Button")
+                objects.Add(obj);
         }
     }
 
@@ -30,7 +31,7 @@ public class GravityEvent : GameEvent
     {
         timer += Time.deltaTime;
 
-        if(timer >= maxTime)
+        if (timer >= maxTime)
             CompletedEvent();
     }
 

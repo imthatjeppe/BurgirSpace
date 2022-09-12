@@ -15,7 +15,7 @@ public class EventController : MonoBehaviour
             _event.Init();
         }
 
-        InvokeRepeating("PlayEvent", 5f, 10f);
+        InvokeRepeating("PlayEvent", 15f, 20f);
     }
 
     public void NextEvent()
@@ -24,7 +24,8 @@ public class EventController : MonoBehaviour
         {
             Debug.Log("Event Over");
             //play complete event audio and haptics
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            return;
         }
         else
         {
