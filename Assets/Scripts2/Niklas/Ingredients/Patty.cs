@@ -54,6 +54,15 @@ public class Patty : MonoBehaviour, IPooledObject
         }
     }
 
+    void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.CompareTag("Bun"))
+        {
+            var rb = GetComponent<Rigidbody>();
+            rb.velocity = new Vector3(0, 0, 0);
+        }
+    }
+
     void OnCollisionExit(Collision other)
     {
         if (other.gameObject.CompareTag("Pan"))
