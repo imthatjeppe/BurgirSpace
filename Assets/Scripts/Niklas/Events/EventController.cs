@@ -15,7 +15,7 @@ public class EventController : MonoBehaviour
             _event.Init();
         }
 
-        InvokeRepeating("PlayEvent", 180f, 360f);
+        InvokeRepeating("PlayEvent", 5f, 10f);
     }
 
     public void NextEvent()
