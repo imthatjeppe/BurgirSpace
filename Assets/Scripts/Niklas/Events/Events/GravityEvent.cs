@@ -22,6 +22,7 @@ public class GravityEvent : GameEvent
         foreach (Rigidbody obj in objects)
         {
             obj.useGravity = false;
+            obj.velocity = Vector3.up;
         }
     }
 
