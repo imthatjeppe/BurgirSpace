@@ -22,10 +22,6 @@ public class BurgerOrders : MonoBehaviour
     {
         functions = new System.Action[] { GenerateCustomOrder, GenerateMenuOrder };
     }
-    void RandomOrder()
-    {
-        functions[Random.Range(0, functions.Length)]();
-    }
     private void Start()
     {
         Ingredients.Add("Tomato");
@@ -39,9 +35,15 @@ public class BurgerOrders : MonoBehaviour
         Burgers.Add("Cheese Royale");
         Burgers.Add("Star-Spangled Burger");
         Burgers.Add("Borgir Deluxe");
-        
+        Burgers.Add("Double Space Cadet");
+        Burgers.Add("Razak's Roughneck");
+        Burgers.Add("Afterburner");
+        Burgers.Add("BFG : Big F*cking Gorger");
     }
-
+    void RandomOrder()
+    {
+        functions[Random.Range(0, functions.Length)]();
+    }
     void Update()
     {
         counter += Time.deltaTime;
@@ -51,7 +53,6 @@ public class BurgerOrders : MonoBehaviour
             counter = 0;
         }
     }
-
     private void GenerateCustomOrder()
     {
         var order = Instantiate(orderPrefab, this.transform.position, this.transform.rotation);
