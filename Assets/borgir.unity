@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 568443410}
   - component: {fileID: 568443411}
   m_Layer: 0
-  m_Name: GravityEvent
+  m_Name: EventHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -790,6 +790,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   events:
   - {fileID: 1616642206}
+  currentEvent: {fileID: 0}
+  minRandomEventInterval: 20
+  maxRandomEventInterval: 30
+  hasStarted: 0
 --- !u!1 &946563945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,7 +1372,7 @@ GameObject:
   - component: {fileID: 1285806515}
   m_Layer: 0
   m_Name: Events
-  m_TagString: Untagged
+  m_TagString: Events
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1643,7 +1647,7 @@ MonoBehaviour:
   eventName: Gravity OFF
   Minimized: 1
   objects: []
-  maxTime: 60
+  maxTime: 10
 --- !u!1 &1699155599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,7 +1755,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699155599}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8336911, y: 0.95, z: -1.78}
+  m_LocalPosition: {x: 0.8336911, y: 1.07, z: -1.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
