@@ -16,7 +16,16 @@ public class BurgerOrders : MonoBehaviour
     public GameObject orderList;
     public int minRandomIngredients = 2;
     public int maxRandomIngredients = 5;
+    System.Action[] functions;
 
+    private void Awake()
+    {
+        functions = new System.Action[] { GenerateCustomOrder, GenerateMenuOrder };
+    }
+    void RandomOrder()
+    {
+        functions[Random.Range(0, functions.Length)]();
+    }
     private void Start()
     {
         Ingredients.Add("Tomato");
@@ -30,13 +39,15 @@ public class BurgerOrders : MonoBehaviour
         Burgers.Add("Cheese Royale");
         Burgers.Add("Star-Spangled Burger");
         Burgers.Add("Borgir Deluxe");
+        
     }
+
     void Update()
     {
         counter += Time.deltaTime;
         if (counter >= 1)
         {
-            GenerateCustomOrder();
+            RandomOrder();
             counter = 0;
         }
     }
@@ -72,25 +83,9 @@ public class BurgerOrders : MonoBehaviour
         //Use an array to choose a random function between the two whenever a new order is to be placed.
         var order = Instantiate(orderPrefab, this.transform.position, this.transform.rotation);
         order.transform.Rotate(Vector3.right, 90f);
-        var recipeListItemInstance = Instantiate(recipeListItemPrefab, order.orderList.transform);
-        recipeListItemInstance.GetComponent<TextMeshProUGUI>().text = "Buns";
-        recipeListItemInstance = Instantiate(recipeListItemPrefab, order.orderList.transform);
-        recipeListItemInstance.GetComponent<TextMeshProUGUI>().text = "Patty";
-        var numberOfIngredients = Random.Range(minRandomIngredients, maxRandomIngredients);
-        var listOfChosenIngredients = new List<int>();
-
-        for (int i = 0; i <= numberOfIngredients; i++)
-        {
-            var ingredientIndex = Random.Range(0, Ingredients.Count);
-
-            while (listOfChosenIngredients.Contains(ingredientIndex))
-            {
-                ingredientIndex = Random.Range(0, Ingredients.Count);
-            }
-            string chooseIngredients = Ingredients[ingredientIndex];
-            recipeListItemInstance = Instantiate(recipeListItemPrefab, order.orderList.transform);
-            recipeListItemInstance.GetComponent<TextMeshProUGUI>().text = chooseIngredients;
-            listOfChosenIngredients.Add(ingredientIndex);
-        }
+        var menuBurgerListItemInstance = Instantiate(recipeListItemPrefab, order.orderList.transform);
+        var burgerIndex = Random.Range(0, Burgers.Count);
+        string chooseMenuBurger = Burgers[burgerIndex];
+        menuBurgerListItemInstance.GetComponent<TextMeshProUGUI>().text = chooseMenuBurger;
     }
 }
