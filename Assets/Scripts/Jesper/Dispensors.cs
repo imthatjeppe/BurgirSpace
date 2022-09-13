@@ -10,7 +10,7 @@ public class Dispensors : MonoBehaviour
     [SerializeField] ParticleSystem ps;
 
 
-    void Start()
+    void Awake()
     {
         ps.Stop();
     }

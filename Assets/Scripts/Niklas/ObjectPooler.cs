@@ -12,6 +12,8 @@ public class ObjectPooler : MonoBehaviour
         public int size;
     }
 
+    GameObject FoodHolder;
+        
     #region Singleton
     public static ObjectPooler instance;
 
@@ -27,6 +29,8 @@ public class ObjectPooler : MonoBehaviour
 
     void Start()
     {
+        FoodHolder = new GameObject("FoodHolder");
+
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
         foreach (Pool pool in pools)
@@ -37,6 +41,7 @@ public class ObjectPooler : MonoBehaviour
             {
                 GameObject obj = Instantiate(pool.prefab);
                 obj.SetActive(false);
+                obj.transform.SetParent(FoodHolder.transform);
                 objectPool.Enqueue(obj);
             }
 
