@@ -6,17 +6,20 @@ public class EventController : MonoBehaviour
 {
     [HideInInspector] public List<GameEvent> events = new List<GameEvent>();
     [HideInInspector] public GameEvent currentEvent = null;
-    int randomEvent = 0;
-    [SerializeField] int minRandomEventInterval = 10, maxRandomEventInterval = 15;
+    [HideInInspector] public int minRandomEventInterval, maxRandomEventInterval;
     [HideInInspector] public bool hasStarted = false;
+    int randomEvent = 0;
 
-    void Start()
+    void Awake()
     {
         foreach (GameEvent _event in events)
         {
-            _event.Init();
+            _event.Init(this);
         }
+    }
 
+    void Start()
+    {
         if (currentEvent != null) { return; }
         InvokeRepeating("StartRandomEvent", minRandomEventInterval, Random.Range(minRandomEventInterval, maxRandomEventInterval));
     }

@@ -14,7 +14,7 @@ public abstract class GameEvent : ScriptableObject
 
     protected EventController ec;
 
-    public virtual void Init() { }
+    public virtual void Init(EventController ec) { }
     public abstract void StartEvent(EventController ec);
     public virtual void UpdateEvent() { }
     public abstract void CompletedEvent();

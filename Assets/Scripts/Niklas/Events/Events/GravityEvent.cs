@@ -7,8 +7,13 @@ public class GravityEvent : GameEvent
     [HideInInspector] public List<Rigidbody> objects;
     float timer = 0;
     public float maxTime = 0;
+    [SerializeField] int minEventRestartTime, maxEventRestartTime;
 
-    public override void Init() { }
+    public override void Init(EventController ec)
+    {
+        ec.minRandomEventInterval = minEventRestartTime + (int)maxTime;
+        ec.maxRandomEventInterval = maxEventRestartTime + (int)maxTime;
+    }
 
     public override void StartEvent(EventController ec)
     {
@@ -23,7 +28,7 @@ public class GravityEvent : GameEvent
         foreach (Rigidbody obj in objects)
         {
             obj.useGravity = false;
-            obj.velocity = Vector3.up;
+            obj.velocity = Vector3.up * Random.Range(0.1f, 1f);
         }
     }
 

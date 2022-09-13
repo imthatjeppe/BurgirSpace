@@ -1648,6 +1648,8 @@ MonoBehaviour:
   Minimized: 1
   objects: []
   maxTime: 10
+  minEventRestartTime: 15
+  maxEventRestartTime: 20
 --- !u!1 &1699155599
 GameObject:
   m_ObjectHideFlags: 0
