@@ -7,11 +7,15 @@ public class Dispensors : MonoBehaviour
 {
     public GameObject dispensor;
     public GameObject liquidPrefab;
+    public List<ParticleCollisionEvent> collisionEvents;
+
     [SerializeField] ParticleSystem Liquid;
+
 
     private void Start()
     {
         Liquid.Stop();
+        collisionEvents = new List<ParticleCollisionEvent>();
     }
     private void Update()
     {
@@ -31,6 +35,21 @@ public class Dispensors : MonoBehaviour
    
     private void OnParticleCollision(GameObject other)
     {
-        // Instantiate(liquidPrefab);
+        Debug.Log("Funkar du?");
+
+        int numCollisionEvents = Liquid.GetCollisionEvents(other, collisionEvents);
+
+        Rigidbody rb = other.GetComponent<Rigidbody>();
+        int i = 1;
+        while (i < numCollisionEvents)
+        {
+            if (!rb) { return; }
+
+            Debug.Log("Hello" + other.name);
+            Vector3 point = collisionEvents[i].intersection;
+            Instantiate(liquidPrefab, point, Quaternion.identity);
+            i++;
+        }
+
     }
 }
