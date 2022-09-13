@@ -1,12 +1,14 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EventController : MonoBehaviour
 {
     [HideInInspector] public List<GameEvent> events = new List<GameEvent>();
-    GameEvent currentEvent = null;
-
-    bool hasStarted = false;
+    [HideInInspector] public GameEvent currentEvent = null;
+    int randomEvent = 0;
+    [SerializeField] int minRandomEventInterval = 10, maxRandomEventInterval = 15;
+    [HideInInspector] public bool hasStarted = false;
 
     void Start()
     {
@@ -15,33 +17,15 @@ public class EventController : MonoBehaviour
             _event.Init();
         }
 
-        if (currentEvent == null)
-        {
-            Invoke("NextEvent", 10f);
-        }
-
+        if (currentEvent != null) { return; }
+        InvokeRepeating("StartRandomEvent", minRandomEventInterval, Random.Range(minRandomEventInterval, maxRandomEventInterval));
     }
 
-    public void NextEvent()
+    void StartRandomEvent()
     {
-        if (events.Count == 0)
-        {
-            //play complete event audio and haptics
-            currentEvent.StartEvent(this);
-            Destroy(gameObject);
-        }
-        else
-        {
-            //play start event audio and haptics
-            currentEvent = events[0];
-            currentEvent.StartEvent(this);
-            events.RemoveAt(0);
-
-            if (!hasStarted)
-            {
-                hasStarted = true;
-            }
-        }
+        randomEvent = Random.Range(0, events.Count);
+        currentEvent = events[randomEvent];
+        currentEvent.StartEvent(this);
     }
 
     void Update()

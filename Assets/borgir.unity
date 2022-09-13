@@ -790,6 +790,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   events:
   - {fileID: 1616642206}
+  currentEvent: {fileID: 0}
+  minRandomEventInterval: 20
+  maxRandomEventInterval: 30
+  hasStarted: 0
 --- !u!1 &946563945
 GameObject:
   m_ObjectHideFlags: 0

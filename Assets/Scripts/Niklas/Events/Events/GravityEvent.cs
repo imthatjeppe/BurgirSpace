@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class GravityEvent : GameEvent
 {
-    [HideInInspector]public List<Rigidbody> objects;
+    [HideInInspector] public List<Rigidbody> objects;
     float timer = 0;
     public float maxTime = 0;
 
-    public override void Init()
+    public override void Init() { }
+
+    public override void StartEvent(EventController ec)
     {
         foreach (Rigidbody obj in FindObjectsOfType<Rigidbody>())
         {
             if (obj.gameObject.tag != "Button")
                 objects.Add(obj);
         }
-    }
 
-    public override void StartEvent(EventController ec)
-    {
         this.ec = ec;
+
         foreach (Rigidbody obj in objects)
         {
             obj.useGravity = false;
@@ -32,7 +32,11 @@ public class GravityEvent : GameEvent
         timer += Time.deltaTime;
 
         if (timer >= maxTime)
+        {
             CompletedEvent();
+
+            ec.currentEvent = null;
+        }
     }
 
     public override void CompletedEvent()
@@ -41,7 +45,7 @@ public class GravityEvent : GameEvent
         {
             obj.useGravity = true;
         }
-        ec.NextEvent();
+        timer = 0;
     }
 
     public override string ToString()
