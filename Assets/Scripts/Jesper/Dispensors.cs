@@ -6,13 +6,14 @@ using UnityEngine.VFX;
 public class Dispensors : MonoBehaviour
 {
     public GameObject dispensor;
-    [SerializeField] VisualEffect Liquid;
+    public GameObject liquidPrefab;
+    public GameObject emptyGameObject;
+    [SerializeField] ParticleSystem Liquid;
 
     private void Start()
     {
-        Liquid.enabled = false;
+        Liquid.Stop();
     }
-
     private void Update()
     {
         Liquid.transform.position = dispensor.transform.position;
@@ -21,13 +22,17 @@ public class Dispensors : MonoBehaviour
     public void activateKetchup()
     {
         Liquid.Play();
-        Liquid.enabled = true;
     }
 
     public void deactivateKetchup()
     {
         Liquid.Stop();
-        Liquid.enabled = false;
     }
-    
+
+   
+    private void OnParticleCollision(GameObject other)
+    {
+        // Instantiate(liquidPrefab);
+        Debug.Log(other.transform.position);
+    }
 }
