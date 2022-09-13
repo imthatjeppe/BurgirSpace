@@ -7,7 +7,6 @@ public class Dispensors : MonoBehaviour
 {
     public GameObject dispensor;
     public GameObject liquidPrefab;
-    public GameObject emptyGameObject;
     [SerializeField] ParticleSystem Liquid;
 
     private void Start()
@@ -33,6 +32,5 @@ public class Dispensors : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         // Instantiate(liquidPrefab);
-        Debug.Log(other.transform.position);
     }
 }
