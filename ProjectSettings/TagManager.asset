@@ -8,7 +8,8 @@ TagManager:
   - NonInteractable
   - Bun
   - Patty
-  - Events
+  - Pan
+  - Button
   layers:
   - Default
   - TransparentFX
