@@ -16,9 +16,9 @@ public class BurgerOrders : MonoBehaviour
     public GameObject orderList;
     public int minRandomIngredients = 2;
     public int maxRandomIngredients = 5;
-    System.Action[] functions;
+    public System.Action[] functions;
 
-    private void Awake()
+    void Awake()
     {
         functions = new System.Action[] { GenerateCustomOrder, GenerateMenuOrder };
     }
@@ -40,18 +40,18 @@ public class BurgerOrders : MonoBehaviour
         Burgers.Add("Afterburner");
         Burgers.Add("BFG : Big F*cking Gorger");
     }
-    void RandomOrder()
+    public void RandomOrder()
     {
         functions[Random.Range(0, functions.Length)]();
     }
-    void Update()
+    private void Update()
     {
-        counter += Time.deltaTime;
-        if (counter >= 1)
-        {
-            RandomOrder();
-            counter = 0;
-        }
+        //counter += Time.deltaTime;
+        //if (counter >= 5)
+        //{
+        //    RandomOrder();
+        //    counter = 0;
+        //}
     }
     private void GenerateCustomOrder()
     {
@@ -78,7 +78,7 @@ public class BurgerOrders : MonoBehaviour
             listOfChosenIngredients.Add(ingredientIndex);
         }
     }
-    private void GenerateMenuOrder()
+    public void GenerateMenuOrder()
     {
         //Generate an order, much like the one from GenerateCustomOrder(), but this will be a preset burger with an in game recipe.
         //Use an array to choose a random function between the two whenever a new order is to be placed.
