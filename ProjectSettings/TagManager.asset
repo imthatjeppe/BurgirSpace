@@ -11,6 +11,8 @@ TagManager:
   - Pan
   - Button
   - Sauce
+  - Food
+  - FoodHolder
   layers:
   - Default
   - TransparentFX
