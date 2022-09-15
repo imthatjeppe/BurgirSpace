@@ -15,6 +15,7 @@ public class Sauce : MonoBehaviour
         SauceHolder = new GameObject("SauceHolder");
         part = GetComponent<ParticleSystem>();
         collisionEvents = new List<ParticleCollisionEvent>();
+        Physics.IgnoreLayerCollision(0, 9, true);
     }
 
     void OnParticleCollision(GameObject other)
@@ -35,7 +36,7 @@ public class Sauce : MonoBehaviour
             GameObject Sauce = Instantiate(liquidPrefab, pos, Quaternion.identity);
             Sauce.transform.SetParent(SauceHolder.transform);
             i++;
-            Destroy(Sauce, 3f);
+            Destroy(Sauce, 2f);
         }
 
     }
