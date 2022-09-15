@@ -5529,6 +5529,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8074179419498550615, guid: a682143723f1ad94d860dbab3b39e731,
         type: 3}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8074179419498550615, guid: a682143723f1ad94d860dbab3b39e731,
+        type: 3}
       propertyPath: InitialModule.maxNumParticles
       value: 30
       objectReference: {fileID: 0}
@@ -5536,6 +5541,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8074179419498550615, guid: a682143723f1ad94d860dbab3b39e731,
+        type: 3}
+      propertyPath: CollisionModule.m_EnergyLossOnCollision.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8388920305239926630, guid: a682143723f1ad94d860dbab3b39e731,
         type: 3}
@@ -13201,6 +13211,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788975693}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &819786490
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5959919448713535597, guid: 2d1d5a17e119e8b4f9c3ce1350a77293,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959919448713535597, guid: 2d1d5a17e119e8b4f9c3ce1350a77293,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.9928763
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959919448713535597, guid: 2d1d5a17e119e8b4f9c3ce1350a77293,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.6008015
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959919448713535597, guid: 2d1d5a17e119e8b4f9c3ce1350a77293,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.248652
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959919448713535597, guid: 2d1d5a17e119e8b4f9c3ce1350a77293,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959919448713535597, guid: 2d1d5a17e119e8b4f9c3ce1350a77293,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959919448713535597, guid: 2d1d5a17e119e8b4f9c3ce1350a77293,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959919448713535597, guid: 2d1d5a17e119e8b4f9c3ce1350a77293,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959919448713535597, guid: 2d1d5a17e119e8b4f9c3ce1350a77293,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959919448713535597, guid: 2d1d5a17e119e8b4f9c3ce1350a77293,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959919448713535597, guid: 2d1d5a17e119e8b4f9c3ce1350a77293,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959919448713535599, guid: 2d1d5a17e119e8b4f9c3ce1350a77293,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2d1d5a17e119e8b4f9c3ce1350a77293, type: 3}
 --- !u!1 &842897547
 GameObject:
   m_ObjectHideFlags: 0
@@ -34464,6 +34543,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8074179419498550615, guid: a682143723f1ad94d860dbab3b39e731,
         type: 3}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8074179419498550615, guid: a682143723f1ad94d860dbab3b39e731,
+        type: 3}
       propertyPath: InitialModule.maxNumParticles
       value: 30
       objectReference: {fileID: 0}
@@ -34471,6 +34555,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8074179419498550615, guid: a682143723f1ad94d860dbab3b39e731,
+        type: 3}
+      propertyPath: CollisionModule.m_EnergyLossOnCollision.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8388920305239926630, guid: a682143723f1ad94d860dbab3b39e731,
         type: 3}
