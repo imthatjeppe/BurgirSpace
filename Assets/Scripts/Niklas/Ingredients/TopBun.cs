@@ -2,11 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TopBun : MonoBehaviour, IPooledObject
+[CreateAssetMenu(fileName = "New Ingredient", menuName = "Ingredient/TopBun")]
+public class TopBun : IngredientManager, IPooledObject
 {
-    public void OnObjectSpawn()
+    [SerializeField] string iName;
+    [SerializeField] Sprite iIcon;
+
+    int idNum = 0;
+
+    void OnEnable()
     {
-        GetComponent<MeshCollider>().isTrigger = false;
-        GetComponent<Rigidbody>().useGravity = true;
+        IngredientName = iName;
+        Id = idNum;
+        Icon = iIcon;
     }
+
+    public void OnObjectSpawn() { }
 }

@@ -2,24 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Ingredient", menuName = "Ingredient/Patty")]
-public class Patty : Cookable
+[CreateAssetMenu(fileName = "New Ingredient", menuName = "Ingredient/Onion")]
+public class Onion : IngredientManager, IPooledObject
 {
-    [SerializeField] CookStates s;
-
     [SerializeField] string iName;
     [SerializeField] Sprite iIcon;
 
-    int idNum = 1;
+    int idNum = 5;
 
     void OnEnable()
     {
         IngredientName = iName;
         Id = idNum;
         Icon = iIcon;
-        States = s;
     }
 
     public void OnObjectSpawn() { }
-
 }
