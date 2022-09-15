@@ -10,6 +10,7 @@ TagManager:
   - Patty
   - Pan
   - Button
+  - Sauce
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - NonInteractable
   - Left Hand Physics
   - Right Hand Physics
-  - 
+  - SauceHolder
   - 
   - 
   - 
