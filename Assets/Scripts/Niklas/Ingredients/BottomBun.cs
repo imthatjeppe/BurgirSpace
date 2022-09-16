@@ -2,11 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BottomBun : MonoBehaviour, IPooledObject
+[CreateAssetMenu(fileName = "New Ingredient", menuName = "Ingredient/BottomBun")]
+public class BottomBun : IngredientManager, IPooledObject
 {
-    public void OnObjectSpawn()
+    [SerializeField] string iName;
+    [SerializeField] Sprite iIcon;
+
+    int idNum = 2;
+
+    void OnEnable()
     {
-        GetComponent<MeshCollider>().isTrigger = false;
-        GetComponent<Rigidbody>().useGravity = true;
+        IngredientName = iName;
+        Id = idNum;
+        Icon = iIcon;
     }
+
+    public void OnObjectSpawn() { }
 }
