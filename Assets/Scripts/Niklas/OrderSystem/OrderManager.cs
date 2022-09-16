@@ -8,6 +8,15 @@ public class OrderManager : MonoBehaviour
     [SerializeField] IngredientManager TopBun, Patty, BottomBun;
     public List<IngredientManager> orderItems = new List<IngredientManager>();
 
+    private void Start()
+    {
+        var test = CreateRandomOrder();
+
+        foreach(IngredientManager i in test)
+        {
+            Debug.Log(i.IngredientName);
+        }
+    }
     public List<IngredientManager> CreateRandomOrder()
     {
         orderItems.Clear();
