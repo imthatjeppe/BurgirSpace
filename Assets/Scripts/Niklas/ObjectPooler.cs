@@ -13,15 +13,21 @@ public class ObjectPooler : MonoBehaviour
     }
 
     GameObject FoodHolder;
-        
+
     #region Singleton
     public static ObjectPooler instance;
-
     void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
-
     #endregion
 
     public List<Pool> pools;

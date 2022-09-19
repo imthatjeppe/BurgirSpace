@@ -8,6 +8,22 @@ public class OrderManager : MonoBehaviour
     [SerializeField] IngredientManager TopBun, Patty, BottomBun;
     public List<IngredientManager> orderItems = new List<IngredientManager>();
 
+    #region Singleton
+    public static OrderManager instance;
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    #endregion
+
     public List<IngredientManager> CreateRandomOrder()
     {
         orderItems.Clear();
