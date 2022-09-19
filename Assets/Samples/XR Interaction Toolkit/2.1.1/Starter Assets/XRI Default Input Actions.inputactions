@@ -419,6 +419,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ChangePosition",
+                    "type": "Value",
+                    "id": "83b99b3e-2c2d-47d6-ae8c-aa53141b1f15",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -474,6 +483,17 @@
                     "processors": "StickDeadzone",
                     "groups": "Continuous Move",
                     "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "488f8415-e6f8-48ad-8ef6-d86a008be477",
+                    "path": "<XRController>/thumbstick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "ChangePosition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
