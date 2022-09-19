@@ -7,6 +7,9 @@ public class Customer : MonoBehaviour
     List<IngredientManager> orderItems = new List<IngredientManager>();
     List<string> checkOrder = new List<string>();
     [HideInInspector] public float completion = 0;
+    float waitTime;
+    [SerializeField] float minWaitTime = 120, maxWaitTime = 360;
+    float orderTime = 0;
 
     void Start()
     {
@@ -15,7 +18,13 @@ public class Customer : MonoBehaviour
         foreach (IngredientManager i in orderItems)
         {
             checkOrder.Add(i.IngredientName);
+            waitTime = Random.Range(minWaitTime, maxWaitTime);
         }
+    }
+
+    void Update()
+    {
+        orderTime += Time.deltaTime;
     }
 
     void OnTriggerEnter(Collider other)
@@ -28,7 +37,11 @@ public class Customer : MonoBehaviour
 
         completion = matches / checkOrder.Count * 100;
 
-        Debug.Log("Burger completion percentage: " + completion);
+        ScoreManager.instance.UpdateScore(completion, orderTime, waitTime);
+
+        orderTime = 0;
+
+        waitTime = Random.Range(minWaitTime, maxWaitTime);
 
         orderItems = OrderManager.instance.CreateRandomOrder();
     }
