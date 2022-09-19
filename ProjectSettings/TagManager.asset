@@ -17,6 +17,8 @@ TagManager:
   - BottomBun
   - Tomato
   - Salad
+  - Burger
+  - Plate
   layers:
   - Default
   - TransparentFX
