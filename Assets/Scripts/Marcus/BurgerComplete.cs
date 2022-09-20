@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class BurgerComplete : MonoBehaviour
 {
-    public BurgerOrders burgerOrders;
+    public OrderManager orderManager;
 
     private void Start()
     {
-        burgerOrders.GetComponent<BurgerOrders>();
+        orderManager.GetComponent<OrderManager>();
     }
     private void OnTriggerEnter(Collider other)
     {
         if (gameObject.tag == "Patty" || gameObject.tag == ("Bun"))
         {
             Debug.Log("Burger in zone");
-            burgerOrders.RandomOrder();
+            orderManager.InstantiateOrder();
         }
     }
 }

@@ -1,21 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class OrderManager : MonoBehaviour
 {
-    public List<IngredientManager> ingredients = new List<IngredientManager>();
+    public List<IngredientManager> ingredients = new();
     [SerializeField] IngredientManager TopBun, Patty, BottomBun;
-    public List<IngredientManager> orderItems = new List<IngredientManager>();
+    public List<IngredientManager> orderItems = new();
+    public Order orderPrefab;
+    public GameObject orderListEntryPrefab;
 
-    private void Start()
+    public void InstantiateOrder()
     {
-        var test = CreateRandomOrder();
-
-        foreach(IngredientManager i in test)
+        var chosenIngredients = CreateRandomOrder();    
+        var order = Instantiate(orderPrefab, this.transform.position, this.transform.rotation);
+    
+        foreach(IngredientManager i in chosenIngredients)
         {
+            var orderListEntry = Instantiate(orderListEntryPrefab, order.orderList.transform);
+            orderListEntry.GetComponentInChildren<TextMeshProUGUI>().text = (i.IngredientName);
+            orderListEntry.GetComponentInChildren<Image>().sprite = i.Icon;
             Debug.Log(i.IngredientName);
-        }
+        }     
     }
     public List<IngredientManager> CreateRandomOrder()
     {
@@ -34,5 +42,4 @@ public class OrderManager : MonoBehaviour
 
         return orderItems;
     }
-
 }
