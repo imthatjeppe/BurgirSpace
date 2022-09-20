@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3015312}
   m_Layer: 0
-  m_Name: PlayerSpawnPosition (4)
+  m_Name: PlayerSpawnPosition 5
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3015311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.02, y: 0, z: 5.15}
+  m_LocalPosition: {x: 4.1, y: 0, z: 6.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5509,7 +5509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 351560235}
   m_Layer: 0
-  m_Name: PlayerSpawnPosition (2)
+  m_Name: PlayerSpawnPosition 3
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5523,7 +5523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351560234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.356, y: 0, z: 4.272}
+  m_LocalPosition: {x: 0.16, y: 0, z: -0.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10228,6 +10228,106 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5254019932468842115, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1339025646}
+    - target: {fileID: 5254019932468842115, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1339025646}
+    - target: {fileID: 5254019932468842115, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveIngredients
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254019932468842115, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddIngredients
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254019932476599279, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1339025646}
+    - target: {fileID: 5254019932476599279, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1339025646}
+    - target: {fileID: 5254019932476599279, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveIngredients
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254019932476599279, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddIngredients
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254019932602487256, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1339025646}
+    - target: {fileID: 5254019932602487256, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1339025646}
+    - target: {fileID: 5254019932602487256, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveIngredients
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254019932602487256, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddIngredients
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254019933331456847, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1339025646}
+    - target: {fileID: 5254019933331456847, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1339025646}
+    - target: {fileID: 5254019933331456847, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveIngredients
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254019933331456847, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddIngredients
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254019933635482930, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1339025646}
+    - target: {fileID: 5254019933635482930, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1339025646}
+    - target: {fileID: 5254019933635482930, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveIngredients
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254019933635482930, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddIngredients
+      objectReference: {fileID: 0}
     - target: {fileID: 6095599949119267656, guid: 41188951cdf900b4caedb5dcd26fe726,
         type: 3}
       propertyPath: m_Name
@@ -10770,7 +10870,7 @@ GameObject:
   m_Component:
   - component: {fileID: 606571270}
   m_Layer: 0
-  m_Name: PlayerSpawnPosition (1)
+  m_Name: PlayerSpawnPosition 2
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -10784,7 +10884,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606571269}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.16, y: 0, z: 1.19}
+  m_LocalPosition: {x: -5.95, y: 0, z: 1.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17300,7 +17400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1053912512}
   m_Layer: 0
-  m_Name: PlayerSpawnPosition (3)
+  m_Name: PlayerSpawnPosition 4
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -17314,7 +17414,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053912511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8, y: 0, z: 1.22}
+  m_LocalPosition: {x: 3.23, y: 0, z: 2.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19846,6 +19946,18 @@ ParticleSystem:
     type: 3}
   m_PrefabInstance: {fileID: 410590955}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1339025646 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3347831644383703797, guid: 04d65e9d8130aa743981dd31dc95188a,
+    type: 3}
+  m_PrefabInstance: {fileID: 646477341}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c6932c006a8dd4faf3793584e61764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1345531678
 GameObject:
   m_ObjectHideFlags: 0
@@ -20516,6 +20628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c877d30603e92243bca0116bf2e4f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftController: {fileID: 1639738106}
   player: {fileID: 1985920032}
   playerPosition:
   - {fileID: 1370190211}
@@ -21017,7 +21130,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370190211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6.29, y: 0, z: 5.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31100,7 +31213,6 @@ GameObject:
   - component: {fileID: 1985920030}
   - component: {fileID: 1985920036}
   - component: {fileID: 1985920035}
-  - component: {fileID: 1985920034}
   - component: {fileID: 1985920033}
   m_Layer: 0
   m_Name: XR Origin (Player)
@@ -31171,7 +31283,7 @@ MonoBehaviour:
   m_System: {fileID: 1985920036}
   m_TurnSpeed: 60
   m_LeftHandTurnAction:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
       m_Name: Left Hand Turn
       m_Type: 0
@@ -31194,51 +31306,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f,
-      type: 3}
---- !u!114 &1985920034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985920029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bf296fc962d7184ab14ad1841598d5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_System: {fileID: 1985920036}
-  m_MoveSpeed: 2
-  m_EnableStrafe: 1
-  m_UseGravity: 1
-  m_GravityApplicationMode: 0
-  m_ForwardSource: {fileID: 0}
-  m_LeftHandMoveAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Left Hand Move
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 75f1b245-c357-48c8-9acb-8967bec9dda2
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f,
-      type: 3}
-  m_RightHandMoveAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Right Hand Move
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 6bf6c732-e011-46b1-acc5-b649a4ec5f10
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f,
+    m_Reference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
 --- !u!143 &1985920035
 CharacterController:

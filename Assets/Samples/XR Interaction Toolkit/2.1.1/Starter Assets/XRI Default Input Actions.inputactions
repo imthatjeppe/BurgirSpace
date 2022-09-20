@@ -489,10 +489,10 @@
                 {
                     "name": "",
                     "id": "488f8415-e6f8-48ad-8ef6-d86a008be477",
-                    "path": "<XRController>/thumbstick",
+                    "path": "<XRController>{LeftHand}/primary2DAxis",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Generic XR Controller",
+                    "groups": "Noncontinuous Move",
                     "action": "ChangePosition",
                     "isComposite": false,
                     "isPartOfComposite": false

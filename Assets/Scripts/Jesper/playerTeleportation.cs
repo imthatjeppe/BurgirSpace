@@ -2,46 +2,65 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.InputSystem;
 
 public class playerTeleportation : MonoBehaviour
 {
+    public ActionBasedController leftController;
     public Transform player;
     public List<GameObject> playerPosition = new List<GameObject>();
 
-    private XRController lefthand;
-    
     private int position = 2;
-    bool pressed;
-    // Start is called before the first frame update
+    Vector2 changePos;
+
+    bool canChangePosition;
+    
     void Start()
     {
-        lefthand = FindObjectOfType<XRController>();
-
-        lefthand.inputDevice.IsPressed(InputHelpers.Button.PrimaryAxis2DLeft, out pressed);
         player.transform.position = playerPosition[position].transform.position;
+        canChangePosition = true;
 
     }
-
     void Update()
     {
-     
-    }
+        changePos = leftController.rotateAnchorAction.action.ReadValue<Vector2>();
+        if(position > 4)
+        {
+            position = 4;
+        }
 
-    private void ArrayPosition()
-    {
-        player.transform.position = playerPosition[position].transform.position;
+        if(position < 0)
+        {
+            position = 0;
+        }
+        Debug.Log(position);
+        ChangePosition();
     }
 
     private void ChangePosition()
     {
-        if (lefthand.inputDevice.IsPressed(InputHelpers.Button.PrimaryAxis2DLeft, out pressed))
+        if(changePos.x == 0)
         {
-            position -= 1;
+            canChangePosition = true;
         }
 
-        if (lefthand.inputDevice.IsPressed(InputHelpers.Button.PrimaryAxis2DRight, out pressed))
+        if (!canChangePosition) return;
+
+        if(changePos.x >= 0.5f)
         {
+            player.transform.position = playerPosition[position].transform.position;
             position += 1;
+            canChangePosition = false;
         }
+
+        if (changePos.x <= -0.5f)
+        {
+            player.transform.position = playerPosition[position].transform.position;
+            position -= 1;
+            canChangePosition = false;
+        }
+
+        
+
     }
 }

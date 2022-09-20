@@ -18,15 +18,7 @@ public class ObjectPooler : MonoBehaviour
     public static ObjectPooler instance;
     void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+        instance = this;
     }
     #endregion
 
@@ -43,7 +35,7 @@ public class ObjectPooler : MonoBehaviour
         {
             Queue<GameObject> objectPool = new Queue<GameObject>();
 
-            for(int i = 0; i < pool.size; i++)
+            for (int i = 0; i < pool.size; i++)
             {
                 GameObject obj = Instantiate(pool.prefab);
                 obj.SetActive(false);
@@ -66,7 +58,7 @@ public class ObjectPooler : MonoBehaviour
 
         IPooledObject pooledObj = objectToSpawn.GetComponent<IPooledObject>();
 
-        if(pooledObj != null)
+        if (pooledObj != null)
         {
             pooledObj.OnObjectSpawn();
         }
