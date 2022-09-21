@@ -19,6 +19,7 @@ TagManager:
   - Salad
   - Burger
   - Plate
+  - Pad
   layers:
   - Default
   - TransparentFX

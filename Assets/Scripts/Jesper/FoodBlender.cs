@@ -10,19 +10,14 @@ public class FoodBlender : MonoBehaviour
     public List<GameObject> foodItems;
 
     private FoodID foodID;
-    private Vector3 offset = new Vector3(0, 0, 0.5f);
-
-    void Start()
-    {
-        foodID = FindObjectOfType<FoodID>();
-    }
+    private Vector3 offset = new Vector3(0.15f, 0, 0);
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Food"))
         {
+            foodID = FindObjectOfType<FoodID>();
             Destroy(other.gameObject);
-            Debug.Log("I am in the Blender");
             Instantiate(foodItems[foodID.foodID], spawnTube.transform.position + offset, Quaternion.identity);
         }
     }
