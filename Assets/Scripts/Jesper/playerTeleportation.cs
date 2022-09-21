@@ -24,16 +24,7 @@ public class playerTeleportation : MonoBehaviour
     void Update()
     {
         changePos = leftController.rotateAnchorAction.action.ReadValue<Vector2>();
-        if(position > 4)
-        {
-            position = 4;
-        }
-
-        if(position < 0)
-        {
-            position = 0;
-        }
-        Debug.Log(position);
+        position = Mathf.Clamp(position, 0, 4);
         ChangePosition();
     }
 
