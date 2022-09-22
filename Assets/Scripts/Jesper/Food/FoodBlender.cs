@@ -15,10 +15,14 @@ public class FoodBlender : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Food"))
-        {
+        {            
             foodID = FindObjectOfType<FoodID>();
             Destroy(other.gameObject);
-            Instantiate(foodItems[foodID.foodID], spawnTube.transform.position + offset, Quaternion.identity);
+
+            for (int i = 0; i < foodID.amountItems; i++)
+            {
+                Instantiate(foodItems[foodID.foodID], spawnTube.transform.position + offset, Quaternion.identity);
+            }
         }
     }
 }
