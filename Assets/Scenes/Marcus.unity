@@ -235,11 +235,8 @@ MonoBehaviour:
   BottomBun: {fileID: 11400000, guid: f1e62e3f522b13746901d87aa6a06e18, type: 2}
   orderItems: []
   orderPrefab: {fileID: 2052010405, guid: 34207c99f7cd83e4d9243b2585134386, type: 3}
-  orderListEntryPrefab: {fileID: 1941679829218057053, guid: 31e5c0be7ebbe3b40b05cf86e4dfa5ff,
+  orderListEntryPrefab: {fileID: 1576214556863271369, guid: 31e5c0be7ebbe3b40b05cf86e4dfa5ff,
     type: 3}
-  orderList: {fileID: 3859353112934975650, guid: 34207c99f7cd83e4d9243b2585134386,
-    type: 3}
-  orderIcons: {fileID: 674283307}
 --- !u!1001 &691849411
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: {fileID: 0}
-  spriteRenderer: {fileID: 0}
+  image: {fileID: 0}
   orderList: {fileID: 3859353111428775323}
   orderIcons: {fileID: 0}
 --- !u!1 &4991880065827734344

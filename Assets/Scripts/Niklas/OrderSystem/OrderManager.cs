@@ -10,7 +10,7 @@ public class OrderManager : MonoBehaviour
     [SerializeField] IngredientManager TopBun, Patty, BottomBun;
     public List<IngredientManager> orderItems = new();
     public Order orderPrefab;
-    public GameObject orderListEntryPrefab;
+    public OrderEntry orderListEntryPrefab;
 
     public void InstantiateOrder()
     {
@@ -20,8 +20,8 @@ public class OrderManager : MonoBehaviour
         foreach(IngredientManager i in chosenIngredients)
         {
             var orderListEntry = Instantiate(orderListEntryPrefab, order.orderList.transform);
-            orderListEntry.GetComponentInChildren<TextMeshProUGUI>().text = (i.IngredientName);
-            orderListEntry.GetComponentInChildren<Image>().sprite = i.Icon;
+            orderListEntry.textEntry.text = (i.IngredientName);
+            orderListEntry.imageEntry.sprite = i.Icon;
             Debug.Log(i.IngredientName);
         }     
     }
