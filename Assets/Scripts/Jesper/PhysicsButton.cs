@@ -27,7 +27,6 @@ public class PhysicsButton : MonoBehaviour
 
         if (isPressed && GetValue() - threshold <= 0)
             Released();
-        
     }
 
     private float GetValue()

@@ -10,6 +10,7 @@ public class Sauce : MonoBehaviour
 
     GameObject SauceHolder;
 
+
     void Start()
     {
         SauceHolder = new GameObject("SauceHolder");
@@ -36,7 +37,9 @@ public class Sauce : MonoBehaviour
             GameObject Sauce = Instantiate(liquidPrefab, pos, Quaternion.identity);
             Sauce.transform.SetParent(SauceHolder.transform);
             i++;
-            Destroy(Sauce, 2f);
+
+            Destroy(Sauce, 3f);
+            
         }
 
     }

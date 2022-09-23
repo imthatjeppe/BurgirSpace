@@ -13,15 +13,13 @@ public class ObjectPooler : MonoBehaviour
     }
 
     GameObject FoodHolder;
-        
+
     #region Singleton
     public static ObjectPooler instance;
-
     void Awake()
     {
         instance = this;
     }
-
     #endregion
 
     public List<Pool> pools;
@@ -37,7 +35,7 @@ public class ObjectPooler : MonoBehaviour
         {
             Queue<GameObject> objectPool = new Queue<GameObject>();
 
-            for(int i = 0; i < pool.size; i++)
+            for (int i = 0; i < pool.size; i++)
             {
                 GameObject obj = Instantiate(pool.prefab);
                 obj.SetActive(false);
@@ -60,7 +58,7 @@ public class ObjectPooler : MonoBehaviour
 
         IPooledObject pooledObj = objectToSpawn.GetComponent<IPooledObject>();
 
-        if(pooledObj != null)
+        if (pooledObj != null)
         {
             pooledObj.OnObjectSpawn();
         }
