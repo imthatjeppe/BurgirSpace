@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BurgerComplete : MonoBehaviour
+public class OrderCompleted : MonoBehaviour
 {
     public OrderManager orderManager;
 
