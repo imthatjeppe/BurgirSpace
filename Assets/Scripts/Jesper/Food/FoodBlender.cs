@@ -15,8 +15,10 @@ public class FoodBlender : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Food"))
-        {            
-            foodID = FindObjectOfType<FoodID>();
+        {
+            var foodID = other.GetComponent<FoodID>();
+            //foodID = FindObjectOfType<FoodID>();
+
             Destroy(other.gameObject);
 
             for (int i = 0; i < foodID.amountItems; i++)
