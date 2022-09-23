@@ -12,15 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7833f7d7e756e348ad73404023a270e, type: 3}
   m_Name: Patty
   m_EditorClassIdentifier: 
-  rare: 20
-  mediumRare: 40
-  wellDone: 60
-  burnt: 80
-  states: 4
-  r: 20
-  mR: 40
-  wD: 60
-  b: 80
+  states: 0
   s: 0
   iName: Patty
-  iIcon: {fileID: 0}
+  iIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}

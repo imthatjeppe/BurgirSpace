@@ -1,29 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class OrderManager : MonoBehaviour
 {
-    public List<IngredientManager> ingredients = new List<IngredientManager>();
+    public List<IngredientManager> ingredients = new();
     [SerializeField] IngredientManager TopBun, Patty, BottomBun;
-    public List<IngredientManager> orderItems = new List<IngredientManager>();
+    public List<IngredientManager> orderItems = new();
+    public Order orderPrefab;
+    public OrderEntry orderListEntryPrefab;
 
-    #region Singleton
-    public static OrderManager instance;
-    void Awake()
+    public void InstantiateOrder()
     {
-        if (instance == null)
+        var chosenIngredients = CreateRandomOrder();    
+        var order = Instantiate(orderPrefab, this.transform.position, this.transform.rotation);
+    
+        foreach(IngredientManager i in chosenIngredients)
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+            var orderListEntry = Instantiate(orderListEntryPrefab, order.orderList.transform);
+            orderListEntry.textEntry.text = (i.IngredientName);
+            orderListEntry.imageEntry.sprite = i.Icon;
+            Debug.Log(i.IngredientName);
+        }     
     }
-    #endregion
-
     public List<IngredientManager> CreateRandomOrder()
     {
         orderItems.Clear();
@@ -41,5 +42,4 @@ public class OrderManager : MonoBehaviour
 
         return orderItems;
     }
-
 }
