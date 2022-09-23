@@ -23007,7 +23007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   events:
-  - {fileID: 2037908889}
+  - {fileID: 0}
   currentEvent: {fileID: 0}
   minRandomEventInterval: 15
   maxRandomEventInterval: 25
@@ -33010,24 +33010,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031443569}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2037908889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84d799c89a3256c488f13d291431df94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventName: Zero Gravity
-  Minimized: 1
-  objects: []
-  maxTime: 10
-  minEventRestartTime: 15
-  maxEventRestartTime: 25
 --- !u!1 &2051372574
 GameObject:
   m_ObjectHideFlags: 0
