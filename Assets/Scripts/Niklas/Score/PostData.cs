@@ -19,19 +19,15 @@ public class ScoreData
     }
 }
 
-public class ScoreManager : MonoBehaviour
+public class PostData : MonoBehaviour
 {
-    [HideInInspector] public float score;
-    int badOrder = 0;
-    [SerializeField] int maxBadOrder = 5;
-
     public TMP_InputField usernameField;
-    public TMP_Text scoreText;
+    public TMP_Text scoreField;
 
-    public GameObject GameOver;
+    private static readonly HttpClient client = new HttpClient();
 
     #region Singleton
-    public static ScoreManager instance;
+    public static PostData instance;
     void Awake()
     {
         if (instance == null)
@@ -48,31 +44,8 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
-        scoreText.text = ""+score;
+        scoreField.text = "Your Score: " + Save.instance.score;
     }
-
-    void Update()
-    {
-        if(badOrder < maxBadOrder) { return; }
-        GameOver.SetActive(true);
-        maxBadOrder = 0;
-    }
-
-    public void UpdateScore(float completionPercentage, float orderTime, float waitTime)
-    {
-        float deliveryMultiplier = 1000;
-        score = deliveryMultiplier * (completionPercentage / 100);
-
-        if(completionPercentage < 30 || orderTime > waitTime)
-        {
-            badOrder++;
-            Debug.Log("Bad Order");
-        }
-
-        scoreText.text = "Your score: " + score + "!";
-    }
-
-    private static readonly HttpClient client = new HttpClient();
 
     string post = "http://borgir.xyz/api/score/create_score.php";
     string get = "https://borgir.xyz/api/score/read_score.php";
@@ -81,15 +54,15 @@ public class ScoreManager : MonoBehaviour
 
     public void CreateScore()
     {
-        ScoreData scoreData = new ScoreData(usernameField.text, ""+score);
+        ScoreData scoreData = new ScoreData(usernameField.text, "" + Save.instance.score);
 
         string values = JsonConvert.SerializeObject(scoreData);
         Debug.Log(values);
 
-        StartCoroutine(PostData(post, values));
+        StartCoroutine(Post(post, values));
     }
 
-    IEnumerator PostData(string url, string json)
+    IEnumerator Post(string url, string json)
     {
 
         var request = new UnityWebRequest(url, "POST");

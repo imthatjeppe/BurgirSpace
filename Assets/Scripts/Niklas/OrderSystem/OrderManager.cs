@@ -12,6 +12,22 @@ public class OrderManager : MonoBehaviour
     public Order orderPrefab;
     public OrderEntry orderListEntryPrefab;
 
+    #region Singleton
+    public static OrderManager instance;
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    #endregion
+
     public void InstantiateOrder()
     {
         var chosenIngredients = CreateRandomOrder();    
