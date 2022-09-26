@@ -20,6 +20,7 @@ TagManager:
   - Burger
   - Plate
   - Pad
+  - Loading
   layers:
   - Default
   - TransparentFX
