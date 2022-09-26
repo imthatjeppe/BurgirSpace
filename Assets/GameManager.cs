@@ -1,27 +1,103 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
-
     public Setting difficultySetting;
-    private void Awake()
+
+    public static GameStates gameState = GameStates.Menu;
+
+    bool paused;
+
+    #region Singleton
+    public static GameManager instance;
+    void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (instance == null)
         {
-            Destroy(this.gameObject);
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            Destroy(this.gameObject);
         }
+    }
+    #endregion
+
+    #region Setting GameStates
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        var buildIndex = SceneManager.GetActiveScene().buildIndex;
+        Save.instance.sceneIndex = buildIndex;
+        Save.instance.SaveAll();
+
+        if(buildIndex == 0 || buildIndex == 3) { gameState = GameStates.Menu; return; }
+        if(buildIndex == 2) { gameState = GameStates.Loading; return; }
+        gameState = GameStates.Playing;
+    }
+    #endregion
+
+    public void PauseGame()
+    {
+        paused = !paused;
+
+        if (paused)
+        {
+            Time.fixedDeltaTime = 0f;
+            gameState = GameStates.Paused;
+            //show pause screen
+            return;
+        }
+
+        Time.fixedDeltaTime = 1f;
+        gameState = GameStates.Playing;
+        //take down pause screen
     }
 
     public void SetDifficulty(Setting setting)
     {
         difficultySetting = setting;
     }
+
+    #region UtilityFunction
+    public static string NameFromIndex(int BuildIndex)
+    {
+        string path = SceneUtility.GetScenePathByBuildIndex(BuildIndex);
+        int slash = path.LastIndexOf('/');
+        string name = path.Substring(slash + 1);
+        int dot = name.LastIndexOf('.');
+        return name.Substring(0, dot);
+    }
+    #endregion
+
+    void OnApplicationQuit()
+    {
+        //Save data to playerprefs here maybe?
+    }
+
+    public void Quit()
+    {
+#if UNITY_EDITOR
+        Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+         Application.Quit();
+#endif
+    }
+}
+
+public enum GameStates
+{
+    Paused,
+    Playing,
+    Loading,
+    Menu
 }
