@@ -9,11 +9,11 @@ public class FoodSpawner : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            spawnBurger();
+            SpawnBurger();
         }
     }
 
-    public void spawnBurger()
+    public void SpawnBurger()
     {
         ObjectPooler.instance.SpawnFromPool("TopBun", spawnPointTopBun.transform.position, Quaternion.Euler(-90, 0, 0));
         ObjectPooler.instance.SpawnFromPool("Patty", spawnPointPatty.transform.position, Quaternion.Euler(-90, 0, 0));

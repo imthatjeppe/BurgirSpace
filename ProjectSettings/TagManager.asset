@@ -21,6 +21,7 @@ TagManager:
   - Plate
   - Pad
   - Loading
+  - Cucumber
   layers:
   - Default
   - TransparentFX
