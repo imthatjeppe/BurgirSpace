@@ -6,19 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/Main Scenes/MainMenu.unity
     guid: e82ded15dcf2d3140a02b26d8b0628a6
-  - enabled: 0
-    path: Assets/Scenes/Jeppe.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Niklas.unity
-    guid: e003b29e858af474db9cd908d02732a5
+    path: Assets/Scenes/Main Scenes/Main Level.unity
+    guid: cce84204aa79f994f9d4784ac8790ad7
   - enabled: 1
-    path: Assets/Scenes/Loading.unity
+    path: Assets/Scenes/Main Scenes/Loading.unity
     guid: 88908cde8bbca924c90d3ba28ac4b3af
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
+    path: Assets/Scenes/Main Scenes/GameOver.unity
     guid: 70bd9ce8e1e6ea7478da4d566dbd176f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,

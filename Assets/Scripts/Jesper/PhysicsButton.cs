@@ -19,7 +19,7 @@ public class PhysicsButton : MonoBehaviour
         startPos = transform.localPosition;
         joint = GetComponent<ConfigurableJoint>();
     }
-
+       
     void Update()
     {
         if(!isPressed && GetValue() + threshold >= 1)

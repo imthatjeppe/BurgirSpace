@@ -6,10 +6,7 @@ using UnityEngine.VFX;
 public class Dispensors : MonoBehaviour
 {
     public GameObject dispensor;
-
     [SerializeField] ParticleSystem ps;
-
-
     void Awake()
     {
         ps.Stop();

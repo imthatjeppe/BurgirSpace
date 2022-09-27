@@ -21,6 +21,8 @@ TagManager:
   - Plate
   - Pad
   - Loading
+  - Cucumber
+  - Onion
   layers:
   - Default
   - TransparentFX
@@ -32,7 +34,7 @@ TagManager:
   - Left Hand Physics
   - Right Hand Physics
   - SauceHolder
-  - 
+  - OnlyInteractable
   - 
   - 
   - 
