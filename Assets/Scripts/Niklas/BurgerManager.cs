@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BurgerManager : MonoBehaviour
 {
-    [HideInInspector] public List<string> BurgerIngredients = new List<string>();
+    public List<string> BurgerIngredients = new List<string>();
 
     #region Singleton
     public static BurgerManager instance;
