@@ -41,9 +41,19 @@ public class Customer : MonoBehaviour
 
         ScoreManager.instance.UpdateScore(completion, orderTime, waitTime);
 
-        Instantiate(plate, plateSpawnPos);
+        Instantiate(plate, plateSpawnPos.transform.position, plateSpawnPos.transform.rotation);
 
-        Destroy(other.gameObject, 0.1f);
+        orderTime = 0;
+
+        waitTime = Random.Range(minWaitTime, maxWaitTime);
+
+        orderItems = OrderManager.instance.CreateRandomOrder();
+
+        foreach(Transform child in other.gameObject.transform)
+        {
+            Destroy(other.gameObject.transform);
+        }
+        Destroy(other.gameObject);
     }
 
     static float CompareLists(List<string> required, List<string> check)
