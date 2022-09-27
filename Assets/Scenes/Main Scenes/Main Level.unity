@@ -1530,6 +1530,37 @@ HingeJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!1 &134093618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 134093619}
+  m_Layer: 0
+  m_Name: PlateSpawnPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &134093619
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134093618}
+  m_LocalRotation: {x: 0, y: 0.30178759, z: 0, w: -0.9533752}
+  m_LocalPosition: {x: -8.18, y: 0.95068824, z: -2.207}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &146786440 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 24b1c562e4b1b1a4f88157225c2a0428,
@@ -11210,6 +11241,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3826302649626364836, guid: 6bb8c4c90e1e83a4fa5fab83d559fde2,
+        type: 3}
+      propertyPath: plate
+      value: 
+      objectReference: {fileID: 6095599949119267656, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+    - target: {fileID: 3826302649626364836, guid: 6bb8c4c90e1e83a4fa5fab83d559fde2,
+        type: 3}
+      propertyPath: plateSpawnPos
+      value: 
+      objectReference: {fileID: 134093619}
     - target: {fileID: 3826302649626364837, guid: 6bb8c4c90e1e83a4fa5fab83d559fde2,
         type: 3}
       propertyPath: m_Name
