@@ -10,6 +10,8 @@ public class Customer : MonoBehaviour
     float waitTime;
     [SerializeField] float minWaitTime = 120, maxWaitTime = 360;
     float orderTime = 0;
+    [SerializeField] GameObject plate;
+    [SerializeField] Transform plateSpawnPos;
 
     void Start()
     {
@@ -39,11 +41,9 @@ public class Customer : MonoBehaviour
 
         ScoreManager.instance.UpdateScore(completion, orderTime, waitTime);
 
-        orderTime = 0;
+        Instantiate(plate, plateSpawnPos);
 
-        waitTime = Random.Range(minWaitTime, maxWaitTime);
-
-        orderItems = OrderManager.instance.CreateRandomOrder();
+        Destroy(plate, 0.1f);
     }
 
     static float CompareLists(List<string> required, List<string> check)
