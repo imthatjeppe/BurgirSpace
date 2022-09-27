@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/OrderEntry.prefab.meta
+guid: 31e5c0be7ebbe3b40b05cf86e4dfa5ff
+========
 guid: 34a502c27fdf896439cd20549071df24
+>>>>>>>> main:Assets/Prefabs/Burger.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 
