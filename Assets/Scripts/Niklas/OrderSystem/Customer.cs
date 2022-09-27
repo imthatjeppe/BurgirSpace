@@ -43,7 +43,7 @@ public class Customer : MonoBehaviour
 
         Instantiate(plate, plateSpawnPos);
 
-        Destroy(plate, 0.1f);
+        Destroy(other.gameObject, 0.1f);
     }
 
     static float CompareLists(List<string> required, List<string> check)
