@@ -5,22 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public void PlayGame()
+    [SerializeField] GameObject audio;
+    [SerializeField] GameObject difficulity;
+    [SerializeField] GameObject loadBtn;
+
+    void Awake()
     {
-        SceneManager.LoadScene(1);
+        Save.instance.LoadAllSettings();
+
+        var savedScene = Save.instance.CheckPreviousSave();
+        if (savedScene == 0) { loadBtn.SetActive(false); return; }
+        loadBtn.SetActive(true);
     }
-    public void Quit()
+
+    public void ToggleAudio()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-         Application.Quit();
-#endif
+        //AudioManager.instance.PlayOnce("Menu Button");
+        if (audio.activeInHierarchy == false) { audio.SetActive(true); }
+        else { audio.SetActive(false); }
     }
-    public void MainMenu()
+
+    public void ToggleDifficulity()
     {
-        SceneManager.LoadScene("MainMenu");
-        Time.timeScale = 1f;
+        //AudioManager.instance.PlayOnce("Menu Button");
+        if (difficulity.activeInHierarchy == false) { difficulity.SetActive(true); }
+        else { difficulity.SetActive(false); }
     }
 
 }
