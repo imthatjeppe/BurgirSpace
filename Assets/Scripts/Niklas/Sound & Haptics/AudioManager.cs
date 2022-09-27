@@ -138,7 +138,6 @@ public class AudioManager : MonoBehaviour
         {
             sound.mixer.audioMixer.SetFloat("Master", Mathf.Log10(soundLevel) * multiplier);
         }
-        Save.instance.master = Mathf.Log10(soundLevel) * multiplier;
     }
 
     public void SetSfxVolume(float soundLevel)
@@ -147,7 +146,6 @@ public class AudioManager : MonoBehaviour
         {
             sound.mixer.audioMixer.SetFloat("SFX", Mathf.Log10(soundLevel) * multiplier);
         }
-        Save.instance.sfx = Mathf.Log10(soundLevel) * multiplier;
     }
 
     public void SetMusicVolume(float soundLevel)
@@ -156,6 +154,5 @@ public class AudioManager : MonoBehaviour
         {
             sound.mixer.audioMixer.SetFloat("Music", Mathf.Log10(soundLevel) * multiplier);
         }
-        Save.instance.music = Mathf.Log10(soundLevel) * multiplier;
     }
 }

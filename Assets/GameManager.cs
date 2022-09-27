@@ -36,12 +36,18 @@ public class GameManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         var buildIndex = SceneManager.GetActiveScene().buildIndex;
-        Save.instance.sceneIndex = buildIndex;
-        Save.instance.SaveAll();
 
-        if(buildIndex == 0 || buildIndex == 3) { gameState = GameStates.Menu; return; }
+        if(buildIndex == 1)
+        {
+            gameState = GameStates.Playing;
+            Save.instance.sceneIndex = buildIndex;
+            Save.instance.SaveAll();
+            Debug.Log(Save.instance.sceneIndex);
+            return;
+        }
+
+        if (buildIndex == 0 || buildIndex == 3) { gameState = GameStates.Menu; return; }
         if(buildIndex == 2) { gameState = GameStates.Loading; return; }
-        gameState = GameStates.Playing;
     }
     #endregion
 
@@ -80,7 +86,7 @@ public class GameManager : MonoBehaviour
 
     void OnApplicationQuit()
     {
-        //Save data to playerprefs here maybe?
+        Save.instance.SaveAll();
     }
 
     public void Quit()

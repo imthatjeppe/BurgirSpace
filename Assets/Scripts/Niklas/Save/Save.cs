@@ -7,7 +7,7 @@ public class Save : MonoBehaviour
     [HideInInspector] public int sceneIndex;
     [HideInInspector] public float score;
     [HideInInspector] public int badOrder;
-    [HideInInspector] public float master = 1f, music = 1f, sfx = 1f, sensitivity = 5f;
+    [HideInInspector] public float master, music, sfx;
 
     #region Singleton
     public static Save instance;
