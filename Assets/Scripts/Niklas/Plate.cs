@@ -3,16 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class Plate : MonoBehaviour, IPooledObject
+public class Plate : MonoBehaviour
 {
-
-    public void OnObjectSpawn()
-    {
-        if(GetComponent<SocketWithTagCheck>() != null)
-        {
-            GetComponent<SocketWithTagCheck>().socketActive = true;
-        }
-    }
 
     public void HoverEntered(string name)
     {
