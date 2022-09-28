@@ -164,21 +164,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5959919448713535596, guid: 2d1d5a17e119e8b4f9c3ce1350a77293,
-        type: 3}
-      propertyPath: sounds.Array.data[1].name
-      value: Food mixer
-      objectReference: {fileID: 0}
-    - target: {fileID: 5959919448713535596, guid: 2d1d5a17e119e8b4f9c3ce1350a77293,
-        type: 3}
-      propertyPath: sounds.Array.data[7].name
-      value: Event started
-      objectReference: {fileID: 0}
-    - target: {fileID: 5959919448713535596, guid: 2d1d5a17e119e8b4f9c3ce1350a77293,
-        type: 3}
-      propertyPath: sounds.Array.data[8].name
-      value: Order complete
-      objectReference: {fileID: 0}
     - target: {fileID: 5959919448713535597, guid: 2d1d5a17e119e8b4f9c3ce1350a77293,
         type: 3}
       propertyPath: m_RootOrder
@@ -321,6 +306,7 @@ MonoBehaviour:
   orderPrefab: {fileID: 2052010405, guid: 34207c99f7cd83e4d9243b2585134386, type: 3}
   orderListEntryPrefab: {fileID: 1576214556863271369, guid: 31e5c0be7ebbe3b40b05cf86e4dfa5ff,
     type: 3}
+  display: {fileID: 0}
 --- !u!1001 &691849411
 PrefabInstance:
   m_ObjectHideFlags: 0

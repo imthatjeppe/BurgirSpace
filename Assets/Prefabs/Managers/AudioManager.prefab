@@ -53,7 +53,7 @@ MonoBehaviour:
     volume: 1
     audio: {fileID: 0}
     loop: 1
-  - name: Food Mixer
+  - name: Food mixer
     clip: {fileID: 8300000, guid: 9243060b2761f3d498eb668464519d39, type: 3}
     mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
       type: 2}
@@ -101,7 +101,7 @@ MonoBehaviour:
     volume: 1
     audio: {fileID: 0}
     loop: 1
-  - name: Event Started
+  - name: Event started
     clip: {fileID: 8300000, guid: 780ecb4d937f9ab47a16f8aba0b1a29e, type: 3}
     mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
       type: 2}
@@ -109,8 +109,40 @@ MonoBehaviour:
     volume: 1
     audio: {fileID: 0}
     loop: 1
-  - name: Order Complete
+  - name: Order complete
     clip: {fileID: 8300000, guid: 2289cd1024b20e244886df6400859c7d, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Squirt
+    clip: {fileID: 8300000, guid: 7595bb8fb3eb7b244a68e4d5f6971e9e, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Teleportation
+    clip: {fileID: 8300000, guid: 9ff3b6d602381b64f9b02838a2dd23ca, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Button
+    clip: {fileID: 8300000, guid: 6309bf1706bf0364c9fc088e8ada48fb, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Robot eating
+    clip: {fileID: 8300000, guid: 138caad043dba734da66d0ec1f4f20c7, type: 3}
     mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
       type: 2}
     maxDistance: 10

@@ -19,6 +19,7 @@ public class Dispensors : MonoBehaviour
     public void activateKetchup()
     {
         ps.Play();
+        AudioManager.instance.PlayOnceLocal("Squirt", gameObject);
     }
 
     public void deactivateKetchup()

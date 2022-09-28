@@ -51,7 +51,7 @@ public class playerTeleportation : MonoBehaviour
             canChangePosition = false;
         }
 
-        
+        AudioManager.instance.PlayOnceLocal("Teleportation", gameObject);
 
     }
 }
