@@ -6,6 +6,7 @@ public class FoodBlender : MonoBehaviour
 {
     public GameObject spawnTube;
     public GameObject addFoodTube;
+    public GameObject foodBlender;
     public List<GameObject> foodItems;
 
     private Vector3 offset = new Vector3(0.15f, 0, 0);
@@ -16,6 +17,7 @@ public class FoodBlender : MonoBehaviour
         {
             var foodID = other.GetComponent<FoodID>();
             Destroy(other.gameObject);
+            AudioManager.instance.PlayOnceLocal("Food blender", foodBlender);
 
             for (int i = 0; i < foodID.amountItems; i++)
             {

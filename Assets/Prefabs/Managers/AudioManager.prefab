@@ -53,5 +53,69 @@ MonoBehaviour:
     volume: 1
     audio: {fileID: 0}
     loop: 1
+  - name: Food Mixer
+    clip: {fileID: 8300000, guid: 9243060b2761f3d498eb668464519d39, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Food spawn
+    clip: {fileID: 8300000, guid: 85a9091637cb9fd46b2fae7b56e0386e, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Frying pan collision
+    clip: {fileID: 8300000, guid: 84c0d0ce8ea3a924cb2a27613f23213a, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Plate breaking
+    clip: {fileID: 8300000, guid: d524f0b41c147cd4291461628f0469f4, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Sizzling
+    clip: {fileID: 8300000, guid: dce2cefbfa1526641a85e086512d1a7b, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Spatula
+    clip: {fileID: 8300000, guid: a8b335592f25bb246994abeced8842a3, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Event Started
+    clip: {fileID: 8300000, guid: 780ecb4d937f9ab47a16f8aba0b1a29e, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Order Complete
+    clip: {fileID: 8300000, guid: 2289cd1024b20e244886df6400859c7d, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
   menuVolume: 0
   multiplier: 30
