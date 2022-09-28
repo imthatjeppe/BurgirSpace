@@ -13,7 +13,6 @@ public class Customer : MonoBehaviour
     float orderTime = 0;
     [SerializeField] GameObject plate;
     [SerializeField] Transform plateSpawnPos;
-    List<IXRSelectInteractable> ingredientInSocket = new List<IXRSelectInteractable>();
 
 
     void Start()
@@ -58,18 +57,16 @@ public class Customer : MonoBehaviour
         {
             XRSocketInteractor socket = socketObj.GetComponent<XRSocketInteractor>();
 
-            ingredientInSocket.Add(socket.interactablesSelected[i]);
-            i++;
-        }
+            IXRSelectInteractable xr = socket.interactablesSelected[i];
 
-        foreach (IXRSelectInteractable xr in ingredientInSocket)
-        {
             xr.transform.SetParent(GameObject.FindGameObjectWithTag("FoodHolder").transform);
 
             xr.transform.gameObject.SetActive(false);
-        }
 
+            i++;
+        }
         i = 0;
+
         FoodSpawner.instance.SpawnPlate();
     }
 
