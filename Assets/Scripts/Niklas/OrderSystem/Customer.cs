@@ -47,9 +47,7 @@ public class Customer : MonoBehaviour
 
         orderItems = OrderManager.instance.CreateRandomOrder();
 
-        GameObject plate = FoodSpawner.instance.SpawnPlate();
-
-        plate.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+        FoodSpawner.instance.SpawnPlate();
     }
 
     static float CompareLists(List<string> required, List<string> check)
