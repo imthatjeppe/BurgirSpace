@@ -27,7 +27,7 @@ public class FoodSpawner : MonoBehaviour
         ObjectPooler.instance.SpawnFromPool("TopBun", spawnPointTopBun.transform.position, Quaternion.Euler(-90, 0, 0));
         ObjectPooler.instance.SpawnFromPool("Patty", spawnPointPatty.transform.position, Quaternion.Euler(-90, 0, 0));
         ObjectPooler.instance.SpawnFromPool("BottomBun", spawnPointBottomBun.transform.position, Quaternion.Euler(-90, 0, 0));
-        AudioManager.instance.PlayOnceLocal("Food Spawner", spawnPipe);
+        AudioManager.instance.PlayOnceLocal("Food Spawn", spawnPipe);
     }
 
     public void SpawnPlate()
