@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Customer : MonoBehaviour
 {
@@ -10,7 +11,9 @@ public class Customer : MonoBehaviour
     float waitTime;
     [SerializeField] float minWaitTime = 120, maxWaitTime = 360;
     float orderTime = 0;
-    GameObject orderHandIn;
+    [SerializeField] GameObject plate;
+    [SerializeField] Transform plateSpawnPos;
+
 
     void Start()
     {
@@ -40,13 +43,22 @@ public class Customer : MonoBehaviour
 
         ScoreManager.instance.UpdateScore(completion, orderTime, waitTime);
 
-        AudioManager.instance.PlayOnceLocal("Order Complete", orderHandIn);
-
         orderTime = 0;
 
         waitTime = Random.Range(minWaitTime, maxWaitTime);
 
         orderItems = OrderManager.instance.CreateRandomOrder();
+
+        foreach(XRSocketInteractor socket in FindObjectsOfType<XRSocketInteractor>())
+        {
+            IXRSelectInteractable ing = socket.GetOldestInteractableSelected();
+
+            ing.transform.SetParent(GameObject.FindGameObjectWithTag("FoodHolder").transform);
+
+            ing.transform.gameObject.SetActive(false);
+        }
+
+        FoodSpawner.instance.SpawnPlate();
     }
 
     static float CompareLists(List<string> required, List<string> check)

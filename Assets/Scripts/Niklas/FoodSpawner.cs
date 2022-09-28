@@ -3,22 +3,35 @@ using UnityEngine;
 
 public class FoodSpawner : MonoBehaviour
 {
-    GameObject spawnPipe;
-    [SerializeField] GameObject spawnPointTopBun, spawnPointBottomBun, spawnPointPatty;
+    [SerializeField] GameObject spawnPointTopBun, spawnPointBottomBun, spawnPointPatty, spawnPointPlate;
 
-    void Update()
+    #region Singleton
+    public static FoodSpawner instance;
+    void Awake()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (instance == null)
         {
-            spawnBurger();
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
         }
     }
+    #endregion
 
-    public void spawnBurger()
+    public void SpawnBurger()
     {
         ObjectPooler.instance.SpawnFromPool("TopBun", spawnPointTopBun.transform.position, Quaternion.Euler(-90, 0, 0));
         ObjectPooler.instance.SpawnFromPool("Patty", spawnPointPatty.transform.position, Quaternion.Euler(-90, 0, 0));
         ObjectPooler.instance.SpawnFromPool("BottomBun", spawnPointBottomBun.transform.position, Quaternion.Euler(-90, 0, 0));
-        AudioManager.instance.PlayOnceLocal("Food Spawn", spawnPipe);
+    }
+
+    public void SpawnPlate()
+    {
+        GameObject plate = ObjectPooler.instance.SpawnFromPool("Plate", spawnPointPlate.transform.position, spawnPointPlate.transform.rotation);
+
+        plate.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
     }
 }

@@ -61,6 +61,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_fc5aa4d572e249cba7196478a4073bea_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 4866a78a93fae0f418da8bf9154203f4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -90,7 +94,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Fill: 0.2
+    - _Fill: 5.13
     - _FresnelEffect: 0.7
     - _GlossMapScale: 0
     - _Glossiness: 0

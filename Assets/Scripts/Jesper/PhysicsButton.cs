@@ -19,7 +19,7 @@ public class PhysicsButton : MonoBehaviour
         startPos = transform.localPosition;
         joint = GetComponent<ConfigurableJoint>();
     }
-
+       
     void Update()
     {
         if(!isPressed && GetValue() + threshold >= 1)
@@ -43,14 +43,12 @@ public class PhysicsButton : MonoBehaviour
     {
         isPressed = true;
         onPressed.Invoke();
-        Debug.Log("Pressed");
     }
 
     private void Released()
     {
         isPressed = false;
         onReleased.Invoke();
-        Debug.Log("Released");
     }
 
   
