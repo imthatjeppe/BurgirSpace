@@ -94,7 +94,7 @@ MonoBehaviour:
     audio: {fileID: 0}
     loop: 1
   - name: Spatula
-    clip: {fileID: 8300000, guid: a8b335592f25bb246994abeced8842a3, type: 3}
+    clip: {fileID: 8300000, guid: 2c5d1e3e8b021504a8a944108d86bce7, type: 3}
     mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
       type: 2}
     maxDistance: 10

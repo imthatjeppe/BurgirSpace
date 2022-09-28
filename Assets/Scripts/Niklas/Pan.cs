@@ -8,7 +8,6 @@ public class Pan : MonoBehaviour
     float cookTime = 0;
     public Color rawColor;
     public Color burntColor;
-    GameObject fryingPan;
 
     bool isCycling = false;
 
@@ -64,12 +63,12 @@ public class Pan : MonoBehaviour
         {
             cooking = true;
             patty = other.gameObject;
-            AudioManager.instance.PlayOnceLocal("Sizzling", fryingPan);
+            AudioManager.instance.PlayOnceLocal("Sizzling", gameObject);
         }
 
         if (other.gameObject.CompareTag("NonInteractable") || other.gameObject.CompareTag("Spatula"))
         {
-            AudioManager.instance.PlayOnceLocal("Frying Pan Collision", fryingPan);
+            AudioManager.instance.PlayOnceLocal("Frying pan collision", gameObject);
         }
     }
 
