@@ -14734,6 +14734,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 917974761}
     m_Modifications:
+    - target: {fileID: 2053057114046263581, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_SocketActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6095599949119267656, guid: 41188951cdf900b4caedb5dcd26fe726,
         type: 3}
       propertyPath: m_Name
