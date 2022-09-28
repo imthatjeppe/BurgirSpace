@@ -55,11 +55,14 @@ public class Customer : MonoBehaviour
         {
             XRSocketInteractor socket = socketObj.GetComponent<XRSocketInteractor>();
 
-            IXRSelectInteractable xr = (IXRSelectInteractable)socket.interactablesSelected;
+            for(int i = 0; i < socket.interactablesSelected.Count; i++)
+            {
+                IXRSelectInteractable xr = socket.interactablesSelected[i];
 
-            xr.transform.SetParent(GameObject.FindGameObjectWithTag("FoodHolder").transform);
+                xr.transform.SetParent(GameObject.FindGameObjectWithTag("FoodHolder").transform);
 
-            xr.transform.gameObject.SetActive(false);
+                xr.transform.gameObject.SetActive(false);
+            }
         }
 
         FoodSpawner.instance.SpawnPlate();
