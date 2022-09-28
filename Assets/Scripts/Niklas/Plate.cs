@@ -8,7 +8,10 @@ public class Plate : MonoBehaviour, IPooledObject
 
     public void OnObjectSpawn()
     {
-        GetComponent<SocketWithTagCheck>().socketActive = true;
+        if(GetComponent<SocketWithTagCheck>() != null)
+        {
+            GetComponent<SocketWithTagCheck>().socketActive = true;
+        }
     }
 
     public void HoverEntered(string name)

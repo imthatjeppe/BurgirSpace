@@ -48,13 +48,12 @@ public class Customer : MonoBehaviour
 
         orderItems = OrderManager.instance.CreateRandomOrder();
 
-        FoodSpawner.instance.SpawnPlate();
-
-        foreach(SocketWithTagCheck socket in FindObjectsOfType<SocketWithTagCheck>())
+        foreach (SocketWithTagCheck socket in FindObjectsOfType<SocketWithTagCheck>())
         {
             socket.socketActive = false;
-            socket.gameObject.SetActive(false);
         }
+
+        FoodSpawner.instance.SpawnPlate();
     }
 
     static float CompareLists(List<string> required, List<string> check)
