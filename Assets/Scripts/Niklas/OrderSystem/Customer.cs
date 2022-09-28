@@ -51,21 +51,15 @@ public class Customer : MonoBehaviour
 
         orderItems = OrderManager.instance.CreateRandomOrder();
 
-
-        int i = 0;
         foreach (Plate socketObj in FindObjectsOfType<Plate>())
         {
             XRSocketInteractor socket = socketObj.GetComponent<XRSocketInteractor>();
 
-            IXRSelectInteractable xr = socket.interactablesSelected[i];
+            IXRSelectInteractable xr = (IXRSelectInteractable)socket.interactablesSelected;
 
             xr.transform.SetParent(GameObject.FindGameObjectWithTag("FoodHolder").transform);
 
             xr.transform.gameObject.SetActive(false);
-
-            Debug.Log("i: " + i);
-
-            i++;
         }
 
         FoodSpawner.instance.SpawnPlate();
