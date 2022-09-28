@@ -56,10 +56,10 @@ public class Customer : MonoBehaviour
         int i = 0;
         foreach (Plate socketObj in FindObjectsOfType<Plate>())
         {
-            i++;
             XRSocketInteractor socket = socketObj.GetComponent<XRSocketInteractor>();
 
             ingredientInSocket.Add(socket.interactablesSelected[i]);
+            i++;
         }
 
         foreach (IXRSelectInteractable xr in ingredientInSocket)
