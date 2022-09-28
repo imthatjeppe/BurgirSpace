@@ -1086,7 +1086,7 @@ GameObject:
   - component: {fileID: 124967371}
   - component: {fileID: 124967370}
   - component: {fileID: 124967369}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Screen
   m_TagString: Pad
   m_Icon: {fileID: 0}
@@ -1224,7 +1224,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -1237,7 +1237,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124967368}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -2404,7 +2404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346959854}
   m_LocalRotation: {x: 0.7054271, y: 0.04870967, z: -0.04870967, w: 0.7054271}
-  m_LocalPosition: {x: -5.656, y: 0.519, z: -4.081}
+  m_LocalPosition: {x: -5.656, y: 0.484, z: -4.062}
   m_LocalScale: {x: 0.5, y: 0.1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2606,7 +2606,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -3378,7 +3378,7 @@ GameObject:
   - component: {fileID: 524097892}
   - component: {fileID: 524097891}
   - component: {fileID: 524097890}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5201,7 +5201,7 @@ GameObject:
   - component: {fileID: 824386915}
   - component: {fileID: 824386914}
   - component: {fileID: 824386913}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PadHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5349,7 +5349,7 @@ Transform:
   m_GameObject: {fileID: 824386912}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: -0.05, y: 0, z: -0.25}
-  m_LocalScale: {x: 0.1, y: 0.2, z: 0.001}
+  m_LocalScale: {x: 0.01, y: 0.02, z: 0.0001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2009136173}
@@ -8602,7 +8602,7 @@ GameObject:
   - component: {fileID: 1139891500}
   - component: {fileID: 1139891502}
   - component: {fileID: 1139891501}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Order
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8726,6 +8726,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139891499}
   m_CullTransparentMesh: 1
+--- !u!1 &1155989522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1314787462212566688, guid: 059667e94e781e04e949bff2db75091e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1774143448}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1155989526
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155989522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3915365081812517687, guid: 059667e94e781e04e949bff2db75091e, type: 3}
 --- !u!1001 &1168541767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15562,7 +15582,7 @@ GameObject:
   - component: {fileID: 2025384133}
   - component: {fileID: 2025384135}
   - component: {fileID: 2025384134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
