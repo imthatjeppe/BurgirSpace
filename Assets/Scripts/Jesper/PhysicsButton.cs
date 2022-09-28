@@ -43,6 +43,7 @@ public class PhysicsButton : MonoBehaviour
     {
         isPressed = true;
         onPressed.Invoke();
+        AudioManager.instance.PlayOnceLocal("Button", gameObject);
     }
 
     private void Released()
