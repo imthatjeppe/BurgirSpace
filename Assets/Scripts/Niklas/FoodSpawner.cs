@@ -5,13 +5,21 @@ public class FoodSpawner : MonoBehaviour
 {
     [SerializeField] GameObject spawnPointTopBun, spawnPointBottomBun, spawnPointPatty, spawnPointPlate;
 
-    void Update()
+    #region Singleton
+    public static FoodSpawner instance;
+    void Awake()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (instance == null)
         {
-            SpawnBurger();
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
         }
     }
+    #endregion
 
     public void SpawnBurger()
     {
@@ -22,6 +30,8 @@ public class FoodSpawner : MonoBehaviour
 
     public void SpawnPlate()
     {
-        ObjectPooler.instance.SpawnFromPool("Plate", spawnPointTopBun.transform.position, spawnPointTopBun.transform.rotation);
+        GameObject plate = ObjectPooler.instance.SpawnFromPool("Plate", spawnPointTopBun.transform.position, spawnPointTopBun.transform.rotation);
+
+        plate.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
     }
 }

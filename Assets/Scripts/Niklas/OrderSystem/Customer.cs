@@ -13,6 +13,7 @@ public class Customer : MonoBehaviour
     [SerializeField] GameObject plate;
     [SerializeField] Transform plateSpawnPos;
 
+
     void Start()
     {
         orderItems = OrderManager.instance.CreateRandomOrder();
@@ -41,19 +42,18 @@ public class Customer : MonoBehaviour
 
         ScoreManager.instance.UpdateScore(completion, orderTime, waitTime);
 
-        Instantiate(plate, plateSpawnPos.transform.position, plateSpawnPos.transform.rotation);
-
         orderTime = 0;
 
         waitTime = Random.Range(minWaitTime, maxWaitTime);
 
         orderItems = OrderManager.instance.CreateRandomOrder();
 
-        foreach(Transform child in other.gameObject.transform)
+        foreach (SocketWithTagCheck socket in FindObjectsOfType<SocketWithTagCheck>())
         {
-            Destroy(other.gameObject.transform);
+            socket.socketActive = false;
         }
-        Destroy(other.gameObject);
+
+        FoodSpawner.instance.SpawnPlate();
     }
 
     static float CompareLists(List<string> required, List<string> check)
