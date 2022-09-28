@@ -28,6 +28,7 @@ public class ObjectPooler : MonoBehaviour
     void Start()
     {
         FoodHolder = new GameObject("FoodHolder");
+        FoodHolder.tag = "FoodHolder";
 
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
 

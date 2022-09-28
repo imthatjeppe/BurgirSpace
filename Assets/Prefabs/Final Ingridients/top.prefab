@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -8014970162158178602}
   - component: {fileID: 5918096070740475426}
   - component: {fileID: 4802263009982139588}
+  - component: {fileID: 771682154932681281}
   m_Layer: 0
   m_Name: top
   m_TagString: TopBun
@@ -236,3 +237,16 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &771682154932681281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534465130394664751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1df56a57502bf1429ec2c8e2286fb18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientManager: {fileID: 11400000, guid: b93a7a05f8c1fad49a263937b3352f37, type: 2}
