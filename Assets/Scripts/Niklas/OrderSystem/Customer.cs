@@ -57,7 +57,9 @@ public class Customer : MonoBehaviour
 
             Debug.Log("socket: " + socketObj.gameObject.name);
 
-            List<IXRSelectInteractable> ing = socket.interactablesSelected;
+            List<IXRSelectInteractable> ing = new List<IXRSelectInteractable>();
+
+            ing.Add((IXRSelectInteractable)socket.interactablesSelected);
 
             foreach (IXRSelectInteractable xr in ing)
             {
