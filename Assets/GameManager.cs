@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
             gameState = GameStates.Playing;
             Save.instance.sceneIndex = buildIndex;
             Save.instance.SaveAll();
-            Debug.Log(Save.instance.sceneIndex);
             return;
         }
 
