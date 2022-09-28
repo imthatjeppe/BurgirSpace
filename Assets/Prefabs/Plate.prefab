@@ -331,7 +331,7 @@ PrefabInstance:
     - target: {fileID: 2053057113007401389, guid: 5eb3644807eb5704f8599c4aebf8ed6f,
         type: 3}
       propertyPath: m_TagString
-      value: FoodHolder
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2053057113307234277, guid: 5eb3644807eb5704f8599c4aebf8ed6f,
         type: 3}
@@ -341,7 +341,7 @@ PrefabInstance:
     - target: {fileID: 2053057113307234277, guid: 5eb3644807eb5704f8599c4aebf8ed6f,
         type: 3}
       propertyPath: m_TagString
-      value: FoodHolder
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2053057113307234282, guid: 5eb3644807eb5704f8599c4aebf8ed6f,
         type: 3}
@@ -431,7 +431,7 @@ PrefabInstance:
     - target: {fileID: 2053057114055175547, guid: 5eb3644807eb5704f8599c4aebf8ed6f,
         type: 3}
       propertyPath: m_TagString
-      value: FoodHolder
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2053057114055175549, guid: 5eb3644807eb5704f8599c4aebf8ed6f,
         type: 3}
@@ -521,7 +521,7 @@ PrefabInstance:
     - target: {fileID: 2053057114164287296, guid: 5eb3644807eb5704f8599c4aebf8ed6f,
         type: 3}
       propertyPath: m_TagString
-      value: FoodHolder
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2053057114164287306, guid: 5eb3644807eb5704f8599c4aebf8ed6f,
         type: 3}
@@ -691,7 +691,7 @@ PrefabInstance:
     - target: {fileID: 2053057114190885436, guid: 5eb3644807eb5704f8599c4aebf8ed6f,
         type: 3}
       propertyPath: m_TagString
-      value: FoodHolder
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4955190394322381177, guid: 5eb3644807eb5704f8599c4aebf8ed6f,
         type: 3}
