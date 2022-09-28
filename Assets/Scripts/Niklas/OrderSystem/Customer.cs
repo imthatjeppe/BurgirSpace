@@ -63,9 +63,10 @@ public class Customer : MonoBehaviour
 
             xr.transform.gameObject.SetActive(false);
 
+            Debug.Log("i: " + i);
+
             i++;
         }
-        i = 0;
 
         FoodSpawner.instance.SpawnPlate();
     }
