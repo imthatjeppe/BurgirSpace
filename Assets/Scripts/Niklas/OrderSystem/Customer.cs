@@ -49,8 +49,10 @@ public class Customer : MonoBehaviour
 
         orderItems = OrderManager.instance.CreateRandomOrder();
 
-        foreach(XRSocketInteractor socket in FindObjectsOfType<XRSocketInteractor>())
+        foreach (Plate socketObj in FindObjectsOfType<Plate>())
         {
+            XRSocketInteractor socket = socketObj.GetComponent<XRSocketInteractor>();
+
             IXRSelectInteractable ing = socket.GetOldestInteractableSelected();
 
             ing.transform.SetParent(GameObject.FindGameObjectWithTag("FoodHolder").transform);
