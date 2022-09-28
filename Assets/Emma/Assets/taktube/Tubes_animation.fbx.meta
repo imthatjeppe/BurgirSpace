@@ -1,8 +1,14 @@
 fileFormatVersion: 2
-guid: 6b5b8811688f7904a92b1c65abdda0ea
+guid: 773926e09f648734283327db5fb89563
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -3756279869105350228
+    second: Armature|foodube
+  - first:
+      74: 834157464230318167
+    second: Armature|foodube.001
   externalObjects: {}
   materials:
     materialImportMode: 2
