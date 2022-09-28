@@ -33,7 +33,5 @@ public class FoodSpawner : MonoBehaviour
         GameObject plate = ObjectPooler.instance.SpawnFromPool("Plate", spawnPointTopBun.transform.position, spawnPointTopBun.transform.rotation);
 
         plate.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-
-        plate.GetComponent<SocketWithTagCheck>().socketActive = true;
     }
 }

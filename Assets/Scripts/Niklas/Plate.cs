@@ -6,6 +6,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Plate : MonoBehaviour
 {
 
+    void OnEnable()
+    {
+        GetComponent<SocketWithTagCheck>().socketActive = true;
+    }
+
     public void HoverEntered(string name)
     {
         BurgerManager.instance.AddIngredients(name);
