@@ -5,7 +5,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Customer : MonoBehaviour
 {
-    GameObject orderHandIn;
     List<IngredientManager> orderItems = new List<IngredientManager>();
     List<string> checkOrder = new List<string>();
     [HideInInspector] public float completion = 0;
@@ -44,7 +43,7 @@ public class Customer : MonoBehaviour
 
         ScoreManager.instance.UpdateScore(completion, orderTime, waitTime);
 
-        AudioManager.instance.PlayOnceLocal("Order Complete", orderHandIn);
+        AudioManager.instance.PlayOnceLocal("Order complete", gameObject);
 
         orderTime = 0;
 

@@ -9,7 +9,6 @@ public class EventController : MonoBehaviour
     [HideInInspector] public int minRandomEventInterval, maxRandomEventInterval;
     [HideInInspector] public bool hasStarted = false;
     int randomEvent = 0;
-    GameObject eventStarted;
 
     void Awake()
     {
@@ -30,7 +29,7 @@ public class EventController : MonoBehaviour
         randomEvent = Random.Range(0, events.Count);
         currentEvent = events[randomEvent];
         currentEvent.StartEvent(this);
-        AudioManager.instance.PlayOnceLocal("Event Started", eventStarted);
+        AudioManager.instance.PlayOnceLocal("Event started", gameObject);
     }
 
     void Update()
