@@ -10,6 +10,7 @@ public class Customer : MonoBehaviour
     float waitTime;
     [SerializeField] float minWaitTime = 120, maxWaitTime = 360;
     float orderTime = 0;
+    GameObject orderHandIn;
 
     void Start()
     {
@@ -38,6 +39,8 @@ public class Customer : MonoBehaviour
         completion = matches / checkOrder.Count * 100;
 
         ScoreManager.instance.UpdateScore(completion, orderTime, waitTime);
+
+        AudioManager.instance.PlayOnceLocal("Order Complete", orderHandIn);
 
         orderTime = 0;
 

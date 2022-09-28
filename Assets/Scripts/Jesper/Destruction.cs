@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Destruction : MonoBehaviour
 {
+    GameObject destructableObject;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("NonInteractable"))
@@ -18,7 +19,7 @@ public class Destruction : MonoBehaviour
                     Destroy(gameObject, 3f);
                 }
             }
-                
+            AudioManager.instance.PlayOnceLocal("Plate breaking", destructableObject);
         }
     }
 }
