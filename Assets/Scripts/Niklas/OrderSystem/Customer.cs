@@ -41,19 +41,15 @@ public class Customer : MonoBehaviour
 
         ScoreManager.instance.UpdateScore(completion, orderTime, waitTime);
 
-        Instantiate(plate, plateSpawnPos.transform.position, plateSpawnPos.transform.rotation);
-
         orderTime = 0;
 
         waitTime = Random.Range(minWaitTime, maxWaitTime);
 
         orderItems = OrderManager.instance.CreateRandomOrder();
 
-        foreach(Transform child in other.gameObject.transform)
-        {
-            Destroy(other.gameObject.transform);
-        }
-        Destroy(other.gameObject);
+        GameObject plate = FoodSpawner.instance.SpawnPlate();
+
+        plate.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
     }
 
     static float CompareLists(List<string> required, List<string> check)
