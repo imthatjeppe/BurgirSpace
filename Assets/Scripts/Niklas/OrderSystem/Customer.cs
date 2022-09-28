@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Customer : MonoBehaviour
 {
@@ -48,9 +49,13 @@ public class Customer : MonoBehaviour
 
         orderItems = OrderManager.instance.CreateRandomOrder();
 
-        foreach (SocketWithTagCheck socket in FindObjectsOfType<SocketWithTagCheck>())
+        foreach(XRSocketInteractor socket in FindObjectsOfType<XRSocketInteractor>())
         {
-            socket.socketActive = false;
+            IXRSelectInteractable ing = socket.GetOldestInteractableSelected();
+
+            ing.transform.SetParent(GameObject.FindGameObjectWithTag("FoodHolder").transform);
+
+            ing.transform.gameObject.SetActive(false);
         }
 
         FoodSpawner.instance.SpawnPlate();
