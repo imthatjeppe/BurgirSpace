@@ -28,8 +28,10 @@ public class FoodSpawner : MonoBehaviour
         ObjectPooler.instance.SpawnFromPool("BottomBun", spawnPointBottomBun.transform.position, Quaternion.Euler(-90, 0, 0));
     }
 
-    public GameObject SpawnPlate()
+    public void SpawnPlate()
     {
-        return ObjectPooler.instance.SpawnFromPool("Plate", spawnPointTopBun.transform.position, spawnPointTopBun.transform.rotation);
+        GameObject plate = ObjectPooler.instance.SpawnFromPool("Plate", spawnPointTopBun.transform.position, spawnPointTopBun.transform.rotation);
+
+        plate.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
     }
 }
