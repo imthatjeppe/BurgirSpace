@@ -55,10 +55,13 @@ public class Customer : MonoBehaviour
         {
             XRSocketInteractor socket = socketObj.GetComponent<XRSocketInteractor>();
 
+            Debug.Log("socket: " + socketObj.gameObject.name);
+
             List<IXRSelectInteractable> ing = socket.interactablesSelected;
 
             foreach (IXRSelectInteractable xr in ing)
             {
+                Debug.Log("xr: " + xr.transform.gameObject.name);
                 xr.transform.SetParent(GameObject.FindGameObjectWithTag("FoodHolder").transform);
 
                 xr.transform.gameObject.SetActive(false);
