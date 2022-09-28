@@ -22,6 +22,7 @@ TagManager:
   - Loading
   - Cucumber
   - Onion
+  - FoodHolder
   layers:
   - Default
   - TransparentFX
