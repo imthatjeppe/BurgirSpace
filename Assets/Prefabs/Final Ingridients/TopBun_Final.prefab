@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4802263009982139588}
   - component: {fileID: 771682154932681281}
   m_Layer: 0
-  m_Name: top
+  m_Name: TopBun_Final
   m_TagString: TopBun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

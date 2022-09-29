@@ -13,11 +13,13 @@ public class Customer : MonoBehaviour
     float orderTime = 0;
     [SerializeField] GameObject plate;
     [SerializeField] Transform plateSpawnPos;
-
+    CookStates desiredPattyState;
+    GameObject patty;
 
     void Start()
     {
         orderItems = OrderManager.instance.CreateRandomOrder();
+        desiredPattyState = OrderManager.instance.GenerateRandomPattyCookState();
 
         foreach (IngredientManager i in orderItems)
         {
@@ -41,15 +43,9 @@ public class Customer : MonoBehaviour
 
         completion = matches / checkOrder.Count * 100;
 
-        ScoreManager.instance.UpdateScore(completion, orderTime, waitTime);
-
-        AudioManager.instance.PlayOnceLocal("Order complete", gameObject);
-
         orderTime = 0;
 
         waitTime = Random.Range(minWaitTime, maxWaitTime);
-
-        orderItems = OrderManager.instance.CreateRandomOrder();
 
         foreach (Plate socketObj in FindObjectsOfType<Plate>())
         {
@@ -61,9 +57,22 @@ public class Customer : MonoBehaviour
 
                 xr.transform.SetParent(GameObject.FindGameObjectWithTag("FoodHolder").transform);
 
+                if(xr.transform.gameObject.tag == "Patty") { patty = xr.transform.gameObject; }
+
                 xr.transform.gameObject.SetActive(false);
             }
         }
+
+        var iM = patty.GetComponent<Ingredient>().ingredientManager;
+
+        var cook = iM as Cookable;
+
+        ScoreManager.instance.UpdateScore(completion, orderTime, waitTime, desiredPattyState, cook.states);
+
+        AudioManager.instance.PlayOnceLocal("Order complete", gameObject);
+
+        orderItems = OrderManager.instance.CreateRandomOrder();
+        desiredPattyState = OrderManager.instance.GenerateRandomPattyCookState();
 
         FoodSpawner.instance.SpawnPlate();
     }

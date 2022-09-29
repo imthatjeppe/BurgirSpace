@@ -34,12 +34,15 @@ public class ScoreManager : MonoBehaviour
         LevelLoader.instance.LoadLoading("GameOver");
     }
 
-    public void UpdateScore(float completionPercentage, float orderTime, float waitTime)
+    public void UpdateScore(float completionPercentage, float orderTime, float waitTime, CookStates desiredPattyState, CookStates currentPattyState)
     {
         float deliveryMultiplier = 1000;
         score = deliveryMultiplier * (completionPercentage / 100);
 
-        if(completionPercentage < 30 || orderTime > waitTime)
+        Debug.Log("Desired: " + desiredPattyState);
+        Debug.Log("Current: " + currentPattyState);
+
+        if (completionPercentage < 30 || orderTime > waitTime || currentPattyState == CookStates.Raw || currentPattyState == CookStates.Burnt || currentPattyState != desiredPattyState)
         {
             badOrder++;
             Save.instance.badOrder = badOrder;

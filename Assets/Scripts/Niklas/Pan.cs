@@ -11,11 +11,13 @@ public class Pan : MonoBehaviour
 
     bool isCycling = false;
 
+    bool onStove = true;
+
     GameObject patty;
 
     void FixedUpdate()
     {
-        if (!cooking) { return; }
+        if (!cooking || !onStove) { return; }
 
         cookTime += Time.deltaTime;
 
@@ -59,6 +61,12 @@ public class Pan : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
+        if (other.gameObject.CompareTag("Stove"))
+        {
+            onStove = true;
+            //play stove audio
+        }
+
         if (other.gameObject.CompareTag("Patty"))
         {
             cooking = true;
@@ -74,6 +82,11 @@ public class Pan : MonoBehaviour
 
     void OnCollisionExit(Collision other)
     {
+        if (other.gameObject.CompareTag("Stove"))
+        {
+            onStove = false;
+        }
+
         if (other.gameObject.CompareTag("Patty"))
         {
             cooking = false;

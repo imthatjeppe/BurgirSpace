@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6811372619958246696}
   - component: {fileID: -8366097623278732347}
   m_Layer: 0
-  m_Name: bot
+  m_Name: BottomBun_Final
   m_TagString: BottomBun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

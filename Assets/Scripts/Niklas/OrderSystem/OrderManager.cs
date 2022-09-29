@@ -29,6 +29,7 @@ public class OrderManager : MonoBehaviour
     }
     #endregion
 
+    /*Depricated method
     public void InstantiateOrder()
     {
         var chosenIngredients = CreateRandomOrder();    
@@ -41,7 +42,8 @@ public class OrderManager : MonoBehaviour
             orderListEntry.imageEntry.sprite = i.Icon;
             Debug.Log(i.IngredientName);
         }     
-    }
+    }*/
+
     public List<IngredientManager> CreateRandomOrder()
     {
         orderItems.Clear();
@@ -60,5 +62,18 @@ public class OrderManager : MonoBehaviour
         display.SetOrder();
 
         return orderItems;
+    }
+
+    public CookStates GenerateRandomPattyCookState()
+    {
+        int random = Random.Range(1, 3);
+
+        CookStates desiredPattyState = new CookStates();
+
+        if (random == 1) { desiredPattyState = CookStates.Rare; }
+        if (random == 2) { desiredPattyState = CookStates.mediumRare; }
+        if (random == 3) { desiredPattyState = CookStates.wellDone; }
+
+        return desiredPattyState;
     }
 }
