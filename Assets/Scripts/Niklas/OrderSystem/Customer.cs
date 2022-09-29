@@ -43,7 +43,7 @@ public class Customer : MonoBehaviour
 
         ScoreManager.instance.UpdateScore(completion, orderTime, waitTime);
 
-        AudioManager.instance.PlayOnceLocal("Order Complete", gameObject);
+        AudioManager.instance.PlayOnceLocal("Order complete", gameObject);
 
         orderTime = 0;
 
