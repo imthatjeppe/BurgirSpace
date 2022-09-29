@@ -23,6 +23,7 @@ TagManager:
   - Cucumber
   - Onion
   - FoodHolder
+  - Cheese
   layers:
   - Default
   - TransparentFX

@@ -8,7 +8,7 @@ public class FoodBlender : MonoBehaviour
     public GameObject addFoodTube;
     public List<GameObject> foodItems;
 
-    private Vector3 offset = new Vector3(0.15f, 0, 0);
+    public Vector3 offset = new Vector3(0, 0, 0);
 
     private void OnTriggerEnter(Collider other)
     {
