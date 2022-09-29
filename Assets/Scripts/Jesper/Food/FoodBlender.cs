@@ -16,6 +16,7 @@ public class FoodBlender : MonoBehaviour
         {
             var foodID = other.GetComponent<FoodID>();
             Destroy(other.gameObject);
+            AudioManager.instance.PlayOnceLocal("Food mixer", gameObject);
 
             for (int i = 0; i < foodID.amountItems; i++)
             {

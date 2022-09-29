@@ -18,7 +18,7 @@ public class Destruction : MonoBehaviour
                     Destroy(gameObject, 3f);
                 }
             }
-                
+            AudioManager.instance.PlayOnceLocal("Plate breaking", gameObject);
         }
     }
 }

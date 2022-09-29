@@ -43,26 +43,26 @@ public class Customer : MonoBehaviour
 
         ScoreManager.instance.UpdateScore(completion, orderTime, waitTime);
 
+        AudioManager.instance.PlayOnceLocal("Order complete", gameObject);
+
         orderTime = 0;
 
         waitTime = Random.Range(minWaitTime, maxWaitTime);
 
         orderItems = OrderManager.instance.CreateRandomOrder();
 
-        List<IXRSelectInteractable> ing = new List<IXRSelectInteractable>();
-
         foreach (Plate socketObj in FindObjectsOfType<Plate>())
         {
             XRSocketInteractor socket = socketObj.GetComponent<XRSocketInteractor>();
 
-            ing = socket.interactablesSelected;
-        }
+            for(int i = 0; i < socket.interactablesSelected.Count; i++)
+            {
+                IXRSelectInteractable xr = socket.interactablesSelected[i];
 
-        foreach (IXRSelectInteractable xr in ing)
-        {
-            xr.transform.SetParent(GameObject.FindGameObjectWithTag("FoodHolder").transform);
+                xr.transform.SetParent(GameObject.FindGameObjectWithTag("FoodHolder").transform);
 
-            xr.transform.gameObject.SetActive(false);
+                xr.transform.gameObject.SetActive(false);
+            }
         }
 
         FoodSpawner.instance.SpawnPlate();

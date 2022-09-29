@@ -63,6 +63,12 @@ public class Pan : MonoBehaviour
         {
             cooking = true;
             patty = other.gameObject;
+            AudioManager.instance.PlayOnceLocal("Sizzling", gameObject);
+        }
+
+        if (other.gameObject.CompareTag("NonInteractable") || other.gameObject.CompareTag("Spatula"))
+        {
+            AudioManager.instance.PlayOnceLocal("Frying pan collision", gameObject);
         }
     }
 
@@ -74,4 +80,5 @@ public class Pan : MonoBehaviour
             isCycling = false;
         }
     }
+
 }

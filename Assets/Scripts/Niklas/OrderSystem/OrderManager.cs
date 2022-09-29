@@ -11,6 +11,7 @@ public class OrderManager : MonoBehaviour
     public List<IngredientManager> orderItems = new();
     public Order orderPrefab;
     public OrderEntry orderListEntryPrefab;
+    public SideScreen display;
 
     #region Singleton
     public static OrderManager instance;
@@ -55,6 +56,8 @@ public class OrderManager : MonoBehaviour
         orderItems.Insert(0, TopBun);
         orderItems.Insert(Mathf.RoundToInt((numOfIngredients + 2) / 2), Patty);
         orderItems.Insert(numOfIngredients + 2, BottomBun);
+
+        display.SetOrder();
 
         return orderItems;
     }
