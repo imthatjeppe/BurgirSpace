@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 423121223}
   - component: {fileID: 423121222}
   - component: {fileID: 423121221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CheeseSocket
   m_TagString: Cheese
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 2053057113007401360}
   - component: {fileID: 2053057113007401363}
   - component: {fileID: 2053057113007401367}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SaladSocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 2053057113307234280}
   - component: {fileID: 2053057113307234283}
   - component: {fileID: 2053057113307234282}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TopBunSocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 2053057114055175550}
   - component: {fileID: 2053057114055175545}
   - component: {fileID: 2053057114055175549}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PattySocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +617,7 @@ GameObject:
   - component: {fileID: 2053057114164287303}
   - component: {fileID: 2053057114164287302}
   - component: {fileID: 2053057114164287306}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BottomBunSocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -768,7 +768,7 @@ GameObject:
   - component: {fileID: 2053057114190885411}
   - component: {fileID: 2053057114190885410}
   - component: {fileID: 2053057114190885414}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TomatoSocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -915,7 +915,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4955190394322381177}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Burger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

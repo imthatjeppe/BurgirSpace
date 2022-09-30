@@ -16,4 +16,9 @@ public class Ingredient : MonoBehaviour
 
     #endregion
 
+    void Start()
+    {
+        //Physics.IgnoreLayerCollision(0, 11, true);
+    }
+
 }
