@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*Depricated script
 public class OrderCompleted : MonoBehaviour
 {
     public OrderManager orderManager;
     public GameObject FoodSpawner;
 
-    private void Start()
+    void Start()
     {
         orderManager.GetComponent<OrderManager>();
     }
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (gameObject.tag == "Patty" || gameObject.tag == ("Bun"))
         {
@@ -20,4 +20,4 @@ public class OrderCompleted : MonoBehaviour
             AudioManager.instance.PlayOnceLocal("Food spawn", FoodSpawner);
         }
     }
-}
+}*/

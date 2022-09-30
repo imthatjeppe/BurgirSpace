@@ -18,6 +18,7 @@ public class playerTeleportation : MonoBehaviour
     void Start()
     {
         player.transform.position = playerPosition[position].transform.position;
+        player.transform.rotation = playerPosition[position].transform.rotation;
         canChangePosition = true;
 
     }
@@ -40,6 +41,7 @@ public class playerTeleportation : MonoBehaviour
         if(changePos.x >= 0.5f)
         {
             player.transform.position = playerPosition[position].transform.position;
+            player.transform.rotation = playerPosition[position].transform.rotation;
             position += 1;
             canChangePosition = false;
         }
@@ -47,6 +49,7 @@ public class playerTeleportation : MonoBehaviour
         if (changePos.x <= -0.5f)
         {
             player.transform.position = playerPosition[position].transform.position;
+            player.transform.rotation = playerPosition[position].transform.rotation;
             position -= 1;
             canChangePosition = false;
         }
