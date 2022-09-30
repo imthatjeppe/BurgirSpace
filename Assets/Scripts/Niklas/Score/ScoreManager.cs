@@ -6,8 +6,8 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     float score = 0;
-    int badOrder = 0;
-    int maxBadOrder = 5;
+    [HideInInspector] public int badOrder = 0;
+    int maxBadOrder;
 
     #region Singleton
     public static ScoreManager instance;
@@ -24,6 +24,11 @@ public class ScoreManager : MonoBehaviour
         }
     }
     #endregion
+
+    void Start()
+    {
+        maxBadOrder = GameManager.instance.difficultySetting.maxBadOrders;
+    }
 
     void Update()
     {
@@ -45,6 +50,7 @@ public class ScoreManager : MonoBehaviour
         if (completionPercentage < 30 || orderTime > waitTime || currentPattyState != desiredPattyState)
         {
             badOrder++;
+            Stats.instance.badOrders.text = "Bad Orders: " + badOrder;
             Save.instance.badOrder = badOrder;
             Debug.Log("Bad Orders: " + badOrder);
         }

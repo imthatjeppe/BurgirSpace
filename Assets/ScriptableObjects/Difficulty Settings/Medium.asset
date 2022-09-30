@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c211aba63d909d742a95d71178e2f34a, type: 3}
   m_Name: Medium
   m_EditorClassIdentifier: 
-  Time: 180
-  score: 0
-  failedOrders: 4
+  GameTime: 450
+  minWaitTime: 80
+  maxWaitTime: 180
+  maxBadOrders: 3

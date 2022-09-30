@@ -50,6 +50,13 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    void Update()
+    {
+        if(difficultySetting.GameTime <= 0) { ScoreManager.instance.badOrder = difficultySetting.maxBadOrders; return; }
+
+        difficultySetting.GameTime -= Time.deltaTime;
+    }
+
     public void PauseGame()
     {
         paused = !paused;
