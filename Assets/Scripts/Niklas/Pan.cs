@@ -74,10 +74,10 @@ public class Pan : MonoBehaviour
             AudioManager.instance.PlayOnceLocal("Sizzling", gameObject);
         }
 
-        if (other.gameObject.CompareTag("NonInteractable") || other.gameObject.CompareTag("Spatula"))
+        /*if (other.gameObject.CompareTag("NonInteractable") || other.gameObject.CompareTag("Spatula"))
         {
             AudioManager.instance.PlayOnceLocal("Frying pan collision", gameObject);
-        }
+        }*/
     }
 
     void OnCollisionExit(Collision other)
