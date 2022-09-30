@@ -37,12 +37,12 @@ public class ScoreManager : MonoBehaviour
     public void UpdateScore(float completionPercentage, float orderTime, float waitTime, CookStates desiredPattyState, CookStates currentPattyState)
     {
         float deliveryMultiplier = 1000;
+
+        if (currentPattyState == CookStates.Burnt || currentPattyState == CookStates.Raw) { deliveryMultiplier = 0; }
+
         score = deliveryMultiplier * (completionPercentage / 100);
 
-        Debug.Log("Desired: " + desiredPattyState);
-        Debug.Log("Current: " + currentPattyState);
-
-        if (completionPercentage < 30 || orderTime > waitTime || currentPattyState == CookStates.Raw || currentPattyState == CookStates.Burnt || currentPattyState != desiredPattyState)
+        if (completionPercentage < 30 || orderTime > waitTime || currentPattyState != desiredPattyState)
         {
             badOrder++;
             Save.instance.badOrder = badOrder;
