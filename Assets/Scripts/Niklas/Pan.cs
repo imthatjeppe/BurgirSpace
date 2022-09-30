@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Pan : MonoBehaviour
 {
-    bool cooking = false;
     float cookTime = 0;
     public Color rawColor;
     public Color burntColor;
 
+    bool cooking = false;
     bool isCycling = false;
-
     bool onStove = true;
 
     GameObject patty;
@@ -27,7 +26,13 @@ public class Pan : MonoBehaviour
 
         if (iM is Cookable)
         {
+
             var cook = iM as Cookable;
+
+            if(cook.states == OrderManager.instance.desiredState) 
+            { 
+                //play burger complete audio (Pling)
+            }
 
             if (!isCycling)
                 StartCoroutine(CycleMaterial(rawColor, burntColor, 80f, mat));
@@ -46,7 +51,7 @@ public class Pan : MonoBehaviour
 
     IEnumerator CycleMaterial(Color startColor, Color endColor, float cycleTime, Material mat)
     {
-        Debug.Log("test");
+        Debug.Log("Cooking");
         isCycling = true;
         float currentTime = 0;
         while (currentTime < cycleTime)
