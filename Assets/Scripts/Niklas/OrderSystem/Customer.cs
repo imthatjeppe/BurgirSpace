@@ -12,10 +12,10 @@ public class Customer : MonoBehaviour
     float minWaitTime, maxWaitTime;
     float orderTime = 0;
     [SerializeField] TMP_Text orderTimeTMP, waitTimeTMP;
-    [SerializeField] GameObject plate;
     [SerializeField] Transform plateSpawnPos;
     CookStates desiredPattyState;
-    GameObject patty;
+    GameObject patty, plate;
+    bool fadeOut = false;
 
     void Start()
     {
@@ -24,6 +24,20 @@ public class Customer : MonoBehaviour
 
     void Update()
     {
+        if (fadeOut)
+        {
+            Color color = plate.GetComponent<MeshRenderer>().material.color;
+            float fadeAmount = color.a - (2f * Time.deltaTime);
+
+            color = new Color(color.r, color.g, color.b, fadeAmount);
+            plate.GetComponent<MeshRenderer>().material.color = color;
+
+            if(color.a <= 0)
+            {
+                fadeOut = false;
+            }
+        }
+
         if (orderTime >= waitTime)
         {
             MakeOrder(); 
@@ -100,9 +114,24 @@ public class Customer : MonoBehaviour
 
         AudioManager.instance.PlayOnceLocal("Order complete", gameObject);
 
+        plate = other.gameObject;
+
+        StartCoroutine(NewOrder());
+    }
+
+    IEnumerator NewOrder()
+    {
+        Color color = plate.GetComponent<MeshRenderer>().material.color;
+        fadeOut = true;
+
+        yield return new WaitForSeconds(2f);
+
+        plate.GetComponent<MeshRenderer>().material.color = color;
+
         orderItems = OrderManager.instance.CreateRandomOrder();
         desiredPattyState = OrderManager.instance.GenerateRandomPattyCookState();
 
+        plate = null;
         patty = null;
 
         FoodSpawner.instance.SpawnPlate();
