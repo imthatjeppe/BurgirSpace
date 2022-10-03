@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Setting", menuName = "Setting")]
 public class Setting : ScriptableObject
 {
-    public float Time;
-    public float score;
-    public int failedOrders;
+    public float GameTime;
+    public float minWaitTime;
+    public float maxWaitTime;
+    public int maxBadOrders;
 }

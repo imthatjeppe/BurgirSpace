@@ -6,8 +6,8 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     float score = 0;
-    int badOrder = 0;
-    int maxBadOrder = 5;
+    [HideInInspector] public int badOrder = 0;
+    int maxBadOrder;
 
     #region Singleton
     public static ScoreManager instance;
@@ -25,6 +25,11 @@ public class ScoreManager : MonoBehaviour
     }
     #endregion
 
+    void Start()
+    {
+        maxBadOrder = GameManager.instance.difficultySetting.maxBadOrders;
+    }
+
     void Update()
     {
         if(badOrder < maxBadOrder) { return; }
@@ -37,20 +42,18 @@ public class ScoreManager : MonoBehaviour
     public void UpdateScore(float completionPercentage, float orderTime, float waitTime, CookStates desiredPattyState, CookStates currentPattyState)
     {
         float deliveryMultiplier = 1000;
+
+        if (currentPattyState == CookStates.Burnt || currentPattyState == CookStates.Raw) { deliveryMultiplier = 0; }
+
         score = deliveryMultiplier * (completionPercentage / 100);
 
-        Debug.Log("Desired: " + desiredPattyState);
-        Debug.Log("Current: " + currentPattyState);
-
-        if (completionPercentage < 30 || orderTime > waitTime || currentPattyState == CookStates.Raw || currentPattyState == CookStates.Burnt || currentPattyState != desiredPattyState)
+        if (completionPercentage < 30 || orderTime > waitTime || currentPattyState != desiredPattyState)
         {
             badOrder++;
+            Stats.instance.badOrders.text = "Bad Orders: " + badOrder;
             Save.instance.badOrder = badOrder;
-            Debug.Log("Bad Orders: " + badOrder);
         }
         Save.instance.score = score;
         Save.instance.SaveAll();
-
-        Debug.Log("Score: " + score);
     }
 }

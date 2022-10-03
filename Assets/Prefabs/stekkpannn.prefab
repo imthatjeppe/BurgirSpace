@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2153369710047171583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.12655312, y: 0.866, z: -4.9897532}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 631902290206170798}
@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 631902290206170798}
   - component: {fileID: 6760322778768043446}
   - component: {fileID: 1071211848847046110}
+  - component: {fileID: 2364592920308577295}
   m_Layer: 0
   m_Name: frypan
   m_TagString: Untagged
@@ -283,6 +284,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &2364592920308577295
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6160322742911126494}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.00045051
+  m_Height: 0.0075248047
+  m_Direction: 1
+  m_Center: {x: 0.0000029448283, y: -0.005479986, z: 0.00009760528}
 --- !u!1 &9075071536788489139
 GameObject:
   m_ObjectHideFlags: 0
