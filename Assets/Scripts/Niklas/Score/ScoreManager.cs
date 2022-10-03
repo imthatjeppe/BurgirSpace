@@ -39,9 +39,9 @@ public class ScoreManager : MonoBehaviour
         LevelLoader.instance.LoadLoading("GameOver");
     }
 
-    public void UpdateScore(float completionPercentage, float orderTime, float waitTime, CookStates desiredPattyState, CookStates currentPattyState)
+    public void UpdateScore(float completionPercentage, float orderTime, float waitTime, CookStates desiredPattyState, CookStates currentPattyState, float bonusMultiplier)
     {
-        float deliveryMultiplier = 1000;
+        float deliveryMultiplier = 1000 + bonusMultiplier;
 
         if (currentPattyState == CookStates.Burnt || currentPattyState == CookStates.Raw) { deliveryMultiplier = 0; }
 
