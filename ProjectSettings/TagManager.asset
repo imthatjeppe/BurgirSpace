@@ -25,6 +25,7 @@ TagManager:
   - FoodHolder
   - Cheese
   - Stove
+  - Mustard
   layers:
   - Default
   - TransparentFX

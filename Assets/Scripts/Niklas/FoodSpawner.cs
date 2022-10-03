@@ -4,6 +4,7 @@ using UnityEngine;
 public class FoodSpawner : MonoBehaviour
 {
     [SerializeField] GameObject spawnPointTopBun, spawnPointBottomBun, spawnPointPatty, spawnPointPlate, spawnPointPan;
+    Transform spawn;
 
     #region Singleton
     public static FoodSpawner instance;
@@ -33,7 +34,7 @@ public class FoodSpawner : MonoBehaviour
     {
         GameObject plate = ObjectPooler.instance.SpawnFromPool("Plate", spawnPointPlate.transform.position, spawnPointPlate.transform.rotation);
 
-        plate.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+        plate.GetComponent<Rigidbody>().isKinematic = true;
     }
 
     public void SpawnPan()
@@ -41,5 +42,15 @@ public class FoodSpawner : MonoBehaviour
         GameObject pan = ObjectPooler.instance.SpawnFromPool("Pan", spawnPointPan.transform.position, spawnPointPan.transform.rotation);
 
         pan.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+    }
+
+    public void SpawnIngridient(string name)
+    {
+        ObjectPooler.instance.SpawnFromPool(name, spawn.position, Quaternion.identity);
+    }
+
+    public void SetSpawn(Transform spawnPoint)
+    {
+        spawn = spawnPoint;
     }
 }

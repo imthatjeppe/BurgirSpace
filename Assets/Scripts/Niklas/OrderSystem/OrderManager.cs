@@ -79,4 +79,24 @@ public class OrderManager : MonoBehaviour
 
         return desiredPattyState;
     }
+
+    public List<bool> Condiment()
+    {
+        bool mustard = false, ketchup = false;
+        List<bool> condiment = new List<bool>();
+
+
+        float roll = Random.Range(1, 4);
+
+
+        if (roll == 1) { mustard = true; ketchup = false; }
+        if (roll == 2) { ketchup = true; mustard = false; }
+        if (roll == 3) { ketchup = false; mustard = false; }
+        if (roll == 4) { ketchup = true; mustard = true; }
+
+        condiment.Add(mustard);
+        condiment.Add(ketchup);
+
+        return condiment;
+    }
 }
