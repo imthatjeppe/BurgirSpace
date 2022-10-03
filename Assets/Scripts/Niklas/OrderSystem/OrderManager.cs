@@ -12,6 +12,7 @@ public class OrderManager : MonoBehaviour
     public Order orderPrefab;
     public OrderEntry orderListEntryPrefab;
     public SideScreen display;
+    public CookStates desiredState;
 
     #region Singleton
     public static OrderManager instance;
@@ -73,6 +74,8 @@ public class OrderManager : MonoBehaviour
         if (random == 1) { desiredPattyState = CookStates.Rare; }
         if (random == 2) { desiredPattyState = CookStates.mediumRare; }
         if (random == 3) { desiredPattyState = CookStates.wellDone; }
+
+        desiredState = desiredPattyState;
 
         return desiredPattyState;
     }
