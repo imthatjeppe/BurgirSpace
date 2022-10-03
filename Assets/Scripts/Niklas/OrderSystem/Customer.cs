@@ -17,6 +17,7 @@ public class Customer : MonoBehaviour
     GameObject patty, plate;
     bool fadeOut = false;
     bool updatingScore = false;
+    List<bool> condiment = new List<bool>();
 
     void Start()
     {
@@ -72,6 +73,7 @@ public class Customer : MonoBehaviour
 
         orderItems = OrderManager.instance.CreateRandomOrder();
         desiredPattyState = OrderManager.instance.GenerateRandomPattyCookState();
+        condiment = OrderManager.instance.Condiment();
 
         foreach (IngredientManager i in orderItems)
         {
@@ -84,10 +86,19 @@ public class Customer : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        bool mustard = false, ketchup = false;
+        if (other.gameObject.CompareTag("Mustard")) { mustard = true; }
+        if (other.gameObject.CompareTag("Ketchup")) { ketchup = true; }
+
         if (updatingScore) { return; }
         if (!other.CompareTag("Plate")) { return; }
 
         if (other.gameObject.transform.GetChild(0) == null) { return; }
+
+        float bonus = 0f;
+
+        if(condiment[0] == mustard) { bonus += 20; }
+        if(condiment[1] == ketchup) { bonus += 20; }
 
         foreach (Plate socketObj in FindObjectsOfType<Plate>())
         {
@@ -126,11 +137,11 @@ public class Customer : MonoBehaviour
 
             var cook = iM as Cookable;
 
-            ScoreManager.instance.UpdateScore(completion, orderTime, waitTime, desiredPattyState, cook.states);
+            ScoreManager.instance.UpdateScore(completion, orderTime, waitTime, desiredPattyState, cook.states, bonus);
         }
         else
         {
-            ScoreManager.instance.UpdateScore(completion, orderTime, waitTime, desiredPattyState, CookStates.Raw);
+            ScoreManager.instance.UpdateScore(completion, orderTime, waitTime, desiredPattyState, CookStates.Raw, bonus);
         }
 
         AudioManager.instance.PlayOnceLocal("Order complete", gameObject);
@@ -157,6 +168,7 @@ public class Customer : MonoBehaviour
 
         orderItems = OrderManager.instance.CreateRandomOrder();
         desiredPattyState = OrderManager.instance.GenerateRandomPattyCookState();
+        condiment = OrderManager.instance.Condiment();
 
         plate = null;
         patty = null;
