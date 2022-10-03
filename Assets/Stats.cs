@@ -21,7 +21,7 @@ public class Stats : MonoBehaviour
 
     void Start()
     {
-        badOrders.text = "Bad Orders: " + ScoreManager.instance.badOrder;
+        badOrders.text = "Bad Orders: " + Save.instance.badOrder;
     }
 
     void Update()
