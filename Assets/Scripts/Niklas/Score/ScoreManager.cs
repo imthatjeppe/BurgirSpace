@@ -52,11 +52,8 @@ public class ScoreManager : MonoBehaviour
             badOrder++;
             Stats.instance.badOrders.text = "Bad Orders: " + badOrder;
             Save.instance.badOrder = badOrder;
-            Debug.Log("Bad Orders: " + badOrder);
         }
         Save.instance.score = score;
         Save.instance.SaveAll();
-
-        Debug.Log("Score: " + score);
     }
 }

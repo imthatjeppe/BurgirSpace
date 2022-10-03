@@ -16,6 +16,7 @@ public class Customer : MonoBehaviour
     CookStates desiredPattyState;
     GameObject patty, plate;
     bool fadeOut = false;
+    bool updatingScore = false;
 
     void Start()
     {
@@ -26,11 +27,23 @@ public class Customer : MonoBehaviour
     {
         if (fadeOut)
         {
-            Color color = plate.GetComponent<MeshRenderer>().material.color;
+            Color color = plate.GetComponent<Renderer>().material.color;
+
             float fadeAmount = color.a - (2f * Time.deltaTime);
 
             color = new Color(color.r, color.g, color.b, fadeAmount);
             plate.GetComponent<MeshRenderer>().material.color = color;
+
+            foreach(Transform child in plate.transform.GetChild(0))
+            {
+                Color colorChild = child.GetComponent<Renderer>().material.color;
+
+                float fadeAmountChild = color.a - (2f * Time.deltaTime);
+
+                color = new Color(color.r, color.g, color.b, fadeAmountChild);
+
+                child.GetComponent<MeshRenderer>().material.color = colorChild;
+            }
 
             if(color.a <= 0)
             {
@@ -71,6 +84,7 @@ public class Customer : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (updatingScore) { return; }
         if (!other.CompareTag("Plate")) { return; }
 
         if (other.gameObject.transform.GetChild(0) == null) { return; }
@@ -106,11 +120,18 @@ public class Customer : MonoBehaviour
 
         waitTime = Random.Range(minWaitTime, maxWaitTime);
 
-        var iM = patty.GetComponent<Ingredient>().ingredientManager;
+        if(patty != null)
+        {
+            var iM = patty.GetComponent<Ingredient>().ingredientManager;
 
-        var cook = iM as Cookable;
+            var cook = iM as Cookable;
 
-        ScoreManager.instance.UpdateScore(completion, orderTime, waitTime, desiredPattyState, cook.states);
+            ScoreManager.instance.UpdateScore(completion, orderTime, waitTime, desiredPattyState, cook.states);
+        }
+        else
+        {
+            ScoreManager.instance.UpdateScore(completion, orderTime, waitTime, desiredPattyState, CookStates.Raw);
+        }
 
         AudioManager.instance.PlayOnceLocal("Order complete", gameObject);
 
@@ -121,12 +142,18 @@ public class Customer : MonoBehaviour
 
     IEnumerator NewOrder()
     {
-        Color color = plate.GetComponent<MeshRenderer>().material.color;
         fadeOut = true;
+        updatingScore = true;
 
-        yield return new WaitForSeconds(2f);
+        plate.GetComponent<XRGrabInteractable>().enabled = false;
+        plate.GetComponent<Rigidbody>().isKinematic = true;
 
-        plate.GetComponent<MeshRenderer>().material.color = color;
+        yield return new WaitForSeconds(2.1f);
+
+        plate.GetComponent<MeshRenderer>().material.color = new Color(plate.GetComponent<MeshRenderer>().material.color.r, plate.GetComponent<MeshRenderer>().material.color.g, plate.GetComponent<MeshRenderer>().material.color.b, 1);
+
+        plate.GetComponent<XRGrabInteractable>().enabled = true;
+        plate.GetComponent<Rigidbody>().isKinematic = false;
 
         orderItems = OrderManager.instance.CreateRandomOrder();
         desiredPattyState = OrderManager.instance.GenerateRandomPattyCookState();
@@ -134,6 +161,7 @@ public class Customer : MonoBehaviour
         plate = null;
         patty = null;
 
+        updatingScore = false;
         FoodSpawner.instance.SpawnPlate();
     }
 
