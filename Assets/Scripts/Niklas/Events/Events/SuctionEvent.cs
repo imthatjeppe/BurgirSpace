@@ -2,40 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GravityEvent : GameEvent
+public class SuctionEvent : GameEvent
 {
-    [HideInInspector] public List<Rigidbody> objects;
+    [HideInInspector] public GameObject player;
+    [HideInInspector] public Vector3 dir;
     float timer = 0;
     public float maxTime = 0;
     [SerializeField] int minEventRestartTime, maxEventRestartTime;
 
     public override void Init(EventController ec)
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         ec.minRandomEventInterval = minEventRestartTime + (int)maxTime;
         ec.maxRandomEventInterval = maxEventRestartTime + (int)maxTime;
     }
 
     public override void StartEvent(EventController ec)
     {
-        foreach (Rigidbody obj in FindObjectsOfType<Rigidbody>())
-        {
-            if (obj.gameObject.tag != "Button")
-                objects.Add(obj);
-        }
-
         this.ec = ec;
 
-        foreach (Rigidbody obj in objects)
-        {
-            obj.useGravity = false;
-            obj.velocity = Vector3.up * Random.Range(0.1f, 1f);
-        }
-        Debug.Log("Starting Gravity Event");
+        dir = new Vector3(Random.value, Random.value, Random.value);
+
+        Debug.Log("Starting Suction Event");
     }
 
     public override void UpdateEvent()
     {
         timer += Time.deltaTime;
+        Debug.Log("sucking: " + dir);
+        player.transform.Translate(dir * Time.deltaTime * 0.3f);
 
         if (timer >= maxTime)
         {
@@ -47,16 +42,12 @@ public class GravityEvent : GameEvent
 
     public override void CompletedEvent()
     {
-        foreach (Rigidbody obj in objects)
-        {
-            obj.useGravity = true;
-        }
         timer = 0;
     }
 
     public override string ToString()
     {
-        if (eventName == "") { return "(GravityEvent)"; }
-        return $"{eventName} (GravityEvent)";
+        if (eventName == "") { return "(SuctionEvent)"; }
+        return $"{eventName} (SuctionEvent)";
     }
 }

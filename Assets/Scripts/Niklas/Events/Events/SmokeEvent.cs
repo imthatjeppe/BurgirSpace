@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GravityEvent : GameEvent
+public class SmokeEvent : GameEvent
 {
-    [HideInInspector] public List<Rigidbody> objects;
     float timer = 0;
     public float maxTime = 0;
     [SerializeField] int minEventRestartTime, maxEventRestartTime;
@@ -17,20 +16,8 @@ public class GravityEvent : GameEvent
 
     public override void StartEvent(EventController ec)
     {
-        foreach (Rigidbody obj in FindObjectsOfType<Rigidbody>())
-        {
-            if (obj.gameObject.tag != "Button")
-                objects.Add(obj);
-        }
-
         this.ec = ec;
-
-        foreach (Rigidbody obj in objects)
-        {
-            obj.useGravity = false;
-            obj.velocity = Vector3.up * Random.Range(0.1f, 1f);
-        }
-        Debug.Log("Starting Gravity Event");
+        Debug.Log("Starting Smoke Event");
     }
 
     public override void UpdateEvent()
@@ -47,16 +34,12 @@ public class GravityEvent : GameEvent
 
     public override void CompletedEvent()
     {
-        foreach (Rigidbody obj in objects)
-        {
-            obj.useGravity = true;
-        }
         timer = 0;
     }
 
     public override string ToString()
     {
-        if (eventName == "") { return "(GravityEvent)"; }
-        return $"{eventName} (GravityEvent)";
+        if (eventName == "") { return "(SmokeEvent)"; }
+        return $"{eventName} (SmokeEvent)";
     }
 }
