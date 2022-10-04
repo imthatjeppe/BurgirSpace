@@ -15,6 +15,8 @@ public class SideScreen : MonoBehaviour
     {
         display.transform.position = transform.position;
         display.transform.rotation = transform.rotation;
+
+        transform.eulerAngles = new Vector3(0, target.eulerAngles.y, 0);
     }
 
     public void SetOrder()
