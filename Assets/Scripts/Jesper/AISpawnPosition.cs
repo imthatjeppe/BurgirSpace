@@ -17,14 +17,7 @@ public class AISpawnPosition : MonoBehaviour
 
         for (int i = 0; i < positionsUsed; i++)
         {
-            Instantiate(robots[randomIndex], aiSpawnPosition[positionsUsed].transform.position, aiSpawnPosition[positionsUsed].transform.rotation);
-            ChangeIndex();
+            Instantiate(robots[randomIndex], aiSpawnPosition[positionsUsed].transform.position, Quaternion.identity);
         }
-    }
-
-    private void ChangeIndex()
-    {
-        randomIndex = Random.Range(0, robots.Length);
-        positionsUsed = Random.Range(0, positions);
     }
 }
