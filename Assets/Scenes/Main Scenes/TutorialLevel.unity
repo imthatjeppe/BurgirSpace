@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &110948683 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6598815579406187027, guid: 9f5a24a380916d14db9775daab4fe333,
+    type: 3}
+  m_PrefabInstance: {fileID: 730844912}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &124103263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -143,7 +149,7 @@ PrefabInstance:
     - target: {fileID: 8538799200141213362, guid: 26586af68da6e7b4784bc43501f8d90a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.504
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8538799200141213362, guid: 26586af68da6e7b4784bc43501f8d90a,
         type: 3}
@@ -212,7 +218,7 @@ PrefabInstance:
     - target: {fileID: 1173754424417256364, guid: 93566ce42b7454344a0dbd2f1406a98f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.501
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1173754424417256364, guid: 93566ce42b7454344a0dbd2f1406a98f,
         type: 3}
@@ -327,7 +333,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &442250510
 PrefabInstance:
@@ -349,7 +355,7 @@ PrefabInstance:
     - target: {fileID: 1030924361942855507, guid: f82a0e01192b7fe45a1304bad8ab5e12,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.503
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1030924361942855507, guid: f82a0e01192b7fe45a1304bad8ab5e12,
         type: 3}
@@ -427,8 +433,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e344c7260a4d14b808e52d8a0ff2c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textDelay: 0.035
+  fullText: 
   Tutorials: []
-  expText: {fileID: 1167260321}
+  tutorialText: {fileID: 1167260321}
 --- !u!4 &536133824
 Transform:
   m_ObjectHideFlags: 0
@@ -443,9 +451,101 @@ Transform:
   m_Children:
   - {fileID: 1002696125}
   - {fileID: 1082440938}
+  - {fileID: 1176297007}
+  - {fileID: 944434505}
+  - {fileID: 1900945787}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &629817462 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2549839397462785944, guid: b8aac39baea7dac40891f371b5b4a191,
+    type: 3}
+  m_PrefabInstance: {fileID: 867601453}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &629817466
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629817462}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9055214681415797829, guid: d701cf481cb5ef94c82f7e865262fa47, type: 3}
+--- !u!1001 &730844912
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6598815579406187027, guid: 9f5a24a380916d14db9775daab4fe333,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 9f5a24a380916d14db9775daab4fe333,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 9f5a24a380916d14db9775daab4fe333,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 9f5a24a380916d14db9775daab4fe333,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 9f5a24a380916d14db9775daab4fe333,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 9f5a24a380916d14db9775daab4fe333,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 9f5a24a380916d14db9775daab4fe333,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 9f5a24a380916d14db9775daab4fe333,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 9f5a24a380916d14db9775daab4fe333,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 9f5a24a380916d14db9775daab4fe333,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 9f5a24a380916d14db9775daab4fe333,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 9f5a24a380916d14db9775daab4fe333,
+        type: 3}
+      propertyPath: m_Name
+      value: XR Device Simulator
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9f5a24a380916d14db9775daab4fe333, type: 3}
 --- !u!1 &794923418
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +758,7 @@ RectTransform:
   m_Children:
   - {fileID: 1167260323}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -680,7 +780,7 @@ PrefabInstance:
     - target: {fileID: 6431098861855457859, guid: b8aac39baea7dac40891f371b5b4a191,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6431098861855457859, guid: b8aac39baea7dac40891f371b5b4a191,
         type: 3}
@@ -734,6 +834,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8aac39baea7dac40891f371b5b4a191, type: 3}
+--- !u!1 &944434504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 944434505}
+  - component: {fileID: 944434506}
+  m_Layer: 0
+  m_Name: MixerTutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &944434505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944434504}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 536133824}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &944434506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944434504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56138cf6093a9cb45963b339dfce957d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Order: 5
+  Explanation: While playing, your ingredients won't be sliced up and ready for you.
+    Put the cucumber into the mixer to get it sliced and ready.
+  cucumberTransform: {fileID: 0}
 --- !u!1001 &990269945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -759,7 +907,7 @@ PrefabInstance:
     - target: {fileID: 4992960710302780666, guid: 777b822bac22ee84fbd617d5f85be8ff,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.501
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4992960710302780666, guid: 777b822bac22ee84fbd617d5f85be8ff,
         type: 3}
@@ -816,7 +964,7 @@ GameObject:
   - component: {fileID: 1002696127}
   - component: {fileID: 1002696128}
   m_Layer: 0
-  m_Name: Movement Tutorial
+  m_Name: MovementTutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -829,14 +977,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002696124}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.36, y: 0, z: 0.043}
+  m_LocalRotation: {x: -0, y: 0.37947524, z: -0, w: 0.92520195}
+  m_LocalPosition: {x: -1.230487, y: 0, z: 0.10753915}
   m_LocalScale: {x: 0.33986, y: 1, z: 0.46592665}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 536133824}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 44.602, z: 0}
 --- !u!114 &1002696126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -850,8 +998,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Order: 0
-  Explanation: You can move around using your teleport. To teleport, flick your right
-    stick to the right, or left to teleport to a set of positions.
+  Explanation: Welcome, Chef! You can move around using your teleport. To teleport,
+    flick your right stick to the right or left to teleport to a set of positions.
   Keys:
   - w
 --- !u!114 &1002696127
@@ -868,7 +1016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Order: 1
   Explanation: Good job! Now teleport over to the counter with the ingredients.
-  PlayerTransform: {fileID: 0}
+  PlayerTransform: {fileID: 110948683}
 --- !u!65 &1002696128
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -895,7 +1043,7 @@ GameObject:
   - component: {fileID: 1082440941}
   - component: {fileID: 1082440940}
   m_Layer: 0
-  m_Name: Building Burger Tutorial
+  m_Name: BuildingBurgerTutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -909,8 +1057,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082440937}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.66, z: 0.283}
-  m_LocalScale: {x: 0.4748, y: 0.5379456, z: 0.14297707}
+  m_LocalPosition: {x: 0, y: 0.66, z: -0.014664426}
+  m_LocalScale: {x: 0.4748, y: 0.5379456, z: 0.76217365}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 536133824}
@@ -932,7 +1080,7 @@ MonoBehaviour:
   Explanation: Build a burger by grabbing the ingredients and placing them on the
     bottom bun. Then move the plate to the outer counter for delivery.
   Keys:
-  - k
+  - w
 --- !u!65 &1082440940
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -959,8 +1107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Order: 3
-  Explanation: Once you're happy with your burger, place it in the "zone" to send
-    it out to a customer.
+  Explanation: Once you're happy with your burger, place the plate on the outer counter,
+    facing the dining area.
   BurgerTransform: {fileID: 0}
 --- !u!1 &1167260320
 GameObject:
@@ -973,8 +1121,9 @@ GameObject:
   - component: {fileID: 1167260323}
   - component: {fileID: 1167260322}
   - component: {fileID: 1167260321}
+  - component: {fileID: 1167260324}
   m_Layer: 5
-  m_Name: ExplanationText
+  m_Name: TutorialText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1027,15 +1176,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 68.95
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1097,6 +1246,66 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &1167260324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167260320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4c656c49883e744936eb97222d2818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1176297006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1176297007}
+  - component: {fileID: 1176297008}
+  m_Layer: 0
+  m_Name: KetchupTutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1176297007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176297006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 536133824}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1176297008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176297006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e76ecd2199aba784382f1a33c9e26622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Order: 4
+  Explanation: You will also have access to some other condiments, like ketchup!
+    Squirt some ketchup on the burger by squeezing the dispenser.
+  ketchupTransform: {fileID: 0}
 --- !u!1 &1883693605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,6 +1421,55 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &1900945786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1900945787}
+  - component: {fileID: 1900945788}
+  m_Layer: 0
+  m_Name: EventTutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1900945787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900945786}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 536133824}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1900945788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900945786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81220cd5f7acb945b21b30afb24b97c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Order: 6
+  Explanation: In the heat of the cooking, anything can happen. Be ready for anything
+    and adapt on the spot and you'll do great! Press # to exit the tutorial.
+  Keys:
+  - w
 --- !u!1001 &2027641238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1227,7 +1485,7 @@ PrefabInstance:
     - target: {fileID: 6095599949119267660, guid: 41188951cdf900b4caedb5dcd26fe726,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6095599949119267660, guid: 41188951cdf900b4caedb5dcd26fe726,
         type: 3}

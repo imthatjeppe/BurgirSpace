@@ -26,7 +26,7 @@ public class playerTeleportation : MonoBehaviour
     void Update()
     {
         changePos = leftController.rotateAnchorAction.action.ReadValue<Vector2>();
-        position = Mathf.Clamp(position, 0, 11);
+        position = Mathf.Clamp(position, 0, 10);
 
         if (Save.instance.walking) {Walking(); return; }
         ChangePosition();

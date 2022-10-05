@@ -6,9 +6,17 @@ using TMPro;
 
 public class TutorialManager: MonoBehaviour
 {
+    public float textDelay = 0.1f;
+
+    private string currentText = "";
+
+    private Coroutine routine;
+
+    public string fullText;
+
     public List<Tutorial> Tutorials = new List<Tutorial>();
 
-    public TextMeshProUGUI expText;
+    public TextMeshProUGUI tutorialText;
 
     private static TutorialManager instance;
     public static TutorialManager Instance
@@ -29,12 +37,26 @@ public class TutorialManager: MonoBehaviour
         }
     }
 
+    void Start()
+    {  
+        SetNextTutorial(0);
+        fullText = tutorialText.text;
+        StartCoroutine(ShowText(fullText));
+    }
+
+    IEnumerator ShowText(string fullText)
+    {
+        for (int i = 0; i < fullText.Length; i++)
+        {
+            currentText = fullText.Substring(0, i);
+            tutorialText.text = currentText;
+            yield return new WaitForSeconds(textDelay);
+        }
+    }
+
     private Tutorial currentTutorial;
 
-    void Start()
-    {
-        SetNextTutorial(0);
-    }
+
 
 
     void Update()
@@ -60,12 +82,18 @@ public class TutorialManager: MonoBehaviour
             return;
         }
 
-        expText.text = currentTutorial.Explanation;
+        if (routine != null)
+        {
+            StopCoroutine(routine);
+        }
+        tutorialText.text = currentTutorial.Explanation;
+        
+        routine = StartCoroutine(ShowText(currentTutorial.Explanation));
     }
 
     public void CompletedAllTutorials()
     {
-        expText.text = "You have completed the tutorial! Press # to exit the tutorial.";
+        tutorialText.text = "You have completed the tutorial! Press # to exit the tutorial.";
     }
 
     public Tutorial GetTutorialByOrder(int Order)
