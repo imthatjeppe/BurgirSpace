@@ -160,5 +160,45 @@ MonoBehaviour:
     volume: 1
     audio: {fileID: 0}
     loop: 1
+  - name: Background noice
+    clip: {fileID: 8300000, guid: 463acef33a1e0834eba43c373d377da5, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Background music 2
+    clip: {fileID: 8300000, guid: 24558e75a04b9ff43956c9263128a5d1, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Background Music 3
+    clip: {fileID: 8300000, guid: 45b778d8c9c012b4c8432cec4bb33805, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Background Music 4
+    clip: {fileID: 8300000, guid: 08d518adab11eec4d88bf204baa77417, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Background Music 5
+    clip: {fileID: 8300000, guid: 98610916ceea23f4cb5d04e2ed7af8a2, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
   menuVolume: 0
   multiplier: 30
