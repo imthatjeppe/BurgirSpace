@@ -5,19 +5,7 @@ using TMPro;
 
 public class SideScreen : MonoBehaviour
 {
-    public Transform target;
-    public Vector3 offset;
     public TMP_Text order;
-    public GameObject display;
-    // Start is called before the first frame update
-
-    void Start()
-    {
-        display.transform.position = transform.position;
-        display.transform.rotation = transform.rotation;
-
-        //transform.eulerAngles = new Vector3(0, 0, target.eulerAngles.z + 45);
-    }
 
     public void SetOrder()
     {

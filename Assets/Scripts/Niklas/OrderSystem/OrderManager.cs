@@ -9,7 +9,6 @@ public class OrderManager : MonoBehaviour
     public List<IngredientManager> ingredients = new();
     [SerializeField] IngredientManager TopBun, Patty, BottomBun;
     public List<IngredientManager> orderItems = new();
-    public Order orderPrefab;
     public OrderEntry orderListEntryPrefab;
     public SideScreen display;
     public CookStates desiredState;
