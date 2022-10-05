@@ -54,9 +54,8 @@ MonoBehaviour:
     audio: {fileID: 0}
     loop: 1
   - name: Food mixer
-    clip: {fileID: 8300000, guid: 9243060b2761f3d498eb668464519d39, type: 3}
-    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
-      type: 2}
+    clip: {fileID: 8300000, guid: 71e198b3229d52a489d2a4572a732fec, type: 3}
+    mixer: {fileID: -111565087283382281, guid: 66f964ee37e4dd94282bf29e640884b7, type: 2}
     maxDistance: 10
     volume: 1
     audio: {fileID: 0}
@@ -70,9 +69,8 @@ MonoBehaviour:
     audio: {fileID: 0}
     loop: 0
   - name: Frying pan collision
-    clip: {fileID: 8300000, guid: 84c0d0ce8ea3a924cb2a27613f23213a, type: 3}
-    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
-      type: 2}
+    clip: {fileID: 8300000, guid: d569808430e786347a71d5b60de59fd5, type: 3}
+    mixer: {fileID: -111565087283382281, guid: 66f964ee37e4dd94282bf29e640884b7, type: 2}
     maxDistance: 10
     volume: 1
     audio: {fileID: 0}
@@ -86,13 +84,12 @@ MonoBehaviour:
     audio: {fileID: 0}
     loop: 0
   - name: Sizzling
-    clip: {fileID: 8300000, guid: dce2cefbfa1526641a85e086512d1a7b, type: 3}
-    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
-      type: 2}
+    clip: {fileID: 8300000, guid: 8d1808bb69e946a47b032ca816370e98, type: 3}
+    mixer: {fileID: -111565087283382281, guid: 66f964ee37e4dd94282bf29e640884b7, type: 2}
     maxDistance: 10
     volume: 1
     audio: {fileID: 0}
-    loop: 1
+    loop: 0
   - name: Spatula
     clip: {fileID: 8300000, guid: 2c5d1e3e8b021504a8a944108d86bce7, type: 3}
     mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
@@ -126,9 +123,8 @@ MonoBehaviour:
     audio: {fileID: 0}
     loop: 0
   - name: Teleportation
-    clip: {fileID: 8300000, guid: 9ff3b6d602381b64f9b02838a2dd23ca, type: 3}
-    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
-      type: 2}
+    clip: {fileID: 8300000, guid: f4457fcd4caaba0469b06c2e327d2704, type: 3}
+    mixer: {fileID: -111565087283382281, guid: 66f964ee37e4dd94282bf29e640884b7, type: 2}
     maxDistance: 10
     volume: 1
     audio: {fileID: 0}
@@ -149,5 +145,60 @@ MonoBehaviour:
     volume: 1
     audio: {fileID: 0}
     loop: 0
+  - name: Stove On
+    clip: {fileID: 8300000, guid: 078a76eb462ca3d4585129613ded811e, type: 3}
+    mixer: {fileID: -111565087283382281, guid: 66f964ee37e4dd94282bf29e640884b7, type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 0
+  - name: Background Music 1
+    clip: {fileID: 8300000, guid: 078a76eb462ca3d4585129613ded811e, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Background noice
+    clip: {fileID: 8300000, guid: 463acef33a1e0834eba43c373d377da5, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Background Music 2
+    clip: {fileID: 8300000, guid: 24558e75a04b9ff43956c9263128a5d1, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Background Music 3
+    clip: {fileID: 8300000, guid: 45b778d8c9c012b4c8432cec4bb33805, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Background Music 4
+    clip: {fileID: 8300000, guid: 08d518adab11eec4d88bf204baa77417, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
+  - name: Background Music 5
+    clip: {fileID: 8300000, guid: 98610916ceea23f4cb5d04e2ed7af8a2, type: 3}
+    mixer: {fileID: -1463656325712652638, guid: 66f964ee37e4dd94282bf29e640884b7,
+      type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 1
   menuVolume: 0
   multiplier: 30
