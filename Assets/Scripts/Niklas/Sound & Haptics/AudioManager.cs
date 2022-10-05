@@ -80,6 +80,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayOnceLocal(string name, GameObject target)
     {
+        Debug.Log("Playing audio clip: " + name);
         GameObject obj = new GameObject();
         obj.name = "LocalSound";
         obj.transform.SetParent(target.transform);
