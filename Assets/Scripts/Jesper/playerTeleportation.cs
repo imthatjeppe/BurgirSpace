@@ -11,7 +11,7 @@ public class playerTeleportation : MonoBehaviour
     public Transform player;
     public List<GameObject> playerPosition = new List<GameObject>();
 
-    private int position = 4;
+    public int position = 4;
     Vector2 changePos;
 
     bool canChangePosition;
@@ -26,7 +26,7 @@ public class playerTeleportation : MonoBehaviour
     void Update()
     {
         changePos = leftController.rotateAnchorAction.action.ReadValue<Vector2>();
-        position = Mathf.Clamp(position, 0, 10);
+        position = Mathf.Clamp(position, 0, playerPosition.Count);
 
         if (Save.instance.walking) {Walking(); return; }
         ChangePosition();
