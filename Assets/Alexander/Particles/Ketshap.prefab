@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4482639650610501680}
   - component: {fileID: 4482639650610501681}
   - component: {fileID: 4482639650610501682}
+  - component: {fileID: 8363020210454877110}
   m_Layer: 0
   m_Name: Ketshap
   m_TagString: Untagged
@@ -3612,12 +3613,12 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
-    multiplyColliderForceByParticleSize: 0
+    multiplyColliderForceByParticleSize: 1
     multiplyColliderForceByParticleSpeed: 0
     multiplyColliderForceByCollisionAngle: 1
     m_Planes: []
@@ -3789,7 +3790,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -4813,3 +4814,17 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &8363020210454877110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4482639650610501683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844f2ded2e14bf243856df3817f37507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  liquidPrefab: {fileID: 7115171252578612358, guid: d4bc8019f77daa84896b7e5a0a8f7d43,
+    type: 3}
