@@ -11,7 +11,7 @@ public class playerTeleportation : MonoBehaviour
     public Transform player;
     public List<GameObject> playerPosition = new List<GameObject>();
 
-    private int position = 4;
+    public int position = 4;
     Vector2 changePos;
 
     bool canChangePosition;
