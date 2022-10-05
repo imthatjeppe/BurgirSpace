@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if(gameState != GameStates.Playing) { return; }
         if(difficultySetting.GameTime <= 0) { ScoreManager.instance.badOrder = difficultySetting.maxBadOrders; return; }
 
         difficultySetting.GameTime -= Time.deltaTime;

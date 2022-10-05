@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.InputSystem;
+using System;
 
 public class playerTeleportation : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class playerTeleportation : MonoBehaviour
     public Transform player;
     public List<GameObject> playerPosition = new List<GameObject>();
 
-    private int position = 2;
+    private int position = 4;
     Vector2 changePos;
 
     bool canChangePosition;
@@ -25,13 +26,27 @@ public class playerTeleportation : MonoBehaviour
     void Update()
     {
         changePos = leftController.rotateAnchorAction.action.ReadValue<Vector2>();
-        position = Mathf.Clamp(position, 0, 4);
+        position = Mathf.Clamp(position, 0, 10);
+
+        if (Save.instance.walking) {Walking(); return; }
         ChangePosition();
+    }
+
+    private void Walking()
+    {
+        player.gameObject.GetComponent<ActionBasedContinuousMoveProvider>().enabled = true;
+        player.gameObject.GetComponent<ActionBasedContinuousTurnProvider>().enabled = false;
+        player.gameObject.GetComponent<CharacterController>().enabled = true;
+
     }
 
     private void ChangePosition()
     {
-        if(changePos.x == 0)
+        player.gameObject.GetComponent<ActionBasedContinuousTurnProvider>().enabled = true;
+        player.gameObject.GetComponent<ActionBasedContinuousMoveProvider>().enabled = false;
+        player.gameObject.GetComponent<CharacterController>().enabled = false;
+
+        if (changePos.x == 0)
         {
             canChangePosition = true;
         }
@@ -54,7 +69,7 @@ public class playerTeleportation : MonoBehaviour
             canChangePosition = false;
         }
 
-        AudioManager.instance.PlayOnceLocal("Teleportation", gameObject);
+        //AudioManager.instance.PlayOnceLocal("Teleportation", gameObject);
 
     }
 }
