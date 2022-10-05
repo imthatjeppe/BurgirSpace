@@ -10,7 +10,6 @@ public class OrderManager : MonoBehaviour
     [SerializeField] IngredientManager TopBun, Patty, BottomBun;
     public List<IngredientManager> orderItems = new();
     public OrderEntry orderListEntryPrefab;
-    public SideScreen display;
     public CookStates desiredState;
 
     #region Singleton
@@ -43,8 +42,6 @@ public class OrderManager : MonoBehaviour
         orderItems.Insert(0, TopBun);
         orderItems.Insert(Mathf.RoundToInt((numOfIngredients + 2) / 2), Patty);
         orderItems.Insert(numOfIngredients + 2, BottomBun);
-
-        display.SetOrder();
 
         return orderItems;
     }
