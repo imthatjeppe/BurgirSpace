@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField] List<GameObject> disable = new List<GameObject>();
+    [SerializeField] GameObject panel;
     [SerializeField] GameObject audio;
     [SerializeField] GameObject difficulity;
     [SerializeField] GameObject loadBtn;
@@ -26,6 +28,35 @@ public class Menu : MonoBehaviour
         masterSlider.value = Save.instance.master;
         sfxSlider.value = Save.instance.sfx;
         musicSlider.value = Save.instance.music;
+    }
+
+    public void CheckTutorial()
+    {
+        if(Save.instance.tutorial == true)
+        {
+            LevelLoader.instance.LoadLoading("Main Level");
+            Save.instance.ResetData();
+        }
+        else
+        {
+            foreach(GameObject g in disable)
+            {
+                g.SetActive(false);
+            }
+            panel.SetActive(true);
+        }
+    }
+
+    public void SetTutorial()
+    {
+        Save.instance.tutorial = true;
+        Save.instance.SaveAll();
+    }
+
+    public void SwapMovement()
+    {
+        Save.instance.walking = !Save.instance.walking;
+        Save.instance.SaveAll();
     }
 
     public void ToggleAudio()

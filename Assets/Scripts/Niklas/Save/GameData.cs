@@ -5,7 +5,7 @@ public class GameData
     public int badOrder;
     public float master, music, sfx;
     public float score;
-    public bool walking;
+    public bool walking, tutorial;
 
     public GameData(Save save)
     {
@@ -16,5 +16,6 @@ public class GameData
         sfx = save.sfx;
         score = save.score;
         walking = save.walking;
+        tutorial = save.tutorial;
     }
 }
