@@ -29,7 +29,7 @@ public class EventController : MonoBehaviour
         randomEvent = Random.Range(0, events.Count);
         currentEvent = events[randomEvent];
         currentEvent.StartEvent(this);
-        AudioManager.instance.PlayOnceLocal("Event started", gameObject);
+        AudioManager.instance.PlayOnce("Event started");
     }
 
     void Update()
