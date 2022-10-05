@@ -73,6 +73,7 @@ public class AudioManager : MonoBehaviour
         source.spatialBlend = 1f;
         source.dopplerLevel = 0f;
         source.maxDistance = s.maxDistance;
+        source.priority = 256;
 
         source.Play();
     }
