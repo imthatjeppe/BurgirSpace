@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.InputSystem;
 using System;
 
-public class playerTeleportation : MonoBehaviour
+public class PlayerTeleportation : MonoBehaviour
 {
     public ActionBasedController leftController;
     public Transform player;
@@ -26,7 +26,6 @@ public class playerTeleportation : MonoBehaviour
     void Update()
     {
         changePos = leftController.rotateAnchorAction.action.ReadValue<Vector2>();
-        position = Mathf.Clamp(position, 0, playerPosition.Count);
 
         if (Save.instance.walking) {Walking(); return; }
         ChangePosition();
@@ -57,7 +56,10 @@ public class playerTeleportation : MonoBehaviour
         {
             player.transform.position = playerPosition[position].transform.position;
             player.transform.rotation = playerPosition[position].transform.rotation;
-            position += 1;
+
+            if(position !=playerPosition.Count)
+                position += 1;
+
             canChangePosition = false;
         }
 
@@ -65,7 +67,10 @@ public class playerTeleportation : MonoBehaviour
         {
             player.transform.position = playerPosition[position].transform.position;
             player.transform.rotation = playerPosition[position].transform.rotation;
-            position -= 1;
+
+            if (position != 0)
+                position -= 1;
+
             canChangePosition = false;
         }
 
