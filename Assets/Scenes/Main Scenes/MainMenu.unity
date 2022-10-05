@@ -4616,6 +4616,8 @@ MonoBehaviour:
   - {fileID: 136035430}
   - {fileID: 433174552}
   - {fileID: 460135141}
+  - {fileID: 1985826312}
+  - {fileID: 1561992398}
   panel: {fileID: 456265749}
   audio: {fileID: 460135141}
   difficulity: {fileID: 433174552}
@@ -4623,6 +4625,7 @@ MonoBehaviour:
   masterSlider: {fileID: 224628899}
   sfxSlider: {fileID: 7362114}
   musicSlider: {fileID: 1997266289}
+  movementType: {fileID: 1561992400}
 --- !u!114 &1250946298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5528,7 +5531,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Swap Movement?
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca193a2c0efd1d04d85bbd813236897d, type: 2}
   m_sharedMaterial: {fileID: -6869824344451442360, guid: ca193a2c0efd1d04d85bbd813236897d,
@@ -5556,10 +5559,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.55
-  m_fontSizeBase: 36
+  m_fontSize: 54
+  m_fontSizeBase: 54
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -5592,7 +5595,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -78.37662, y: 0, z: -96.59105, w: -60.33602}
+  m_margin: {x: -179.66582, y: 0, z: -96.59105, w: -60.33602}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

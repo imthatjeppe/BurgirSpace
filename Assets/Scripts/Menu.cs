@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class Menu : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Menu : MonoBehaviour
     [SerializeField] GameObject difficulity;
     [SerializeField] GameObject loadBtn;
     [SerializeField] Slider masterSlider, sfxSlider, musicSlider;
+    [SerializeField] TMP_Text movementType;
 
     void Awake()
     {
@@ -28,6 +30,19 @@ public class Menu : MonoBehaviour
         masterSlider.value = Save.instance.master;
         sfxSlider.value = Save.instance.sfx;
         musicSlider.value = Save.instance.music;
+
+        string movement;
+        if (Save.instance.walking)
+        {
+            movement = "Walking";
+        }
+        else
+        {
+            movement = "Teleporting";
+        }
+
+        movementType.text = "Movement: " + movement;
+
     }
 
     public void CheckTutorial()
@@ -57,6 +72,19 @@ public class Menu : MonoBehaviour
     {
         Save.instance.walking = !Save.instance.walking;
         Save.instance.SaveAll();
+
+
+        string movement;
+        if (Save.instance.walking)
+        {
+            movement = "Walking";
+        }
+        else
+        {
+            movement = "Teleporting";
+        }
+
+        movementType.text = "Movement: " + movement;
     }
 
     public void ToggleAudio()
