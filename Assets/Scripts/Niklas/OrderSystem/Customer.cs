@@ -22,7 +22,6 @@ public class Customer : MonoBehaviour
     void Start()
     {
         MakeOrder();
-        SideScreen.instance.SetOrder();
     }
 
     void Update()
@@ -56,7 +55,6 @@ public class Customer : MonoBehaviour
         if (orderTime >= waitTime)
         {
             MakeOrder();
-            SideScreen.instance.SetOrder();
             ScoreManager.instance.badOrder++;
             Stats.instance.badOrders.text = "Bad Orders: " + ScoreManager.instance.badOrder;
             return;
@@ -74,7 +72,6 @@ public class Customer : MonoBehaviour
         maxWaitTime = GameManager.instance.difficultySetting.maxWaitTime;
 
         orderItems = OrderManager.instance.CreateRandomOrder();
-        SideScreen.instance.customerOrders.Add(orderItems);
         desiredPattyState = OrderManager.instance.GenerateRandomPattyCookState();
         condiment = OrderManager.instance.Condiment();
 
@@ -85,6 +82,7 @@ public class Customer : MonoBehaviour
         }
 
         waitTimeTMP.text = "Wait Time: " + waitTime.ToString("f0");
+        SideScreen.instance.SetOrder(orderItems);
     }
 
     void OnTriggerEnter(Collider other)
