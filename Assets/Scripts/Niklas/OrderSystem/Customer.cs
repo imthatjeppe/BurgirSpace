@@ -57,7 +57,6 @@ public class Customer : MonoBehaviour
         {
             MakeOrder();
             SideScreen.instance.SetOrder(orderItems);
-            Debug.Log("!!!");
             ScoreManager.instance.badOrder++;
             Stats.instance.badOrders.text = "Bad Orders: " + ScoreManager.instance.badOrder;
             return;

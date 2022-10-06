@@ -33,8 +33,6 @@ public class FoodSpawner : MonoBehaviour
     public void SpawnPlate()
     {
         GameObject plate = ObjectPooler.instance.SpawnFromPool("Plate", spawnPointPlate.transform.position, spawnPointPlate.transform.rotation);
-
-        plate.GetComponent<Rigidbody>().isKinematic = true;
     }
 
     public void SpawnPan()

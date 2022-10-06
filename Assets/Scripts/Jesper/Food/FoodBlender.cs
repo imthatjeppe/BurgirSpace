@@ -20,7 +20,8 @@ public class FoodBlender : MonoBehaviour
 
             for (int i = 0; i < foodID.amountItems; i++)
             {
-                Instantiate(foodItems[foodID.foodID], spawnTube.transform.position + offset, Quaternion.identity);
+                GameObject obj = Instantiate(foodItems[foodID.foodID], spawnTube.transform.position + offset, Quaternion.identity);
+                obj.GetComponent<Rigidbody>().AddForce(Vector3.forward, ForceMode.Impulse);
             }
         }
     }

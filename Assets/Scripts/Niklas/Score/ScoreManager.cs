@@ -53,7 +53,6 @@ public class ScoreManager : MonoBehaviour
 
         if (completionPercentage < 30)
         {
-            Debug.Log("???");
             badPs.Play();
             //AudioManager.instance.PlayOnceLocal("Bad Order", gameObject);
             badOrder++;
