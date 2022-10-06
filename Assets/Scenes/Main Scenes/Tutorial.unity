@@ -561,10 +561,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Good job!  This is your kitchen. Here you will prepare the food for the
-    customers. To make a burger, simply grab the ingredients with the trigger button,
-    and drag it to one of the sockets on the plate and it will snap in place.\n\n<-
-    Previous Tutorial\t\t\t\t\t\t\t   Next Tutorial ->"
+  m_text: "Good job!  This is your kitchen. Here you will prepare the food for your
+    customers. To make a burger, simply grab the ingredients with the trigger button
+    on the side of the controller, and drag it to one of the sockets on the plate
+    and it will snap in place.\n\n<- Previous Tutorial\t\t\t\t\t\t\t   Next Tutorial
+    ->"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2280,7 +2281,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Welcome to the tutorial, chef! In this first step you will learn how to
     teleport. In the main menu you can select whether to use normal movement, or
-    teleportation. When using the teleport system, press your left stick to the left/right.
+    teleportation. When using the teleport system, flick your left stick to the left/right.
     This will move you to one of the set teleportation points. \n\nTry teleporting
     now.\n\n\t\t\t\t\t\t\t\t\t\t       Next Tutorial ->"
   m_isRightToLeft: 0
@@ -4385,8 +4386,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "To cut vegetables, simply put the vegetable in the blender and it will
-    slice them up for you! Vegetables must be sliced to be put on the burger.\n\n<-
+  m_text: "To cut vegetables, put the vegetable in the blender and it will slice
+    them up for you! Vegetables must be sliced to be placed on the burger.\n\n<-
     Previous Tutorial\t\t\t\t\t\t\t   Next Tutorial ->"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4948,8 +4949,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "To use the Ketchup- and mustard dispensers, simply squeeze it. Adding
-    Ketchup or mustard when wished for will grant a bonus multiplier.\n\n<- Previous
+  m_text: "To use the ketchup- and mustard dispensers, simply squeeze them. Adding
+    Ketchup or mustard when ordered will grant a bonus multiplier.\n\n<- Previous
     Tutorial\t\t\t\t\t\t\t   Next Tutorial ->"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5529,7 +5530,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You are now ready to open up your resturant! Press the button in front
+  m_text: 'You are now ready to open up your restaurant! Press the button in front
     of you  using your right hand to exit the tutorial and start the game.
 
 
