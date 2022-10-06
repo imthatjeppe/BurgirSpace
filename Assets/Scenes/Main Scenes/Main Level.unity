@@ -24233,7 +24233,7 @@ PrefabInstance:
         type: 3}
       propertyPath: foodItems.Array.data[2]
       value: 
-      objectReference: {fileID: 4383371452984555861, guid: bb58b9ce369e1cd40a642da84bf7d971,
+      objectReference: {fileID: 4391516999656451721, guid: 7303d0d0bc76d79458e1b7c16b39fd27,
         type: 3}
     - target: {fileID: 4909802068428968777, guid: 3cbb70bbcc2d9c84b8845700945c25a2,
         type: 3}
