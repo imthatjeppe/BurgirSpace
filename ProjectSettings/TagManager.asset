@@ -26,6 +26,8 @@ TagManager:
   - Cheese
   - Stove
   - Mustard
+  - SaveManager
+  - LevelLoader
   layers:
   - Default
   - TransparentFX
