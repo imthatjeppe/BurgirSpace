@@ -26,6 +26,6 @@ public class Stats : MonoBehaviour
 
     void Update()
     {
-        gameTime.text = "Game Time: " + GameManager.instance.difficultySetting.GameTime.ToString("f0");
+        gameTime.text = "Game Time: " + GameManager.instance.gameTime.ToString("f0");
     }
 }
