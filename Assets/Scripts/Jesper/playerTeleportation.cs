@@ -18,8 +18,8 @@ public class PlayerTeleportation : MonoBehaviour
     
     void Start()
     {
-        player.transform.position = playerPosition[Mathf.Clamp(position, 0, playerPosition.Count-1)].transform.position;
-        player.transform.rotation = playerPosition[Mathf.Clamp(position, 0, playerPosition.Count - 1)].transform.rotation;
+        player.transform.position = playerPosition[position].transform.position;
+        player.transform.rotation = playerPosition[position].transform.rotation;
         canChangePosition = true;
 
     }
@@ -54,8 +54,8 @@ public class PlayerTeleportation : MonoBehaviour
 
         if(changePos.x >= 0.5f)
         {
-            player.transform.position = playerPosition[Mathf.Clamp(position, 0, playerPosition.Count - 1)].transform.position;
-            player.transform.rotation = playerPosition[Mathf.Clamp(position, 0, playerPosition.Count - 1)].transform.rotation;
+            player.transform.position = playerPosition[position].transform.position;
+            player.transform.rotation = playerPosition[position].transform.rotation;
 
             if(position !=playerPosition.Count)
                 position += 1;
@@ -65,8 +65,8 @@ public class PlayerTeleportation : MonoBehaviour
 
         if (changePos.x <= -0.5f)
         {
-            player.transform.position = playerPosition[Mathf.Clamp(position, 0, playerPosition.Count - 1)].transform.position;
-            player.transform.rotation = playerPosition[Mathf.Clamp(position, 0, playerPosition.Count - 1)].transform.rotation;
+            player.transform.position = playerPosition[position].transform.position;
+            player.transform.rotation = playerPosition[position].transform.rotation;
 
             if (position != 0)
                 position -= 1;
