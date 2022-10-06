@@ -14,6 +14,12 @@ public class Pan : MonoBehaviour
     bool playSound = true;
 
     GameObject patty;
+    [SerializeField] ParticleSystem smoke;
+
+    void OnEnable()
+    {
+        smoke.Stop();
+    }
 
     void FixedUpdate()
     {
@@ -53,7 +59,6 @@ public class Pan : MonoBehaviour
 
     IEnumerator CycleMaterial(Color startColor, Color endColor, float cycleTime, Material mat)
     {
-        Debug.Log("Cooking");
         isCycling = true;
         float currentTime = 0;
         while (currentTime < cycleTime)
@@ -79,6 +84,7 @@ public class Pan : MonoBehaviour
             cooking = true;
             patty = other.gameObject;
             AudioManager.instance.PlayLocal("Sizzling", gameObject);
+            smoke.Play();
         }
 
         
@@ -101,8 +107,8 @@ public class Pan : MonoBehaviour
             cooking = false;
             isCycling = false;
             playSound = true;
-
-            foreach(Transform child in gameObject.transform)
+            smoke.Stop();
+            foreach (Transform child in gameObject.transform)
             {
                 if (child == null) return;
 

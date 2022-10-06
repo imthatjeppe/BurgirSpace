@@ -23,13 +23,11 @@ public class SuctionEvent : GameEvent
 
         dir = new Vector3(Random.value, Random.value, Random.value);
 
-        Debug.Log("Starting Suction Event");
     }
 
     public override void UpdateEvent()
     {
         timer += Time.deltaTime;
-        Debug.Log("sucking: " + dir);
         player.transform.Translate(dir * Time.deltaTime * 0.3f);
 
         if (timer >= maxTime)

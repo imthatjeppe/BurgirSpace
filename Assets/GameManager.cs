@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
 
         if(buildIndex == 2)
         {
+            AudioManager.instance.PauseAllSound();
+
             gameState = GameStates.Playing;
             Save.instance.sceneIndex = buildIndex;
             gameTime = difficultySetting.GameTime;
