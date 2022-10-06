@@ -6,6 +6,7 @@ using TMPro;
 public class SideScreen : MonoBehaviour
 {
     public TMP_Text order1;
+    public TMP_Text pattyState;
 
     #region Singleton
     public static SideScreen instance;
@@ -31,6 +32,7 @@ public class SideScreen : MonoBehaviour
         {
             temp1 = temp1 + "\n" + im0.IngredientName;
             order1.text = temp1;
+            pattyState.text = OrderManager.instance.desiredState.ToString();
         }
 
     }

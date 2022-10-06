@@ -8,7 +8,7 @@ public class Customer : MonoBehaviour
     List<IngredientManager> orderItems = new List<IngredientManager>();
     List<string> checkOrder = new List<string>();
     [HideInInspector] public float completion = 0;
-    float waitTime;
+    float waitTime = 200f;
     float minWaitTime, maxWaitTime;
     float orderTime = 0;
     [SerializeField] TMP_Text orderTimeTMP, waitTimeTMP;
