@@ -166,14 +166,12 @@ public class Customer : MonoBehaviour
         plate.GetComponent<XRGrabInteractable>().enabled = true;
         plate.GetComponent<Rigidbody>().isKinematic = false;
 
-        orderItems = OrderManager.instance.CreateRandomOrder();
-        desiredPattyState = OrderManager.instance.GenerateRandomPattyCookState();
-        condiment = OrderManager.instance.Condiment();
-
         plate = null;
         patty = null;
 
         updatingScore = false;
+
+        MakeOrder();
         FoodSpawner.instance.SpawnPlate();
     }
 
