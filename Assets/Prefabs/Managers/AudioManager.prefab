@@ -200,5 +200,12 @@ MonoBehaviour:
     volume: 1
     audio: {fileID: 0}
     loop: 1
+  - name: Order complete 2
+    clip: {fileID: 8300000, guid: e63e8178ec9e7c641990163adc7abba4, type: 3}
+    mixer: {fileID: -111565087283382281, guid: 66f964ee37e4dd94282bf29e640884b7, type: 2}
+    maxDistance: 10
+    volume: 1
+    audio: {fileID: 0}
+    loop: 0
   menuVolume: 0
   multiplier: 30
