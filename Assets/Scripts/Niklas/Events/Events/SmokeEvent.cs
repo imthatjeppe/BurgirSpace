@@ -11,6 +11,10 @@ public class SmokeEvent : GameEvent
 
     public override void Init(EventController ec)
     {
+        foreach (ParticleSystem ps in smoke)
+        {
+            ps.Stop();
+        }
         ec.minRandomEventInterval = minEventRestartTime + (int)maxTime;
         ec.maxRandomEventInterval = maxEventRestartTime + (int)maxTime;
     }

@@ -16,6 +16,11 @@ public class Pan : MonoBehaviour
     GameObject patty;
     [SerializeField] ParticleSystem smoke;
 
+    void OnEnable()
+    {
+        smoke.Stop();
+    }
+
     void FixedUpdate()
     {
         if (!cooking || !onStove) { return; }
