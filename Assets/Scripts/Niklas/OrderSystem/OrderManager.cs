@@ -9,9 +9,7 @@ public class OrderManager : MonoBehaviour
     public List<IngredientManager> ingredients = new();
     [SerializeField] IngredientManager TopBun, Patty, BottomBun;
     public List<IngredientManager> orderItems = new();
-    public Order orderPrefab;
     public OrderEntry orderListEntryPrefab;
-    public SideScreen display;
     public CookStates desiredState;
 
     #region Singleton
@@ -30,21 +28,6 @@ public class OrderManager : MonoBehaviour
     }
     #endregion
 
-    /*Depricated method
-    public void InstantiateOrder()
-    {
-        var chosenIngredients = CreateRandomOrder();    
-        var order = Instantiate(orderPrefab, this.transform.position, this.transform.rotation);
-    
-        foreach(IngredientManager i in chosenIngredients)
-        {
-            var orderListEntry = Instantiate(orderListEntryPrefab, order.orderList.transform);
-            orderListEntry.textEntry.text = (i.IngredientName);
-            orderListEntry.imageEntry.sprite = i.Icon;
-            Debug.Log(i.IngredientName);
-        }     
-    }*/
-
     public List<IngredientManager> CreateRandomOrder()
     {
         orderItems.Clear();
@@ -59,8 +42,6 @@ public class OrderManager : MonoBehaviour
         orderItems.Insert(0, TopBun);
         orderItems.Insert(Mathf.RoundToInt((numOfIngredients + 2) / 2), Patty);
         orderItems.Insert(numOfIngredients + 2, BottomBun);
-
-        display.SetOrder();
 
         return orderItems;
     }

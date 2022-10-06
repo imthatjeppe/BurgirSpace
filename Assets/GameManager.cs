@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     {
         var buildIndex = SceneManager.GetActiveScene().buildIndex;
 
-        if(buildIndex == 1)
+        if(buildIndex == 2)
         {
             gameState = GameStates.Playing;
             Save.instance.sceneIndex = buildIndex;
@@ -45,13 +45,14 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        if (buildIndex == 0 || buildIndex == 3) { gameState = GameStates.Menu; return; }
-        if(buildIndex == 2) { gameState = GameStates.Loading; return; }
+        if (buildIndex == 0 || buildIndex == 4) { gameState = GameStates.Menu; return; }
+        if(buildIndex == 3) { gameState = GameStates.Loading; return; }
     }
     #endregion
 
     void Update()
     {
+        if(gameState != GameStates.Playing) { return; }
         if(difficultySetting.GameTime <= 0) { ScoreManager.instance.badOrder = difficultySetting.maxBadOrders; return; }
 
         difficultySetting.GameTime -= Time.deltaTime;

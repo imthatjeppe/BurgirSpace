@@ -8,6 +8,7 @@ public class Save : MonoBehaviour
     [HideInInspector] public float score;
     [HideInInspector] public int badOrder;
     [HideInInspector] public float master, music, sfx;
+    [HideInInspector] public bool walking, tutorial;
 
     #region Singleton
     public static Save instance;
@@ -64,6 +65,8 @@ public class Save : MonoBehaviour
         master = data.master;
         sfx = data.sfx;
         music = data.music;
+        walking = data.walking;
+        tutorial = data.tutorial;
         AudioManager.instance.SetMasterVolume(master);
         AudioManager.instance.SetSfxVolume(sfx);
         AudioManager.instance.SetMusicVolume(music);

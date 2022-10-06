@@ -5,23 +5,35 @@ using TMPro;
 
 public class SideScreen : MonoBehaviour
 {
-    public Transform target;
-    public Vector3 offset;
-    public TMP_Text order;
-    public GameObject display;
-    // Start is called before the first frame update
+    public TMP_Text order1;
+    public TMP_Text pattyState;
 
-    void Start()
+    #region Singleton
+    public static SideScreen instance;
+    void Awake()
     {
-        display.transform.position = transform.position;
-        display.transform.rotation = transform.rotation;
-    }
-
-    public void SetOrder()
-    {
-        for(int i = 0; i < OrderManager.instance.orderItems.Count; i++)
+        if (instance == null)
         {
-            order.text = order.text + "\n" + OrderManager.instance.orderItems[i].IngredientName;
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    #endregion
+
+    public void SetOrder(List<IngredientManager> orderItems)
+    {
+        string temp1 = "";
+
+        foreach (IngredientManager im0 in orderItems)
+        {
+            temp1 = temp1 + "\n" + im0.IngredientName;
+            order1.text = temp1;
+            pattyState.text = OrderManager.instance.desiredState.ToString();
+        }
+
     }
 }

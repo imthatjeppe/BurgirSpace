@@ -11,6 +11,7 @@ public class Pan : MonoBehaviour
     bool cooking = false;
     bool isCycling = false;
     bool onStove = true;
+    bool playSound = true;
 
     GameObject patty;
 
@@ -29,9 +30,10 @@ public class Pan : MonoBehaviour
 
             var cook = iM as Cookable;
 
-            if(cook.states == OrderManager.instance.desiredState) 
-            { 
-                //play burger complete audio (Pling)
+            if(cook.states == OrderManager.instance.desiredState && playSound) 
+            {
+                AudioManager.instance.PlayOnceLocal("Burger Finished", gameObject);
+                playSound = false;
             }
 
             if (!isCycling)
@@ -76,8 +78,10 @@ public class Pan : MonoBehaviour
         {
             cooking = true;
             patty = other.gameObject;
-            AudioManager.instance.PlayOnceLocal("Sizzling", gameObject);
+            AudioManager.instance.PlayLocal("Sizzling", gameObject);
         }
+
+        
 
         /*if (other.gameObject.CompareTag("NonInteractable") || other.gameObject.CompareTag("Spatula"))
         {
@@ -96,6 +100,16 @@ public class Pan : MonoBehaviour
         {
             cooking = false;
             isCycling = false;
+            playSound = true;
+
+            foreach(Transform child in gameObject.transform)
+            {
+                if (child == null) return;
+
+                if (child.GetComponent<AudioSource>() == null) return;
+
+                Destroy(child.gameObject);
+            }
         }
     }
 

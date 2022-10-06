@@ -32,6 +32,20 @@ public class EventZoneEditor : Editor
                 CreateEditors();
             }
 
+            if (GUILayout.Button("Add Suction Event"))
+            {
+
+                _target.AddEvent((GameEvent)CreateInstance(typeof(SuctionEvent)));
+                CreateEditors();
+            }
+
+            if (GUILayout.Button("Add Smoke Event"))
+            {
+
+                _target.AddEvent((GameEvent)CreateInstance(typeof(SmokeEvent)));
+                CreateEditors();
+            }
+
             EditorGUILayout.Space(10);
         }
     }

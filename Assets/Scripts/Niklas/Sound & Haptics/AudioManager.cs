@@ -73,12 +73,14 @@ public class AudioManager : MonoBehaviour
         source.spatialBlend = 1f;
         source.dopplerLevel = 0f;
         source.maxDistance = s.maxDistance;
+        source.priority = 256;
 
         source.Play();
     }
 
     public void PlayOnceLocal(string name, GameObject target)
     {
+        Debug.Log("Playing audio clip: " + name);
         GameObject obj = new GameObject();
         obj.name = "LocalSound";
         obj.transform.SetParent(target.transform);
