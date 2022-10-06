@@ -21,7 +21,8 @@ public class ScoreData
 
 public class PostData : MonoBehaviour
 {
-    public TMP_InputField usernameField;
+    public TMP_Text username;
+    public TMP_Text placeHolder;
     public TMP_Text scoreField;
 
     private static readonly HttpClient client = new HttpClient();
@@ -52,9 +53,15 @@ public class PostData : MonoBehaviour
     string getOne = "http://borgir.xyz/api/score/read_single_score.php?userID=";
     string update = "http://borgir.xyz/api/score/update_score.php?userID=";
 
+    public void SetKey(string key)
+    {
+        username.text += key;
+        placeHolder.text += key;
+    }
+
     public void CreateScore()
     {
-        ScoreData scoreData = new ScoreData(usernameField.text, "" + Save.instance.score);
+        ScoreData scoreData = new ScoreData(username.text, "" + Save.instance.score);
 
         string values = JsonConvert.SerializeObject(scoreData);
         Debug.Log(values);

@@ -14,15 +14,15 @@ public class Customer : MonoBehaviour
     [SerializeField] TMP_Text orderTimeTMP, waitTimeTMP;
     [SerializeField] Transform plateSpawnPos;
     CookStates desiredPattyState;
-    GameObject patty, plate;
+    public GameObject patty, plate;
     bool fadeOut = false;
     bool updatingScore = false;
+    bool isDelivering = false;
     List<bool> condiment = new List<bool>();
 
     void Start()
     {
         MakeOrder();
-        SideScreen.instance.SetOrder(orderItems);
     }
 
     void Update()
@@ -56,7 +56,6 @@ public class Customer : MonoBehaviour
         if (orderTime >= waitTime)
         {
             MakeOrder();
-            SideScreen.instance.SetOrder(orderItems);
             ScoreManager.instance.badOrder++;
             Stats.instance.badOrders.text = "Bad Orders: " + ScoreManager.instance.badOrder;
             return;
@@ -68,8 +67,6 @@ public class Customer : MonoBehaviour
 
     void MakeOrder()
     {
-        orderTime = 0;
-
         minWaitTime = GameManager.instance.difficultySetting.minWaitTime;
         maxWaitTime = GameManager.instance.difficultySetting.maxWaitTime;
 
@@ -83,42 +80,20 @@ public class Customer : MonoBehaviour
             waitTime = Random.Range(minWaitTime, maxWaitTime);
         }
 
+        isDelivering = false;
+        orderTime = 0;
         waitTimeTMP.text = "Wait Time: " + waitTime.ToString("f0");
+        SideScreen.instance.SetOrder(orderItems);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        bool mustard = false, ketchup = false;
-        if (other.gameObject.CompareTag("Mustard")) { mustard = true; }
-        if (other.gameObject.CompareTag("Ketchup")) { ketchup = true; }
+        if (isDelivering) { return; }
 
         if (updatingScore) { return; }
         if (!other.CompareTag("Plate")) { return; }
 
-        if (other.gameObject.transform.GetChild(0) == null) { return; }
-
-        float bonus = 0f;
-
-        if (condiment[0] == mustard) { bonus += 20; }
-        if (condiment[1] == ketchup) { bonus += 20; }
-
-        foreach (Plate socketObj in FindObjectsOfType<Plate>())
-        {
-            XRSocketInteractor socket = socketObj.GetComponent<XRSocketInteractor>();
-
-            for (int i = 0; i < socket.interactablesSelected.Count; i++)
-            {
-                IXRSelectInteractable xr = socket.interactablesSelected[i];
-
-                xr.transform.SetParent(GameObject.FindGameObjectWithTag("FoodHolder").transform);
-
-                if (xr.transform.gameObject.tag == "Patty") { patty = xr.transform.gameObject; }
-
-                xr.transform.gameObject.SetActive(false);
-            }
-        }
-
-        if (patty == null) { return; }
+        isDelivering = true;
 
         float matches = CompareLists(checkOrder, BurgerManager.instance.BurgerIngredients);
 
@@ -128,9 +103,6 @@ public class Customer : MonoBehaviour
         {
             GameManager.instance.gameTime += waitTime - orderTime;
         }
-
-        orderTime = 0;
-
         waitTime = Random.Range(minWaitTime, maxWaitTime);
 
         if (patty != null)
@@ -139,13 +111,12 @@ public class Customer : MonoBehaviour
 
             var cook = iM as Cookable;
 
-            ScoreManager.instance.UpdateScore(completion, orderTime, waitTime, desiredPattyState, cook.states, bonus);
+            ScoreManager.instance.UpdateScore(completion, orderTime, waitTime, desiredPattyState, cook.states);
         }
         else
         {
-            ScoreManager.instance.UpdateScore(completion, orderTime, waitTime, desiredPattyState, CookStates.Raw, bonus);
+            ScoreManager.instance.UpdateScore(completion, orderTime, waitTime, desiredPattyState, CookStates.Raw);
         }
-
         plate = other.gameObject;
 
         StartCoroutine(NewOrder());
@@ -155,7 +126,6 @@ public class Customer : MonoBehaviour
     {
         fadeOut = true;
         updatingScore = true;
-
         plate.GetComponent<XRGrabInteractable>().enabled = false;
         plate.GetComponent<Rigidbody>().isKinematic = true;
 

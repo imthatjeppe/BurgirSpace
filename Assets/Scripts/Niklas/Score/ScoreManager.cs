@@ -41,17 +41,17 @@ public class ScoreManager : MonoBehaviour
         LevelLoader.instance.LoadLoading("GameOver");
     }
 
-    public void UpdateScore(float completionPercentage, float orderTime, float waitTime, CookStates desiredPattyState, CookStates currentPattyState, float bonusMultiplier)
+    public void UpdateScore(float completionPercentage, float orderTime, float waitTime, CookStates desiredPattyState, CookStates currentPattyState)
     {
-        float deliveryMultiplier = 1000 + bonusMultiplier;
+        float deliveryMultiplier = 1000;
 
-        if (currentPattyState == CookStates.Burnt || currentPattyState == CookStates.Raw) { deliveryMultiplier = 0; }
+        if (currentPattyState == CookStates.Burnt || currentPattyState == CookStates.Raw) { deliveryMultiplier = 10; }
 
-        if(currentPattyState == desiredPattyState) { deliveryMultiplier += 50; }
+        if(currentPattyState == desiredPattyState) { deliveryMultiplier += 200; }
 
         score = deliveryMultiplier * (completionPercentage / 100);
 
-        if (completionPercentage < 20)
+        if (completionPercentage < 25)
         {
             badPs.Play();
             //AudioManager.instance.PlayOnceLocal("Bad Order", gameObject);
