@@ -47,10 +47,13 @@ public class ScoreManager : MonoBehaviour
 
         if (currentPattyState == CookStates.Burnt || currentPattyState == CookStates.Raw) { deliveryMultiplier = 0; }
 
+        if(currentPattyState == desiredPattyState) { deliveryMultiplier += 50; }
+
         score = deliveryMultiplier * (completionPercentage / 100);
 
-        if (completionPercentage < 30 || orderTime > waitTime || currentPattyState != desiredPattyState)
+        if (completionPercentage < 30)
         {
+            Debug.Log("???");
             badPs.Play();
             //AudioManager.instance.PlayOnceLocal("Bad Order", gameObject);
             badOrder++;

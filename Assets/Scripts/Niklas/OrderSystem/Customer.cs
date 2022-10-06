@@ -8,7 +8,7 @@ public class Customer : MonoBehaviour
     List<IngredientManager> orderItems = new List<IngredientManager>();
     List<string> checkOrder = new List<string>();
     [HideInInspector] public float completion = 0;
-    float waitTime;
+    float waitTime = 200f;
     float minWaitTime, maxWaitTime;
     float orderTime = 0;
     [SerializeField] TMP_Text orderTimeTMP, waitTimeTMP;
@@ -22,6 +22,7 @@ public class Customer : MonoBehaviour
     void Start()
     {
         MakeOrder();
+        SideScreen.instance.SetOrder(orderItems);
     }
 
     void Update()
@@ -55,6 +56,8 @@ public class Customer : MonoBehaviour
         if (orderTime >= waitTime)
         {
             MakeOrder();
+            SideScreen.instance.SetOrder(orderItems);
+            Debug.Log("!!!");
             ScoreManager.instance.badOrder++;
             Stats.instance.badOrders.text = "Bad Orders: " + ScoreManager.instance.badOrder;
             return;
@@ -82,7 +85,6 @@ public class Customer : MonoBehaviour
         }
 
         waitTimeTMP.text = "Wait Time: " + waitTime.ToString("f0");
-        SideScreen.instance.SetOrder(orderItems);
     }
 
     void OnTriggerEnter(Collider other)
@@ -125,7 +127,7 @@ public class Customer : MonoBehaviour
 
         if (waitTime > orderTime)
         {
-            GameManager.instance.difficultySetting.GameTime += waitTime - orderTime;
+            GameManager.instance.gameTime += waitTime - orderTime;
         }
 
         orderTime = 0;
