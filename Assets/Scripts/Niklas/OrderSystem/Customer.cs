@@ -22,7 +22,6 @@ public class Customer : MonoBehaviour
     void Start()
     {
         MakeOrder();
-        SideScreen.instance.SetOrder();
     }
 
     void Update()
@@ -36,7 +35,7 @@ public class Customer : MonoBehaviour
             color = new Color(color.r, color.g, color.b, fadeAmount);
             plate.GetComponent<MeshRenderer>().material.color = color;
 
-            foreach(Transform child in plate.transform.GetChild(0))
+            foreach (Transform child in plate.transform.GetChild(0))
             {
                 Color colorChild = child.GetComponent<Renderer>().material.color;
 
@@ -47,7 +46,7 @@ public class Customer : MonoBehaviour
                 child.GetComponent<MeshRenderer>().material.color = colorChild;
             }
 
-            if(color.a <= 0)
+            if (color.a <= 0)
             {
                 fadeOut = false;
             }
@@ -56,7 +55,6 @@ public class Customer : MonoBehaviour
         if (orderTime >= waitTime)
         {
             MakeOrder();
-            SideScreen.instance.SetOrder();
             ScoreManager.instance.badOrder++;
             Stats.instance.badOrders.text = "Bad Orders: " + ScoreManager.instance.badOrder;
             return;
@@ -74,7 +72,6 @@ public class Customer : MonoBehaviour
         maxWaitTime = GameManager.instance.difficultySetting.maxWaitTime;
 
         orderItems = OrderManager.instance.CreateRandomOrder();
-        SideScreen.instance.customerOrders.Add(orderItems);
         desiredPattyState = OrderManager.instance.GenerateRandomPattyCookState();
         condiment = OrderManager.instance.Condiment();
 
@@ -85,6 +82,7 @@ public class Customer : MonoBehaviour
         }
 
         waitTimeTMP.text = "Wait Time: " + waitTime.ToString("f0");
+        SideScreen.instance.SetOrder(orderItems);
     }
 
     void OnTriggerEnter(Collider other)
@@ -100,8 +98,8 @@ public class Customer : MonoBehaviour
 
         float bonus = 0f;
 
-        if(condiment[0] == mustard) { bonus += 20; }
-        if(condiment[1] == ketchup) { bonus += 20; }
+        if (condiment[0] == mustard) { bonus += 20; }
+        if (condiment[1] == ketchup) { bonus += 20; }
 
         foreach (Plate socketObj in FindObjectsOfType<Plate>())
         {
@@ -119,7 +117,7 @@ public class Customer : MonoBehaviour
             }
         }
 
-        if(patty == null) { return; }
+        if (patty == null) { return; }
 
         float matches = CompareLists(checkOrder, BurgerManager.instance.BurgerIngredients);
 
@@ -134,7 +132,7 @@ public class Customer : MonoBehaviour
 
         waitTime = Random.Range(minWaitTime, maxWaitTime);
 
-        if(patty != null)
+        if (patty != null)
         {
             var iM = patty.GetComponent<Ingredient>().ingredientManager;
 
