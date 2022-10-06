@@ -6,6 +6,12 @@ public class Jukebox : MonoBehaviour
 {
     public List<string> music = new List<string>();
 
+    void Start()
+    {
+        AudioManager.instance.PlayOnceLocal("Jukebox Start", gameObject);
+
+        AudioManager.instance.PlayLocal(music[Random.Range(0, music.Count)], gameObject);
+    }
 
     void OnCollisionEnter(Collision collision)
     {

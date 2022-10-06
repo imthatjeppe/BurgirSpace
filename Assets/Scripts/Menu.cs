@@ -27,6 +27,9 @@ public class Menu : MonoBehaviour
     void Start()
     {
         if (SceneManager.GetActiveScene().buildIndex != 0) { return; }
+
+        AudioManager.instance.Play("Background Music 2");
+
         masterSlider.value = Save.instance.master;
         sfxSlider.value = Save.instance.sfx;
         musicSlider.value = Save.instance.music;

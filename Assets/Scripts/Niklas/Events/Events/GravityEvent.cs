@@ -30,7 +30,6 @@ public class GravityEvent : GameEvent
             obj.useGravity = false;
             obj.velocity = Vector3.up * Random.Range(0.1f, 1f);
         }
-        Debug.Log("Starting Gravity Event");
     }
 
     public override void UpdateEvent()

@@ -17,7 +17,6 @@ public class SmokeEvent : GameEvent
     public override void StartEvent(EventController ec)
     {
         this.ec = ec;
-        Debug.Log("Starting Smoke Event");
     }
 
     public override void UpdateEvent()
