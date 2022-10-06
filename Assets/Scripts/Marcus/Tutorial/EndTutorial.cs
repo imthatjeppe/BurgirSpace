@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 public class EndTutorial : MonoBehaviour
 {
 
-    public void LoadScene()
+    public void End()
     {
-        SceneManager.LoadScene("Main Level");
+        GameObject.FindGameObjectWithTag("LevelLoader").GetComponent<LevelLoader>().LoadLoading("Main Level");
+        GameObject.FindGameObjectWithTag("SaveManager").GetComponent<Save>().ResetData();
     }
 }

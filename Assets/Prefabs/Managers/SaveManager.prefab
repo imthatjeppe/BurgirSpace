@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4868998524875890339}
   m_Layer: 0
   m_Name: SaveManager
-  m_TagString: Untagged
+  m_TagString: SaveManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,8 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneIndex: 0
   score: 0
-  lives: 0
+  badOrder: 0
   master: 1
   music: 1
   sfx: 1
-  sensitivity: 5
+  walking: 0
+  tutorial: 0
