@@ -7,6 +7,7 @@ public class SmokeEvent : GameEvent
     float timer = 0;
     public float maxTime = 0;
     [SerializeField] int minEventRestartTime, maxEventRestartTime;
+    [SerializeField] List<ParticleSystem> smoke;
 
     public override void Init(EventController ec)
     {
@@ -17,6 +18,10 @@ public class SmokeEvent : GameEvent
     public override void StartEvent(EventController ec)
     {
         this.ec = ec;
+        foreach(ParticleSystem ps in smoke)
+        {
+            ps.Play();
+        }
     }
 
     public override void UpdateEvent()
@@ -34,6 +39,10 @@ public class SmokeEvent : GameEvent
     public override void CompletedEvent()
     {
         timer = 0;
+        foreach (ParticleSystem ps in smoke)
+        {
+            ps.Stop();
+        }
     }
 
     public override string ToString()
