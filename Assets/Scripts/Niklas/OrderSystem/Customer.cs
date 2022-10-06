@@ -22,6 +22,7 @@ public class Customer : MonoBehaviour
     void Start()
     {
         MakeOrder();
+        SideScreen.instance.SetOrder(orderItems);
     }
 
     void Update()
@@ -55,6 +56,8 @@ public class Customer : MonoBehaviour
         if (orderTime >= waitTime)
         {
             MakeOrder();
+            SideScreen.instance.SetOrder(orderItems);
+            Debug.Log("!!!");
             ScoreManager.instance.badOrder++;
             Stats.instance.badOrders.text = "Bad Orders: " + ScoreManager.instance.badOrder;
             return;
@@ -82,7 +85,6 @@ public class Customer : MonoBehaviour
         }
 
         waitTimeTMP.text = "Wait Time: " + waitTime.ToString("f0");
-        SideScreen.instance.SetOrder(orderItems);
     }
 
     void OnTriggerEnter(Collider other)
