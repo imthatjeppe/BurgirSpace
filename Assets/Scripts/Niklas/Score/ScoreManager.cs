@@ -5,6 +5,8 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
+    [SerializeField] ParticleSystem confetti;
+    [SerializeField] ParticleSystem badPs;
     float score = 0;
     [HideInInspector] public int badOrder = 0;
     int maxBadOrder;
@@ -49,11 +51,22 @@ public class ScoreManager : MonoBehaviour
 
         if (completionPercentage < 30 || orderTime > waitTime || currentPattyState != desiredPattyState)
         {
+            badPs.Play();
+            AudioManager.instance.PlayOnceLocal("Bad Order", gameObject);
             badOrder++;
             Stats.instance.badOrders.text = "Bad Orders: " + badOrder;
             Save.instance.badOrder = badOrder;
+            Save.instance.score = score;
+            Save.instance.SaveAll();
         }
-        Save.instance.score = score;
-        Save.instance.SaveAll();
+        else
+        {
+            confetti.Play();
+            AudioManager.instance.PlayOnceLocal("Good Order", gameObject);
+            Save.instance.score = score;
+            Save.instance.SaveAll();
+        }
+
+        AudioManager.instance.PlayOnceLocal("Order complete", gameObject);
     }
 }

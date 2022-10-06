@@ -145,8 +145,6 @@ public class Customer : MonoBehaviour
             ScoreManager.instance.UpdateScore(completion, orderTime, waitTime, desiredPattyState, CookStates.Raw, bonus);
         }
 
-        AudioManager.instance.PlayOnceLocal("Order complete", gameObject);
-
         plate = other.gameObject;
 
         StartCoroutine(NewOrder());

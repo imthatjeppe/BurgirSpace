@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0031371415, g: 0.003716838, b: 0.002134078, a: 1}
+  m_IndirectSpecularColor: {r: 0.0031913985, g: 0.0037735316, b: 0.0021695523, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12769,6 +12769,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 3826302649626364836, guid: 6bb8c4c90e1e83a4fa5fab83d559fde2,
         type: 3}
+      propertyPath: confetti
+      value: 
+      objectReference: {fileID: 2884603159318473304}
+    - target: {fileID: 3826302649626364836, guid: 6bb8c4c90e1e83a4fa5fab83d559fde2,
+        type: 3}
       propertyPath: waitTimeTMP
       value: 
       objectReference: {fileID: 1389364512}
@@ -23040,23 +23045,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2884603159035510528, guid: 133390bb22811164d961e11d701e7fb6,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884603159035510528, guid: 133390bb22811164d961e11d701e7fb6,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884603159035510528, guid: 133390bb22811164d961e11d701e7fb6,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884603159035510528, guid: 133390bb22811164d961e11d701e7fb6,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.613882
+      value: -4.667
       objectReference: {fileID: 0}
     - target: {fileID: 2884603159035510528, guid: 133390bb22811164d961e11d701e7fb6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8696279
+      value: 0.994
       objectReference: {fileID: 0}
     - target: {fileID: 2884603159035510528, guid: 133390bb22811164d961e11d701e7fb6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.25
+      value: 2.008
       objectReference: {fileID: 0}
     - target: {fileID: 2884603159035510528, guid: 133390bb22811164d961e11d701e7fb6,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2884603159035510528, guid: 133390bb22811164d961e11d701e7fb6,
         type: 3}
@@ -23066,7 +23086,7 @@ PrefabInstance:
     - target: {fileID: 2884603159035510528, guid: 133390bb22811164d961e11d701e7fb6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2884603159035510528, guid: 133390bb22811164d961e11d701e7fb6,
         type: 3}
@@ -23081,12 +23101,17 @@ PrefabInstance:
     - target: {fileID: 2884603159035510528, guid: 133390bb22811164d961e11d701e7fb6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 2884603159035510528, guid: 133390bb22811164d961e11d701e7fb6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884603159035510528, guid: 133390bb22811164d961e11d701e7fb6,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2884603159035510531, guid: 133390bb22811164d961e11d701e7fb6,
         type: 3}
@@ -23095,6 +23120,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 133390bb22811164d961e11d701e7fb6, type: 3}
+--- !u!198 &2884603159318473304 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2884603159035510529, guid: 133390bb22811164d961e11d701e7fb6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2884603159318473303}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2892267968544723400
 Transform:
   m_ObjectHideFlags: 0
