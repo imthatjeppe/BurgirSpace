@@ -33,14 +33,12 @@ public class PlayerTeleportation : MonoBehaviour
     private void Walking()
     {
         player.gameObject.GetComponent<ActionBasedContinuousMoveProvider>().enabled = true;
-        player.gameObject.GetComponent<ActionBasedContinuousTurnProvider>().enabled = false;
         player.gameObject.GetComponent<CharacterController>().enabled = true;
 
     }
 
     private void ChangePosition()
     {
-        player.gameObject.GetComponent<ActionBasedContinuousTurnProvider>().enabled = true;
         player.gameObject.GetComponent<ActionBasedContinuousMoveProvider>().enabled = false;
         player.gameObject.GetComponent<CharacterController>().enabled = false;
 
