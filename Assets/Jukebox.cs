@@ -9,6 +9,8 @@ public class Jukebox : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        AudioManager.instance.PlayOnceLocal("Jukebox Start", gameObject);
+
         foreach(Transform child in gameObject.transform)
         {
             if(child != null)
