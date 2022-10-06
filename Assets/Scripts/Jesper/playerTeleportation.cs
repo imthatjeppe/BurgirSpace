@@ -10,7 +10,6 @@ public class PlayerTeleportation : MonoBehaviour
     public ActionBasedController leftController;
     public Transform player;
     public List<GameObject> playerPosition = new List<GameObject>();
-
     public int position = 4;
     Vector2 changePos;
 
