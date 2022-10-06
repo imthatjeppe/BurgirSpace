@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
         {
             gameState = GameStates.Playing;
             Save.instance.sceneIndex = buildIndex;
+            gameTime = difficultySetting.GameTime;
             Save.instance.SaveAll();
             return;
         }
@@ -55,8 +56,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if(gameState != GameStates.Playing) { return; }
-
-        gameTime = difficultySetting.GameTime;
 
         if(gameTime <= 0) { ScoreManager.instance.badOrder = difficultySetting.maxBadOrders; return; }
 
