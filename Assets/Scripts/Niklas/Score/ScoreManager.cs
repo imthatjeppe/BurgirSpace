@@ -51,7 +51,7 @@ public class ScoreManager : MonoBehaviour
 
         score = deliveryMultiplier * (completionPercentage / 100);
 
-        if (completionPercentage < 30)
+        if (completionPercentage < 20)
         {
             badPs.Play();
             //AudioManager.instance.PlayOnceLocal("Bad Order", gameObject);
