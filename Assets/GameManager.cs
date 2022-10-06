@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public Setting difficultySetting;
 
+    public float gameTime;
+
     public static GameStates gameState = GameStates.Menu;
 
     bool paused;
@@ -53,9 +55,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if(gameState != GameStates.Playing) { return; }
-        if(difficultySetting.GameTime <= 0) { ScoreManager.instance.badOrder = difficultySetting.maxBadOrders; return; }
 
-        difficultySetting.GameTime -= Time.deltaTime;
+        gameTime = difficultySetting.GameTime;
+
+        if(gameTime <= 0) { ScoreManager.instance.badOrder = difficultySetting.maxBadOrders; return; }
+
+        gameTime -= Time.deltaTime;
     }
 
     public void PauseGame()

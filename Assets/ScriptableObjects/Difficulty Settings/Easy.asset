@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c211aba63d909d742a95d71178e2f34a, type: 3}
   m_Name: Easy
   m_EditorClassIdentifier: 
-  GameTime: 196.22131
+  GameTime: 600
   minWaitTime: 120
   maxWaitTime: 360
   maxBadOrders: 5

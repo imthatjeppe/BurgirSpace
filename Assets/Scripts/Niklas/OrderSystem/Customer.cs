@@ -127,7 +127,7 @@ public class Customer : MonoBehaviour
 
         if (waitTime > orderTime)
         {
-            GameManager.instance.difficultySetting.GameTime += waitTime - orderTime;
+            GameManager.instance.gameTime += waitTime - orderTime;
         }
 
         orderTime = 0;
