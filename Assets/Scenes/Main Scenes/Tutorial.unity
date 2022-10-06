@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 111768538}
   m_Layer: 0
-  m_Name: GameObject (2)
+  m_Name: TeleportationPoint3
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -146,14 +146,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111768537}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.069, y: 0, z: 4.235}
+  m_LocalRotation: {x: -0, y: -0.030443447, z: -0, w: 0.9995365}
+  m_LocalPosition: {x: -5.437, y: -1, z: 4.542}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1446509741}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -3.489, z: 0}
 --- !u!1001 &124103263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -169,7 +169,7 @@ PrefabInstance:
     - target: {fileID: 8538799200141213362, guid: 26586af68da6e7b4784bc43501f8d90a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.616
+      value: -3.549
       objectReference: {fileID: 0}
     - target: {fileID: 8538799200141213362, guid: 26586af68da6e7b4784bc43501f8d90a,
         type: 3}
@@ -179,7 +179,7 @@ PrefabInstance:
     - target: {fileID: 8538799200141213362, guid: 26586af68da6e7b4784bc43501f8d90a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.207
+      value: 2.049
       objectReference: {fileID: 0}
     - target: {fileID: 8538799200141213362, guid: 26586af68da6e7b4784bc43501f8d90a,
         type: 3}
@@ -468,6 +468,67 @@ CapsuleCollider:
   m_Height: 0.18
   m_Direction: 2
   m_Center: {x: 0.03, y: 0, z: -0.03}
+--- !u!1 &369878617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 369878618}
+  - component: {fileID: 369878620}
+  - component: {fileID: 369878619}
+  m_Layer: 0
+  m_Name: MovementTutorial2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &369878618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369878617}
+  m_LocalRotation: {x: -0, y: -0.02657515, z: -0, w: 0.99964684}
+  m_LocalPosition: {x: -1.049, y: 0, z: 0.068}
+  m_LocalScale: {x: 0.95198184, y: 1, z: 0.32647014}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 536133824}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: -3.046, z: 0}
+--- !u!65 &369878619
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369878617}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &369878620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369878617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad05567c6ebf214cbe82b44839a6650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Order: 1
+  Explanation: Good job! Now teleport over to the counter with the ingredients.
+  PlayerTransform: {fileID: 1910429808}
 --- !u!1001 &415515411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -483,7 +544,7 @@ PrefabInstance:
     - target: {fileID: 1173754424417256364, guid: 93566ce42b7454344a0dbd2f1406a98f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.957
+      value: -3.869
       objectReference: {fileID: 0}
     - target: {fileID: 1173754424417256364, guid: 93566ce42b7454344a0dbd2f1406a98f,
         type: 3}
@@ -493,7 +554,7 @@ PrefabInstance:
     - target: {fileID: 1173754424417256364, guid: 93566ce42b7454344a0dbd2f1406a98f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.7721
+      value: 1.697
       objectReference: {fileID: 0}
     - target: {fileID: 1173754424417256364, guid: 93566ce42b7454344a0dbd2f1406a98f,
         type: 3}
@@ -620,7 +681,7 @@ PrefabInstance:
     - target: {fileID: 1030924361942855507, guid: f82a0e01192b7fe45a1304bad8ab5e12,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.421
+      value: -3.371
       objectReference: {fileID: 0}
     - target: {fileID: 1030924361942855507, guid: f82a0e01192b7fe45a1304bad8ab5e12,
         type: 3}
@@ -630,7 +691,7 @@ PrefabInstance:
     - target: {fileID: 1030924361942855507, guid: f82a0e01192b7fe45a1304bad8ab5e12,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.4190001
+      value: 2.207
       objectReference: {fileID: 0}
     - target: {fileID: 1030924361942855507, guid: f82a0e01192b7fe45a1304bad8ab5e12,
         type: 3}
@@ -720,6 +781,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1002696125}
+  - {fileID: 369878618}
   - {fileID: 1082440938}
   - {fileID: 1176297007}
   - {fileID: 944434505}
@@ -1496,7 +1558,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805912119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 0.005, y: 0.005, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1608,7 +1670,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 536133824}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &944434506
 MonoBehaviour:
@@ -1724,7 +1786,7 @@ PrefabInstance:
     - target: {fileID: 4992960710302780666, guid: 777b822bac22ee84fbd617d5f85be8ff,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.797
+      value: -3.729
       objectReference: {fileID: 0}
     - target: {fileID: 4992960710302780666, guid: 777b822bac22ee84fbd617d5f85be8ff,
         type: 3}
@@ -1734,7 +1796,7 @@ PrefabInstance:
     - target: {fileID: 4992960710302780666, guid: 777b822bac22ee84fbd617d5f85be8ff,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.993
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 4992960710302780666, guid: 777b822bac22ee84fbd617d5f85be8ff,
         type: 3}
@@ -1782,8 +1844,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1002696125}
-  - component: {fileID: 1002696126}
-  - component: {fileID: 1002696127}
+  - component: {fileID: 1002696129}
   - component: {fileID: 1002696128}
   m_Layer: 0
   m_Name: MovementTutorial
@@ -1799,46 +1860,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002696124}
-  m_LocalRotation: {x: -0, y: 0.37947524, z: -0, w: 0.92520195}
-  m_LocalPosition: {x: -1.230487, y: 0, z: 0.10753915}
-  m_LocalScale: {x: 0.33986, y: 1, z: 0.46592665}
+  m_LocalRotation: {x: -0, y: -0.02657515, z: -0, w: 0.99964684}
+  m_LocalPosition: {x: 1.133, y: 0, z: -0.584}
+  m_LocalScale: {x: 0.71792024, y: 2.9617, z: 0.46592665}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 536133824}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 44.602, z: 0}
---- !u!114 &1002696126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002696124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d81220cd5f7acb945b21b30afb24b97c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Order: 0
-  Explanation: Welcome, Chef! You can move around using your teleport. To teleport,
-    flick your right stick to the right or left to teleport to a set of positions.
-  Keys:
-  - w
---- !u!114 &1002696127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002696124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ad05567c6ebf214cbe82b44839a6650, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Order: 1
-  Explanation: Good job! Now teleport over to the counter with the ingredients.
-  PlayerTransform: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -3.046, z: 0}
 --- !u!65 &1002696128
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1852,6 +1881,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1002696129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002696124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad05567c6ebf214cbe82b44839a6650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Order: 0
+  Explanation: Welcome, Chef! You can move around using your teleport. To teleport,
+    flick your right stick to the right or left to teleport to a set of positions.
+  PlayerTransform: {fileID: 1910429808}
 --- !u!1 &1033273987
 GameObject:
   m_ObjectHideFlags: 0
@@ -2190,9 +2235,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1082440938}
-  - component: {fileID: 1082440939}
   - component: {fileID: 1082440941}
   - component: {fileID: 1082440940}
+  - component: {fileID: 1082440942}
   m_Layer: 0
   m_Name: BuildingBurgerTutorial
   m_TagString: Untagged
@@ -2207,31 +2252,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082440937}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.66, z: -0.014664426}
-  m_LocalScale: {x: 0.4748, y: 0.5379456, z: 0.76217365}
+  m_LocalRotation: {x: -0, y: -0.16040666, z: -0, w: 0.987051}
+  m_LocalPosition: {x: -0.788, y: 0.66, z: 0.404}
+  m_LocalScale: {x: 0.4748, y: 0.5379456, z: 0.18834835}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 536133824}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1082440939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082440937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d81220cd5f7acb945b21b30afb24b97c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Order: 2
-  Explanation: Build a burger by grabbing the ingredients and placing them on the
-    bottom bun. Then move the plate to the outer counter for delivery.
-  Keys:
-  - w
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -18.461, z: 0}
 --- !u!65 &1082440940
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2257,10 +2285,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7093e5659e7f5da4a8ea528502359943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Order: 3
-  Explanation: Once you're happy with your burger, place the plate on the outer counter,
-    facing the dining area.
+  Order: 2
+  Explanation: Build a burger using the ingredients available to you. Place the ingredients
+    on the plate. Once you're done, put the plate on the counter to your right.
   BurgerTransform: {fileID: 2027641239}
+--- !u!212 &1082440942
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082440937}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 10.3, y: 4.2}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1167260320
 GameObject:
   m_ObjectHideFlags: 0
@@ -2363,7 +2443,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -332.67282, y: -27.08255, z: -331.547, w: 0}
+  m_margin: {x: -125.090576, y: -27.08255, z: -107.972855, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2394,7 +2474,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 169}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1167260324
@@ -2439,7 +2519,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 536133824}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1176297008
 MonoBehaviour:
@@ -2467,7 +2547,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1360537555}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: TeleportationPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2480,14 +2560,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1360537554}
-  m_LocalRotation: {x: 0, y: 0.89208555, z: 0, w: 0.45186654}
-  m_LocalPosition: {x: 0.046, y: 0, z: 2.289}
+  m_LocalRotation: {x: -0, y: 0.36532745, z: -0, w: -0.93087906}
+  m_LocalPosition: {x: 1.693, y: -1, z: 2.391}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1446509741}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 126.273, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 317.145, z: 0}
 --- !u!1 &1379644481
 GameObject:
   m_ObjectHideFlags: 0
@@ -2498,7 +2578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1379644482}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: TeleportationPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2511,14 +2591,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379644481}
-  m_LocalRotation: {x: -0, y: 0.42611057, z: -0, w: -0.90467113}
-  m_LocalPosition: {x: 0.14399981, y: 0, z: 0.079}
+  m_LocalRotation: {x: -0, y: 0.22700357, z: -0, w: -0.973894}
+  m_LocalPosition: {x: 0.14399981, y: -1, z: 0.079}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1446509741}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 309.55798, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 333.759, z: 0}
 --- !u!1 &1446509739
 GameObject:
   m_ObjectHideFlags: 0
@@ -2553,7 +2633,7 @@ Transform:
   - {fileID: 111768538}
   - {fileID: 2042842108}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1446509742
 MonoBehaviour:
@@ -2946,7 +3026,7 @@ PrefabInstance:
     - target: {fileID: 8166175803741158414, guid: 98c56432f8bf5c042811862b535438c7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8166175803741158414, guid: 98c56432f8bf5c042811862b535438c7,
         type: 3}
@@ -3750,7 +3830,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 536133824}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1900945788
 MonoBehaviour:
@@ -3798,15 +3878,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910429807}
-  m_LocalRotation: {x: -0, y: 0.8920844, z: -0, w: 0.45186883}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.30871537, z: -0, w: 0.9511545}
+  m_LocalPosition: {x: -1.057, y: -0.35, z: -1.396}
+  m_LocalScale: {x: 1, y: 0.7386803, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1825108673}
   m_Father: {fileID: 2026826343}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 126.273, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 35.964, z: 0}
 --- !u!114 &1910429809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3986,7 +4066,7 @@ Transform:
   - {fileID: 1910429808}
   - {fileID: 966194580}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 232.884, z: 0}
 --- !u!1001 &2027641238
 PrefabInstance:
@@ -3995,6 +4075,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -75385380657133948, guid: 41188951cdf900b4caedb5dcd26fe726,
+        type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6095599949119267656, guid: 41188951cdf900b4caedb5dcd26fe726,
         type: 3}
       propertyPath: m_Name
@@ -4008,7 +4093,7 @@ PrefabInstance:
     - target: {fileID: 6095599949119267660, guid: 41188951cdf900b4caedb5dcd26fe726,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.942
+      value: -3.004
       objectReference: {fileID: 0}
     - target: {fileID: 6095599949119267660, guid: 41188951cdf900b4caedb5dcd26fe726,
         type: 3}
@@ -4018,7 +4103,7 @@ PrefabInstance:
     - target: {fileID: 6095599949119267660, guid: 41188951cdf900b4caedb5dcd26fe726,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.664
+      value: 2.528
       objectReference: {fileID: 0}
     - target: {fileID: 6095599949119267660, guid: 41188951cdf900b4caedb5dcd26fe726,
         type: 3}
@@ -4073,7 +4158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2042842108}
   m_Layer: 0
-  m_Name: GameObject (3)
+  m_Name: TeleportationPoint4
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4086,11 +4171,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2042842107}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.644, y: 0, z: 2.679}
+  m_LocalRotation: {x: -0, y: 0.7804174, z: -0, w: -0.625259}
+  m_LocalPosition: {x: -4.262, y: -1, z: -1.232}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1446509741}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 257.402, z: 0}
