@@ -19236,6 +19236,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScoreManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2098178903949754731, guid: 51afe4ec4baa8294f93c56f2f7179d2b,
+        type: 3}
+      propertyPath: badPs
+      value: 
+      objectReference: {fileID: 2884603159318473304}
+    - target: {fileID: 2098178903949754731, guid: 51afe4ec4baa8294f93c56f2f7179d2b,
+        type: 3}
+      propertyPath: confetti
+      value: 
+      objectReference: {fileID: 2884603159318473304}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51afe4ec4baa8294f93c56f2f7179d2b, type: 3}
 --- !u!4 &1943643022 stripped

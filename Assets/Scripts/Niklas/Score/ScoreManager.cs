@@ -52,7 +52,7 @@ public class ScoreManager : MonoBehaviour
         if (completionPercentage < 30 || orderTime > waitTime || currentPattyState != desiredPattyState)
         {
             badPs.Play();
-            AudioManager.instance.PlayOnceLocal("Bad Order", gameObject);
+            //AudioManager.instance.PlayOnceLocal("Bad Order", gameObject);
             badOrder++;
             Stats.instance.badOrders.text = "Bad Orders: " + badOrder;
             Save.instance.badOrder = badOrder;
@@ -62,8 +62,8 @@ public class ScoreManager : MonoBehaviour
         else
         {
             confetti.Play();
-            AudioManager.instance.PlayOnceLocal("Good Order", gameObject);
             Save.instance.score = score;
+            //AudioManager.instance.PlayOnceLocal("Good Order", gameObject);
             Save.instance.SaveAll();
         }
 
