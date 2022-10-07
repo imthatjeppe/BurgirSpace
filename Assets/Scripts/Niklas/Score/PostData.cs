@@ -61,7 +61,7 @@ public class PostData : MonoBehaviour
 
     public void CreateScore()
     {
-        ScoreData scoreData = new ScoreData(username.text, "" + Save.instance.score);
+        ScoreData scoreData = new ScoreData(placeHolder.text, "" + Save.instance.score);
 
         string values = JsonConvert.SerializeObject(scoreData);
         Debug.Log(values);

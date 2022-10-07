@@ -88,6 +88,11 @@ public class Customer : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if(other.gameObject.CompareTag("Patty") || other.gameObject.CompareTag("TopBun") || other.gameObject.CompareTag("BottomBun") || other.gameObject.CompareTag("Cheese")
+           || other.gameObject.CompareTag("Onion") || other.gameObject.CompareTag("Tomato") || other.gameObject.CompareTag("Cucumber") || other.gameObject.CompareTag("Salad"))
+        {
+            other.gameObject.SetActive(false);
+        }
         if (isDelivering) { return; }
 
         if (updatingScore) { return; }

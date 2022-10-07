@@ -45,7 +45,7 @@ public class ScoreManager : MonoBehaviour
     {
         float deliveryMultiplier = 1000;
 
-        if (currentPattyState == CookStates.Burnt || currentPattyState == CookStates.Raw) { deliveryMultiplier = 10; }
+        //if (currentPattyState == CookStates.Burnt || currentPattyState == CookStates.Raw) { deliveryMultiplier = 10; }
 
         if(currentPattyState == desiredPattyState) { deliveryMultiplier += 200; }
 
